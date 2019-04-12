@@ -1,6 +1,9 @@
 package creature;
 
-public abstract class Creature {
+import Interface.attackable;
+import Interface.movable;
+
+public abstract class Creature implements attackable, movable{
 	
 	private String name;
 	private int hp;

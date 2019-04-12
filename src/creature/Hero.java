@@ -1,6 +1,8 @@
 package creature;
 
-public class Hero extends Creature {
+import Interface.regenable;
+
+public abstract class Hero extends Creature implements regenable{
 
 	private int mp;
 	private int maxMp;
