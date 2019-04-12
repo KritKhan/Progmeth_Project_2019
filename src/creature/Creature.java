@@ -33,8 +33,8 @@ public abstract class Creature {
 	}
 
 	public void setHp(int hp) {
-		if(hp < 0) {
-			hp = 0;
+		if(hp < 1) {
+			hp = 1;
 		}
 		this.hp = hp;
 	}
@@ -44,14 +44,14 @@ public abstract class Creature {
 	}
 
 	public void setMaxHp(int maxHp) {
-		if(maxHp < 0 ) {
-			maxHp = 0;
+		if(maxHp < 1 ) {
+			maxHp = 1;
 		}
 		this.maxHp = maxHp;
 	}
 
 	public int getCoin() {
-		return coin;
+		return (int) coin;
 	}
 
 	public void setCoin(int coin) {

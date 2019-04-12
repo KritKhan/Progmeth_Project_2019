@@ -5,9 +5,11 @@ public class Hero extends Creature {
 	private int maxMp;
 	private int mpConsumption;
 
-	public Hero(String name, int hp, int maxHp, int coin) {
+	public Hero(String name, int hp, int maxHp, int coin, int mp, int maxMp, int mpConsumption) {
 		super(name, hp, maxHp, coin);
-		
+		setMp(mp);
+		setMaxMp(maxMp);
+		setMpConsumption(mpConsumption);
 	}
 	
 	public boolean canConsumeMp() {
@@ -26,6 +28,7 @@ public class Hero extends Creature {
 	}
 
 	public void setMpConsumption(int mpConsumption) {
+		if(mpConsumption < 1) mpConsumption = 1;
 		this.mpConsumption = mpConsumption;
 	}
 
@@ -34,6 +37,7 @@ public class Hero extends Creature {
 	}
 
 	public void setMp(int mp) {
+		if(mp < 0) mp = 0;
 		this.mp = mp;
 	}
 
@@ -42,6 +46,7 @@ public class Hero extends Creature {
 	}
 
 	public void setMaxMp(int maxMp) {
+		if(maxMp < 1) maxMp = 1;
 		this.maxMp = maxMp;
 	}
 	
