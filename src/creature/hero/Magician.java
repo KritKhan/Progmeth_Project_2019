@@ -1,5 +1,11 @@
 package creature.hero;
 
-public class Magician {
+import creature.Hero;
+
+public class Magician extends Hero{
+
+	public Magician(String name) {
+		super(name, 200, 200, 0, 30, 250, 250, 15);
+	}
 
 }

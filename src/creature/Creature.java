@@ -8,11 +8,12 @@ public abstract class Creature {
 	private int coin;
 	private int atk;
 	
-	public Creature(String name, int hp, int maxHp, int coin) {
+	public Creature(String name, int hp, int maxHp, int coin, int atk) {
 		setName(name);
 		setHp(maxHp);
 		setMaxHp(maxHp);
 		setCoin(coin);
+		setAtk(atk);
 	}
 
 	public boolean isAlive() {
@@ -59,6 +60,15 @@ public abstract class Creature {
 			coin = 0;
 		}
 		this.coin = coin;
+	}
+
+	public int getAtk() {
+		return atk;
+	}
+
+	public void setAtk(int atk) {
+		if(atk < 0) atk = 0;
+		this.atk = atk;
 	}
 	
 	

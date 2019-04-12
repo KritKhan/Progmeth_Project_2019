@@ -1,14 +1,15 @@
 package creature;
 
 public class Hero extends Creature {
+
 	private int mp;
 	private int maxMp;
 	private int mpConsumption;
 
-	public Hero(String name, int hp, int maxHp, int coin, int mp, int maxMp, int mpConsumption) {
-		super(name, hp, maxHp, coin);
+	public Hero(String name, int hp, int maxHp, int coin, int atk, int mp, int maxMp, int mpConsumption) {
+		super(name, hp, maxHp, coin, atk);
 		setMp(mp);
-		setMaxMp(maxMp);
+		setMaxHp(maxHp);
 		setMpConsumption(mpConsumption);
 	}
 	
