@@ -6,7 +6,7 @@ public abstract class Creature {
 	private int hp;
 	private int maxHp;
 	private int coin;
-	
+	private int atk;
 	
 	public Creature(String name, int hp, int maxHp, int coin) {
 		setName(name);
