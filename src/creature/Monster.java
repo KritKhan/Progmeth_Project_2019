@@ -2,12 +2,12 @@ package creature;
 
 public class Monster extends Creature {
 
-	public Monster(String name, int hp, int maxHp, int coin, int atk) {
-		super(name, hp, maxHp, coin, atk);
+	public Monster(String name, int maxHp, int coin, int atk) {
+		super(name, maxHp, coin, atk);
 	}
 	
-	public void giveCoin(Hero hero) {
-		hero.recieveCoin(this.getCoin());	
+	public int giveCoin(Hero hero) {
+		return getCoin();
 	}
 	
 }

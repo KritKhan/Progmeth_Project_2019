@@ -8,7 +8,7 @@ public abstract class Creature {
 	private int coin;
 	private int atk;
 	
-	public Creature(String name, int hp, int maxHp, int coin, int atk) {
+	public Creature(String name, int maxHp, int coin, int atk) {
 		setName(name);
 		setHp(maxHp);
 		setMaxHp(maxHp);

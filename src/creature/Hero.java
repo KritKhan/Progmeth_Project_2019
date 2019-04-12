@@ -6,9 +6,9 @@ public class Hero extends Creature {
 	private int maxMp;
 	private int mpConsumption;
 
-	public Hero(String name, int hp, int maxHp, int coin, int atk, int mp, int maxMp, int mpConsumption) {
-		super(name, hp, maxHp, coin, atk);
-		setMp(mp);
+	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) {
+		super(name, maxHp, coin, atk);
+		setMp(maxHp);
 		setMaxHp(maxHp);
 		setMpConsumption(mpConsumption);
 	}

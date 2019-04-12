@@ -1,5 +1,11 @@
 package creature.boss;
 
-public class Witch {
+import creature.Monster;
+
+public class Witch extends Monster {
+
+	public Witch(String name) {
+		super(name, 500, 1500, 50);
+	}
 
 }
