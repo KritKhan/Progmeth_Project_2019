@@ -20,7 +20,10 @@ public class Hero extends Creature {
 			setMp(getMp() - getMpConsumption());
 		}
 	}
-
+	
+	public void recieveCoin(int coin) {
+		this.setCoin(getCoin()+coin);
+	}
 	public int getMpConsumption() {
 		return mpConsumption;
 	}
