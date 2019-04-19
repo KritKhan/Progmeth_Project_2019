@@ -5,8 +5,8 @@ import creature.Hero;
 
 public abstract class Archer extends Hero{
 	
-	public Archer(String name) {
-		super(name, 200, 0, 25, 200, 15);
+	public Archer(int lvl) {
+		super("Archer", 200, 0, 25, 200, 15);
 	}
 
 	@Override

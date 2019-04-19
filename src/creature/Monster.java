@@ -6,7 +6,7 @@ public abstract class Monster extends Creature {
 		super(name, maxHp, coin, atk);
 	}
 	
-	public int giveCoin(Hero hero) {
+	public double giveCoin(Hero hero) {
 		return getCoin();
 	}
 	

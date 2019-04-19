@@ -2,6 +2,6 @@ package Interface;
 
 import java.awt.event.KeyEvent;
 
-public interface movable {
+public interface Movable {
 	public boolean move(KeyEvent event);
 }

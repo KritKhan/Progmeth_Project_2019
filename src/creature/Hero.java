@@ -1,14 +1,14 @@
 package creature;
 
-import Interface.regenable;
+import Interface.Regenable;
 
-public abstract class Hero extends Creature implements regenable{
+public abstract class Hero extends Creature implements Regenable{
 
 	private int mp;
 	private int maxMp;
 	private int mpConsumption;
 
-	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) {
+	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) { 
 		super(name, maxHp, coin, atk);
 		setMp(maxHp);
 		setMaxHp(maxHp);
@@ -19,7 +19,7 @@ public abstract class Hero extends Creature implements regenable{
 		if(getMp() - getMpConsumption()> 0 ) return true;
 		return false;
 	}
-	
+
 	public void mpConsume() {
 		if(canConsumeMp()) {
 			setMp(getMp() - getMpConsumption());
