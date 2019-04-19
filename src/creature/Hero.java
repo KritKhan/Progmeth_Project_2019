@@ -1,18 +1,21 @@
 package creature;
 
 import Interface.regenable;
+import item.Inventory;
 
 public abstract class Hero extends Creature implements regenable{
 
 	private int mp;
 	private int maxMp;
 	private int mpConsumption;
+	private Inventory inventory;
 
 	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) {
 		super(name, maxHp, coin, atk);
 		setMp(maxHp);
 		setMaxHp(maxHp);
 		setMpConsumption(mpConsumption);
+		inventory = new Inventory();
 	}
 	
 	public boolean canConsumeMp() {
@@ -55,6 +58,7 @@ public abstract class Hero extends Creature implements regenable{
 		if(maxMp < 1) maxMp = 1;
 		this.maxMp = maxMp;
 	}
+	
 	
 
 }

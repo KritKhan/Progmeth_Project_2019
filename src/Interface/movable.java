@@ -1,7 +1,8 @@
 package Interface;
 
-import java.awt.event.KeyEvent;
+import javafx.scene.input.KeyEvent;
 
 public interface movable {
 	public boolean move(KeyEvent event);
+	
 }
