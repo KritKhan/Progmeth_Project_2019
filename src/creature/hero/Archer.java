@@ -4,8 +4,8 @@ import creature.Creature;
 import creature.Hero;
 
 public abstract class Archer extends Hero{
-	
-	public Archer(int lvl) {
+
+	public Archer() {
 		super("Archer", 200, 0, 25, 200, 15);
 	}
 
@@ -13,4 +13,5 @@ public abstract class Archer extends Hero{
 	public void attack(Creature creature) {
 		creature.setHp(creature.getHp()-this.getAtk());
 	}
+	
 }
