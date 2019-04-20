@@ -2,6 +2,6 @@ package Interface;
 
 import creature.Creature;
 
-public interface attackable {
+public interface Attackable {
 	public void attack(Creature creature);
 }

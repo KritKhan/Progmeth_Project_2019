@@ -1,17 +1,19 @@
 package creature;
 
-import Interface.attackable;
-import Interface.movable;
+import java.awt.event.KeyEvent;
 
-public abstract class Creature implements attackable, movable{
-	
+import Interface.Attackable;
+import Interface.Movable;
+
+public abstract class Creature implements Attackable, Movable {
+
 	private String name;
 	private int hp;
 	private int maxHp;
-	private int coin;
+	private double coin;
 	private int atk;
-	
-	public Creature(String name, int maxHp, int coin, int atk) {
+
+	public Creature(String name, int maxHp, double coin, int atk) {
 		setName(name);
 		setHp(maxHp);
 		setMaxHp(maxHp);
@@ -19,8 +21,22 @@ public abstract class Creature implements attackable, movable{
 		setAtk(atk);
 	}
 
+	@Override
+	public boolean move(KeyEvent event) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void attack(Creature creature) {
+		if (creature.isAlive()) {
+			creature.setHp(creature.getHp() - this.getAtk());
+		}
+	}
+
 	public boolean isAlive() {
-		if(hp>0) return true;
+		if (hp > 0)
+			return true;
 		return false;
 	}
 
@@ -37,7 +53,7 @@ public abstract class Creature implements attackable, movable{
 	}
 
 	public void setHp(int hp) {
-		if(hp < 1) {
+		if (hp < 1) {
 			hp = 1;
 		}
 		this.hp = hp;
@@ -48,18 +64,18 @@ public abstract class Creature implements attackable, movable{
 	}
 
 	public void setMaxHp(int maxHp) {
-		if(maxHp < 1 ) {
+		if (maxHp < 1) {
 			maxHp = 1;
 		}
 		this.maxHp = maxHp;
 	}
 
-	public int getCoin() {
-		return (int) coin;
+	public double getCoin() {
+		return (double) coin;
 	}
 
-	public void setCoin(int coin) {
-		if(coin < 0) {
+	public void setCoin(double coin) {
+		if (coin < 0) {
 			coin = 0;
 		}
 		this.coin = coin;
@@ -70,9 +86,9 @@ public abstract class Creature implements attackable, movable{
 	}
 
 	public void setAtk(int atk) {
-		if(atk < 0) atk = 0;
+		if (atk < 0)
+			atk = 0;
 		this.atk = atk;
 	}
-	
-	
+
 }

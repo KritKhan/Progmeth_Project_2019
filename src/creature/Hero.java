@@ -1,28 +1,30 @@
 package creature;
 
-import Interface.regenable;
 import item.Inventory;
+import Interface.Regenable;
 
-public abstract class Hero extends Creature implements regenable{
+public abstract class Hero extends Creature implements Regenable {
 
 	private int mp;
 	private int maxMp;
 	private int mpConsumption;
 	private Inventory inventory;
+	private int lvl;
 
-	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) {
+	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) { 
 		super(name, maxHp, coin, atk);
 		setMp(maxHp);
 		setMaxHp(maxHp);
 		setMpConsumption(mpConsumption);
 		inventory = new Inventory();
+		lvl = 1;
 	}
 	
 	public boolean canConsumeMp() {
 		if(getMp() - getMpConsumption()> 0 ) return true;
 		return false;
 	}
-	
+
 	public void mpConsume() {
 		if(canConsumeMp()) {
 			setMp(getMp() - getMpConsumption());
@@ -58,7 +60,25 @@ public abstract class Hero extends Creature implements regenable{
 		if(maxMp < 1) maxMp = 1;
 		this.maxMp = maxMp;
 	}
-	
-	
 
+	public int lvlUp() {
+		if(lvl>0 && lvl<=15) {
+			lvl++;
+			setMaxHp((int)(getMaxHp()*1.3));
+			setMaxMp((int)(getMaxMp()*1.15));
+			setAtk((int)(getAtk()*1.2));
+			setMpConsumption((int)(getMpConsumption()*1.1));
+		}
+		return lvl;
+	}
+	
+	@Override
+	public void regenHp() {
+		setHp((int)(getHp()+(30*Math.pow(1.25, lvl))));
+	}
+
+	@Override
+	public void regenMp() {
+		setMp((int)(getMp()+(25*Math.pow(1.1, lvl))));
+	}
 }
