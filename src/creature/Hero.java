@@ -81,4 +81,9 @@ public abstract class Hero extends Creature implements Regenable {
 	public void regenMp() {
 		setMp((int)(getMp()+(25*Math.pow(1.1, lvl))));
 	}
+
+	public Inventory getInventory() {
+		return inventory;
+	}
+	
 }
