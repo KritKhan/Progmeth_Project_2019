@@ -8,7 +8,7 @@ public class Shop {
 	
 	public void buy(Hero hero, Item item) {
 		if(hero.getCoin() >= item.getPrice()) {
-			hero.getInventory().add(item);
+			hero.inventory.add(item);
 			hero.setCoin(hero.getCoin() - item.getPrice());
 		}
 		else {
