@@ -1,11 +1,9 @@
 package creature;
 
-import java.awt.event.KeyEvent;
-
 import Interface.Attackable;
-import Interface.Movable;
+import SharedObject.IRenderable;
 
-public abstract class Creature implements Attackable {
+public abstract class Creature implements IRenderable, Attackable {
 
 	private String name;
 	private int hp;

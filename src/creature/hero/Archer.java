@@ -2,6 +2,7 @@ package creature.hero;
 
 import creature.Creature;
 import creature.Hero;
+import javafx.scene.canvas.GraphicsContext;
 
 public abstract class Archer extends Hero{
 
@@ -12,6 +13,11 @@ public abstract class Archer extends Hero{
 	@Override
 	public void attack(Creature creature) {
 		creature.setHp(creature.getHp()-this.getAtk());
+	}
+	
+	@Override
+	public void draw(GraphicsContext gc) {
+		
 	}
 	
 }

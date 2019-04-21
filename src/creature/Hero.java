@@ -8,7 +8,7 @@ public abstract class Hero extends Creature implements Regenable {
 	private int mp;
 	private int maxMp;
 	private int mpConsumption;
-	private Inventory inventory;
+	public Inventory inventory;
 	private int lvl;
 
 	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) { 
@@ -81,4 +81,9 @@ public abstract class Hero extends Creature implements Regenable {
 	public void regenMp() {
 		setMp((int)(getMp()+(25*Math.pow(1.1, lvl))));
 	}
+
+	public Inventory getInventory() {
+		return inventory;
+	}
+	
 }
