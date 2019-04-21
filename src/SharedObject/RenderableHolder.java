@@ -18,6 +18,7 @@ public class RenderableHolder {
 	public static Image waterDun;
 	public static Image grassland;
 	public static Image waterland;
+	
 	static {
 		loadResource();
 	}
@@ -31,7 +32,6 @@ public class RenderableHolder {
 	}
 	
 	private static void loadResource() {
-		ClassLoader loader = ClassLoader.getSystemClassLoader();
 		try {
 			
 			//BG
@@ -63,4 +63,5 @@ public class RenderableHolder {
 	public static RenderableHolder getInstance() {
 		return instance;
 	}
+	
 }
