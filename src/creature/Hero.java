@@ -1,7 +1,7 @@
 package creature;
 
-import item.Inventory;
 import Interface.Regenable;
+import item.Inventory;
 
 public abstract class Hero extends Creature implements Regenable {
 
