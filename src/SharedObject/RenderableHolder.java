@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import com.sun.javafx.tk.FontLoader;
+import com.sun.javafx.tk.Toolkit;
+
 import SharedObject.IRenderable;
 import javafx.scene.image.Image;
 
@@ -11,6 +14,9 @@ public class RenderableHolder {
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
 	private static final RenderableHolder instance = new RenderableHolder();
+	//font
+	public static FontLoader fontLoader;
+	
 	//character
 	public static Image magician;
 	public static Image knight;

@@ -4,6 +4,7 @@ import SharedObject.RenderableHolder;
 import drawing.manager.SceneManager;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
@@ -42,9 +43,24 @@ public class SelectCanvas extends Canvas{
 		//draw ok btn
 	}
 	
-	public void gotoBattleField() {
+	public void goToBattleField() {
 		BattleFieldMain battle = new BattleFieldMain();
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
+	}
+	
+	private void onButton(MouseEvent event, boolean isGoNext) {
+		if (event.getSceneX() >= Constant.SCENE_WIDTH / 3 && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + 300
+				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 2 && event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + 87) {
+			//area of event
+			if (isGoNext) {				
+				goToBattleField();;
+			} else {
+				//gc.drawImage(img, x, y, btn's w, btn's h);
+			}
+		} 
+		else {
+			drawSelectMenu();
+		}
 	}
 
 }

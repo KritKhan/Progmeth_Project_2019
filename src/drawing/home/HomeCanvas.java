@@ -52,8 +52,8 @@ public class HomeCanvas extends Canvas {
 	}
 	
 	private void onButton(MouseEvent event, boolean isGoNext) {
-		if (event.getSceneX() >= Constant.SCENE_WIDTH / 3 && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + 300
-				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 2 && event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + 87) {
+		if (event.getSceneX() >= 10000 / 3 && event.getSceneX() <= 1000 / 3 + 300
+				&& event.getSceneY() >= 700 / 2 && event.getSceneY() <= 700 / 2 + 87) {
 			//area of event
 			if (isGoNext) {				
 				goToSeclect();
