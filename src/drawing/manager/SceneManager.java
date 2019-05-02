@@ -4,13 +4,16 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import drawing.battlefield.BattleFieldScene;
 import drawing.home.*;
+import drawing.select.SelectScene;
 
 public class SceneManager {
 	
 	private static Stage stage;
-	private static TitleScene mainScene = new TitleScene();
-	private static DungeonScene dungeonScene = new DungeonScene();
+	public static HomeScene MainScene = new HomeScene();
+	public static SelectScene SelectScene = new SelectScene();
+	public static BattleFieldScene BattleFieldScene = new BattleFieldScene();
 	
 	public static void initialize(Stage primaryStage) {
 		stage = primaryStage;

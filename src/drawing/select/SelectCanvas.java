@@ -1,6 +1,7 @@
 package drawing.select;
 
 import SharedObject.RenderableHolder;
+import drawing.manager.SceneManager;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -43,7 +44,7 @@ public class SelectCanvas extends Canvas{
 	
 	public void gotoBattleField() {
 		BattleFieldMain battle = new BattleFieldMain();
-		SceneManager.gotoScene(SceneManager.BattlefieldScene);
+		SceneManager.goToScene(SceneManager.BattleFieldScene);
 	}
 
 }

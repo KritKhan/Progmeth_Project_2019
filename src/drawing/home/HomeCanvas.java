@@ -1,6 +1,7 @@
 package drawing.home;
 
 import SharedObject.RenderableHolder;
+import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -46,16 +47,16 @@ public class HomeCanvas extends Canvas {
 	
 	public void goToSeclect() {
 		SelectMain select = new SelectMain();
-		SceneManager.gotoScene(SceneManager.selectScene);
+		SceneManager.goToScene(SceneManager.SelectScene);
 		
 	}
 	
-	private void onButton(MouseEvent event, boolean isNext) {
+	private void onButton(MouseEvent event, boolean isGoNext) {
 		if (event.getSceneX() >= Constant.SCENE_WIDTH / 3 && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + 300
 				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 2 && event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + 87) {
 			//area of event
 			if (isGoNext) {				
-				goToSelect();
+				goToSeclect();
 			} else {
 				//gc.drawImage(img, x, y, btn's w, btn's h);
 			}
@@ -75,7 +76,7 @@ public class HomeCanvas extends Canvas {
 					Runtime.getRuntime().exit(0);
 				}
 				if (event.getCode() == KeyCode.ENTER) {
-					goToSelect();
+					goToSeclect();
 				}
 			}
 		});
