@@ -2,7 +2,6 @@ package drawing.battlefield;
 
 import java.util.ConcurrentModificationException;
 
-import Main.BattleFieldMain;
 import SharedObject.Constant;
 import SharedObject.IRenderable;
 import SharedObject.InputUtility;
@@ -11,6 +10,7 @@ import SharedObject.ResourceLoader;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import main.BattleFieldMain;
 
 public class BattleFieldCanvas extends Canvas {
 	

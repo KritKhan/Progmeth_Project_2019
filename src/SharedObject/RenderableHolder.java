@@ -12,6 +12,9 @@ public class RenderableHolder {
 	
 	private static final RenderableHolder instance = new RenderableHolder();
 	
+	static {
+		ResourceLoader.loadResource();
+	}
 	
 	public RenderableHolder() {
 		entities = new ArrayList<IRenderable>();
@@ -25,6 +28,10 @@ public class RenderableHolder {
 	public void add(IRenderable entity) {
 		entities.add(entity);
 		Collections.sort(entities,comparator);
+	}
+	
+	public void sort() throws IllegalArgumentException{		
+		entities.sort(comparator);	
 	}
 	
 	public void clear() {

@@ -1,62 +1,66 @@
 package drawing.home;
 
-import Main.SelectMain;
 import SharedObject.Constant;
-import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
 import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
-
+import main.SelectMain;
 
 public class HomeCanvas extends Canvas {
 	private GraphicsContext gc;
 	private Font f;
-	
 	
 	public HomeCanvas() {
 		super(Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		gc = this.getGraphicsContext2D();
 		
 		this.drawMainMenu();
+		this.addKeyEventHandler();
 	}
 	
-	public void drawMainMenu() {
+	private void drawMainMenu() {
 		//draw bg
-		gc.drawImage(ResourceLoader.main, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.drawImage(ResourceLoader.homebg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
-		f = Font.font("Georgia", 200);
+		f = Font.font("Georgia", 90);
 		gc.setFont(f);
 		gc.setTextAlign(TextAlignment.CENTER);
-		gc.fillText("B x M", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
+		gc.fillText("Battle x Monster", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
 		
 		//draw btn
-		//gc.drawImage(ResourceLoader., Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/2);
+		double h = ResourceLoader.startbtn.getHeight()/2.0;
+		double w = ResourceLoader.startbtn.getWidth()/2.0;
+		gc.drawImage(ResourceLoader.startbtn, (Constant.SCENE_WIDTH/2)-w, (Constant.SCENE_HEIGHT/1.5)-h);
 	}
 	
-	public void goToSeclect() {
+	private void goToSeclect() {
 		SelectMain select = new SelectMain();
 		SceneManager.goToScene(SceneManager.SelectScene);
 	}
 	
 	private void onButton(MouseEvent event, boolean isGoNext) {
-		if (event.getSceneX() >= Constant.SCENE_WIDTH / 3 && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + 300
-				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 2 && event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + 87) {
+		double h = ResourceLoader.startbtn.getHeight()/2.0;
+		double w = ResourceLoader.startbtn.getWidth()/2.0;
+		if (event.getSceneX() >= (Constant.SCENE_WIDTH / 2)-w && event.getSceneX() <= (Constant.SCENE_WIDTH / 2)+w
+				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 1.5)-h && event.getSceneY() <= (Constant.SCENE_HEIGHT / 1.5)+h) {
 			//area of event
 			if (isGoNext) {				
 				goToSeclect();
 			} else {
-				//gc.drawImage(img, x, y, btn's w, btn's h);
+				double h2 = ResourceLoader.starthili.getHeight()/2.0;
+				double w2 = ResourceLoader.starthili.getWidth()/2.0;
+				gc.drawImage(ResourceLoader.starthili, (Constant.SCENE_WIDTH/2)-w2, (Constant.SCENE_HEIGHT/1.5)-h2);
 			}
 		} 
 		else {

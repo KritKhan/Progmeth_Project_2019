@@ -1,6 +1,5 @@
 package drawing.select;
 
-import Main.BattleFieldMain;
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
@@ -11,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import main.BattleFieldMain;
 
 public class SelectCanvas extends Canvas{
 	private GraphicsContext gc;
@@ -26,23 +26,24 @@ public class SelectCanvas extends Canvas{
 	
 	public void drawSelectMenu() {
 		//draw bg
-		gc.drawImage(img, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.drawImage(ResourceLoader.selectbg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
-		f = Font.font("Georgia", 170);
+		f = Font.font("Georgia", 70);
 		gc.setFont(f);
 		gc.setTextAlign(TextAlignment.CENTER);
 		gc.fillText("Select Hero", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/4);
 		
 		//draw hero1
-		gc.drawImage(ResourceLoader.archerFace, (Constant.SCENE_WIDTH/4)*2, Constant.SCENE_HEIGHT/2);
-		gc.drawImage(ResourceLoader.magicianFace, Constant.SCENE_WIDTH/4, Constant.SCENE_HEIGHT/2);
-		gc.drawImage(ResourceLoader.knightFace, (Constant.SCENE_WIDTH/4)*3, Constant.SCENE_HEIGHT/2);
-		
-		//draw input name
+		gc.drawImage(ResourceLoader.archerFace, (Constant.SCENE_WIDTH/4)*2-10, Constant.SCENE_HEIGHT/3);
+		gc.drawImage(ResourceLoader.magicianFace, Constant.SCENE_WIDTH/4-10, Constant.SCENE_HEIGHT/3);
+		gc.drawImage(ResourceLoader.knightFace, (Constant.SCENE_WIDTH/4)*3-10, Constant.SCENE_HEIGHT/3);
 		
 		//draw ok btn
+		double h = ResourceLoader.okbtn.getHeight()/2.0;
+		double w = ResourceLoader.okbtn.getWidth()/2.0;
+		gc.drawImage(ResourceLoader.okbtn, Constant.SCENE_WIDTH/2 - w, Constant.SCENE_HEIGHT/1.3 - h);
 	}
 	
 	public void goToBattleField() {
@@ -51,13 +52,17 @@ public class SelectCanvas extends Canvas{
 	}
 	
 	private void onButton(MouseEvent event, boolean isGoNext) {
-		if (event.getSceneX() >= Constant.SCENE_WIDTH / 3 && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + 300
-				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 2 && event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + 87) {
+		double h = ResourceLoader.okbtn.getHeight()/2.0;
+		double w = ResourceLoader.okbtn.getWidth()/2.0;
+		if (event.getSceneX() >= Constant.SCENE_WIDTH / 2-w && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + w
+				&& event.getSceneY() >= Constant.SCENE_HEIGHT/1.3 - h && event.getSceneY() <= Constant.SCENE_HEIGHT /1.3 + h) {
 			//area of event
 			if (isGoNext) {				
 				goToBattleField();;
 			} else {
-				//gc.drawImage(img, x, y, btn's w, btn's h);
+				double h2 = ResourceLoader.okhili.getHeight()/2.0;
+				double w2 = ResourceLoader.okhili.getWidth()/2.0;
+				gc.drawImage(ResourceLoader.okhili,Constant.SCENE_WIDTH/2-w2,Constant.SCENE_HEIGHT/1.3-h2);
 			}
 		} 
 		else {

@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import drawing.manager.SceneManager;
 import javafx.application.Application;
