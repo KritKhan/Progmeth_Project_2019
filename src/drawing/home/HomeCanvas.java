@@ -1,7 +1,9 @@
 package drawing.home;
 
+import Main.SelectMain;
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
+import SharedObject.ResourceLoader;
 import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -13,7 +15,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
-import main.SelectMain;
 
 
 public class HomeCanvas extends Canvas {
@@ -30,7 +31,7 @@ public class HomeCanvas extends Canvas {
 	
 	public void drawMainMenu() {
 		//draw bg
-		gc.drawImage(img, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.drawImage(ResourceLoader.main, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
@@ -40,7 +41,7 @@ public class HomeCanvas extends Canvas {
 		gc.fillText("B x M", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
 		
 		//draw btn
-		gc.drawImage(img, Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/2);
+		//gc.drawImage(ResourceLoader., Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/2);
 	}
 	
 	public void goToSeclect() {

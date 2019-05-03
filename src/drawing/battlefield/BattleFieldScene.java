@@ -1,5 +1,6 @@
 package drawing.battlefield;
 
+import Main.BattleFieldMain;
 import Main.DungeonMain;
 import SharedObject.InputUtility;
 import drawing.manager.DialogPane;
@@ -7,7 +8,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
-import main.BattleFieldMain;
 
 public class BattleFieldScene extends Scene{
 	private StackPane root;

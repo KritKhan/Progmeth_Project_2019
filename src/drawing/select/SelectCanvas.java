@@ -1,5 +1,6 @@
 package drawing.select;
 
+import Main.BattleFieldMain;
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
@@ -10,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
-import main.BattleFieldMain;
 
 public class SelectCanvas extends Canvas{
 	private GraphicsContext gc;

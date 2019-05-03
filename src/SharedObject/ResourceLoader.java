@@ -31,6 +31,7 @@ public abstract class ResourceLoader {
 	public static Image waterDun;
 	public static Image grassland;
 	public static Image waterland;
+	public static Image main;
 	
 	public static Thread loadThread;
 	
@@ -53,13 +54,14 @@ public abstract class ResourceLoader {
 			archerFace = new Image(ClassLoader.getSystemResource("Character/Archerface.png").toString());
 			
 			//BG
-			map = new Image(ClassLoader.getSystemResource("BG/Map.jpg").toString());
-			dirtland = new Image(ClassLoader.getSystemResource("BG/Dirt.jpg").toString());
-			dungeon1 = new Image(ClassLoader.getSystemResource("BG/Dun1.jpg").toString());
-			dungeon2 = new Image(ClassLoader.getSystemResource("BG/Dun2.jpg").toString());
-			waterDun = new Image(ClassLoader.getSystemResource("BG/DunWater.jpg").toString());
-			grassland = new Image(ClassLoader.getSystemResource("BG/Grass.jpg").toString());
-			waterland = new Image(ClassLoader.getSystemResource("BG/Water.jpg").toString());
+			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
+			dirtland = new Image(ClassLoader.getSystemResource("BGandButton/Dirt.jpg").toString());
+			dungeon1 = new Image(ClassLoader.getSystemResource("BGandButton/Dun1.jpg").toString());
+			dungeon2 = new Image(ClassLoader.getSystemResource("BGandButton/Dun2.jpg").toString());
+			waterDun = new Image(ClassLoader.getSystemResource("BGandButton/DunWater.jpg").toString());
+			grassland = new Image(ClassLoader.getSystemResource("BGandButton/Grass.jpg").toString());
+			waterland = new Image(ClassLoader.getSystemResource("BGandButton/Water.jpg").toString());
+			main = new Image(ClassLoader.getSystemResourceAsStream("BGandButton/Main.jpg").toString());
 		}catch (NullPointerException e) {
 			System.out.println("resource not found");
 		}
