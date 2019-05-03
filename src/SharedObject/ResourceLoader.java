@@ -44,6 +44,7 @@ public abstract class ResourceLoader {
 	public static Image starthili;
 	public static Image okbtn;
 	public static Image okhili;
+
 	
 	public static Thread loadThread;
 	
