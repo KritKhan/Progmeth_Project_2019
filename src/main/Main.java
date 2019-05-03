@@ -16,7 +16,7 @@ public class Main extends Application{
 			SceneManager.initialize(primaryStage);
 			SceneManager.goToScene(SceneManager.MainScene);
 
-			primaryStage.setTitle("B x M");
+			primaryStage.setTitle("Battle x Monsters");
 			primaryStage.centerOnScreen();
 			primaryStage.setResizable(false);
 			

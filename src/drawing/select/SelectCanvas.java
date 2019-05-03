@@ -1,5 +1,7 @@
 package drawing.select;
 
+import javax.annotation.Resource;
+
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
@@ -36,13 +38,17 @@ public class SelectCanvas extends Canvas{
 		gc.fillText("Select Hero", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/4);
 		
 		//draw hero1
-		gc.drawImage(ResourceLoader.archerFace, (Constant.SCENE_WIDTH/4)*2-10, Constant.SCENE_HEIGHT/3);
-		gc.drawImage(ResourceLoader.magicianFace, Constant.SCENE_WIDTH/4-10, Constant.SCENE_HEIGHT/3);
-		gc.drawImage(ResourceLoader.knightFace, (Constant.SCENE_WIDTH/4)*3-10, Constant.SCENE_HEIGHT/3);
+		double h,w;
+		w = ResourceLoader.archerFace.getWidth()/2;
+		gc.drawImage(ResourceLoader.archerFace, (Constant.SCENE_WIDTH/4)*2-w, Constant.SCENE_HEIGHT/2.5);
+		w = ResourceLoader.magicianFace.getWidth()/2;
+		gc.drawImage(ResourceLoader.magicianFace, Constant.SCENE_WIDTH/4-w, Constant.SCENE_HEIGHT/2.5);
+		w = ResourceLoader.knightFace.getWidth()/2;
+		gc.drawImage(ResourceLoader.knightFace, (Constant.SCENE_WIDTH/4)*3-w, Constant.SCENE_HEIGHT/2.5);
 		
 		//draw ok btn
-		double h = ResourceLoader.okbtn.getHeight()/2.0;
-		double w = ResourceLoader.okbtn.getWidth()/2.0;
+		h = ResourceLoader.okbtn.getHeight()/2.0;
+		w = ResourceLoader.okbtn.getWidth()/2.0;
 		gc.drawImage(ResourceLoader.okbtn, Constant.SCENE_WIDTH/2 - w, Constant.SCENE_HEIGHT/1.3 - h);
 	}
 	
