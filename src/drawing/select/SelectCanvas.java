@@ -1,6 +1,8 @@
 package drawing.select;
 
+import SharedObject.Constant;
 import SharedObject.RenderableHolder;
+import SharedObject.ResourceLoader;
 import drawing.manager.SceneManager;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -24,19 +26,19 @@ public class SelectCanvas extends Canvas{
 	
 	public void drawSelectMenu() {
 		//draw bg
-		gc.drawImage(img, 0, 0, 1000, 700);
+		gc.drawImage(img, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
 		f = Font.font("Georgia", 170);
 		gc.setFont(f);
 		gc.setTextAlign(TextAlignment.CENTER);
-		gc.fillText("Select Hero", 500, 700/4);
+		gc.fillText("Select Hero", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/4);
 		
 		//draw hero1
-		gc.drawImage(RenderableHolder.archerFace, 500, 700/2);
-		gc.drawImage(RenderableHolder.magicianFace, 250, 700/2);
-		gc.drawImage(RenderableHolder.knightFace, 750, 700/2);
+		gc.drawImage(ResourceLoader.archerFace, (Constant.SCENE_WIDTH/4)*2, Constant.SCENE_HEIGHT/2);
+		gc.drawImage(ResourceLoader.magicianFace, Constant.SCENE_WIDTH/4, Constant.SCENE_HEIGHT/2);
+		gc.drawImage(ResourceLoader.knightFace, (Constant.SCENE_WIDTH/4)*3, Constant.SCENE_HEIGHT/2);
 		
 		//draw input name
 		

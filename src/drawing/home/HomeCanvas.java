@@ -1,5 +1,6 @@
 package drawing.home;
 
+import SharedObject.Constant;
 import SharedObject.RenderableHolder;
 import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
@@ -13,8 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import main.SelectMain;
-import utility.Constant;
-import utility.ResourceLoader;
+
 
 public class HomeCanvas extends Canvas {
 	private GraphicsContext gc;
@@ -22,38 +22,35 @@ public class HomeCanvas extends Canvas {
 	
 	
 	public HomeCanvas() {
-		super(1000, 700);
+		super(Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		gc = this.getGraphicsContext2D();
 		
 		this.drawMainMenu();
-		
 	}
 	
 	public void drawMainMenu() {
 		//draw bg
-		gc.drawImage(img, 0, 0, 1000, 700);
+		gc.drawImage(img, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
 		f = Font.font("Georgia", 200);
 		gc.setFont(f);
 		gc.setTextAlign(TextAlignment.CENTER);
-		gc.fillText("B x M", 500, 700/3);
+		gc.fillText("B x M", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
 		
 		//draw btn
-		gc.drawImage(img, 500, 700/2);
-		
+		gc.drawImage(img, Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/2);
 	}
 	
 	public void goToSeclect() {
 		SelectMain select = new SelectMain();
 		SceneManager.goToScene(SceneManager.SelectScene);
-		
 	}
 	
 	private void onButton(MouseEvent event, boolean isGoNext) {
-		if (event.getSceneX() >= 10000 / 3 && event.getSceneX() <= 1000 / 3 + 300
-				&& event.getSceneY() >= 700 / 2 && event.getSceneY() <= 700 / 2 + 87) {
+		if (event.getSceneX() >= Constant.SCENE_WIDTH / 3 && event.getSceneX() <= Constant.SCENE_WIDTH / 3 + 300
+				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 2 && event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + 87) {
 			//area of event
 			if (isGoNext) {				
 				goToSeclect();
@@ -64,7 +61,6 @@ public class HomeCanvas extends Canvas {
 		else {
 			drawMainMenu();
 		}
-		
 	}
 	
 	private void addKeyEventHandler() {
@@ -91,7 +87,5 @@ public class HomeCanvas extends Canvas {
 			onButton(event, true);
 		});
 	}
-	
-	
 	
 }

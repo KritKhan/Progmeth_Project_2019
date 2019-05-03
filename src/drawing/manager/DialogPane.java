@@ -1,9 +1,11 @@
 package drawing.manager;
 
 import SharedObject.RenderableHolder;
+import drawing.battlefield.BattleFieldScene;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -18,14 +20,14 @@ public class DialogPane extends VBox {
 	private ImageView HpPotion;
 	private ImageView MpPotion;
 	private ImageView MixPotion;
-	private DungeonScene scene;
+	private BattleFieldScene scene;
 	
-	public DialogPane(DungeonScene dunScene) {
+	public DialogPane(BattleFieldScene battleScene) {
 		super(10);
-		this.scene = dunScene;
+		this.scene = battleScene;
 	}
 	
-	public void defaultDraw(DungeonScene dunScene, Image image) {
+	public void defaultDraw(BattleFieldScene battleScene, Image image) {
 		setMaxSize(1000, 700);
 		setAlignment(Pos.CENTER);
 		setBackground(new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, 
