@@ -17,13 +17,16 @@ public abstract class ResourceLoader {
 	public static Image archer;
 	public static Image viper;
 	public static Image witch;
-	public static Image darklord;
+	public static Image darklorde;
 	public static Image minion;
 	
 	//hero face
 	public static Image magicianFace;
 	public static Image knightFace;
 	public static Image archerFace;
+	public static Image magicianFaceH;
+	public static Image knightFaceH;
+	public static Image archerFaceH;
 	
 	//background
 	public static Image map;
@@ -44,23 +47,30 @@ public abstract class ResourceLoader {
 	
 	public static Thread loadThread;
 	
-	private static void loadResource() {
+	static {
+		ResourceLoader.loadResource();
+	}
+	
+	static void loadResource() {
 		try {
 			fontLoader = Toolkit.getToolkit().getFontLoader();
 			
 			//Character
-			magician = new Image(ClassLoader.getSystemResource("Character/Magician.png").toString());
-			knight = new Image(ClassLoader.getSystemResource("Character/Knight.png").toString());
-			archer = new Image(ClassLoader.getSystemResource("Character/Archer.png").toString());
-			viper = new Image(ClassLoader.getSystemResource("Character/Viper.png").toString());
-			witch = new Image(ClassLoader.getSystemResource("Character/Witch.png").toString());
-			darklord = new Image(ClassLoader.getSystemResource("Character/Darklord.png").toString());
+//			magician = new Image(ClassLoader.getSystemResource("Character/Magician.png").toString());
+//			knight = new Image(ClassLoader.getSystemResource("Character/Knight.png").toString());
+//			archer = new Image(ClassLoader.getSystemResource("Character/Archer.png").toString());
+//			viper = new Image(ClassLoader.getSystemResource("Character/Viper.png").toString());
+//			witch = new Image(ClassLoader.getSystemResource("Character/Witch.png").toString());
+//			darklorde = new Image(ClassLoader.getSystemResource("Character/Darklorde.png").toString());
 			minion = new Image(ClassLoader.getSystemResource("Character/Minion.png").toString());
 			
 			//Hero Face
-			magicianFace = new Image(ClassLoader.getSystemResource("Character/Magicianface.png").toString());
-			knightFace = new Image(ClassLoader.getSystemResource("Character/Knightface.png").toString());
-			archerFace = new Image(ClassLoader.getSystemResource("Character/Archerface.png").toString());
+			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
+			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
+			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
+			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.jpg").toString());
+			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.jpg").toString());
+			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.jpg").toString());
 			
 			//BG
 			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
@@ -75,7 +85,9 @@ public abstract class ResourceLoader {
 			
 			//Button
 			startbtn = new Image(ClassLoader.getSystemResource("BGandButton/Startbutton.png").toString());
+			starthili = new Image(ClassLoader.getSystemResource("BGandButton/StartbuttonH.png").toString());
 			okbtn = new Image(ClassLoader.getSystemResource("BGandButton/OKbutton.png").toString());
+			okhili = new Image(ClassLoader.getSystemResource("BGandButton/OKbuttonH.png").toString());
 			
 		}catch (NullPointerException e) {
 			System.out.println("resource not found");

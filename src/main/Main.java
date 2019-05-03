@@ -12,6 +12,7 @@ public class Main extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
+			isGameRunning = true;
 			SceneManager.initialize(primaryStage);
 			SceneManager.goToScene(SceneManager.MainScene);
 
