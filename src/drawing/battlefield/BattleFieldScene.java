@@ -1,6 +1,5 @@
 package drawing.battlefield;
 
-import Main.DungeonMain;
 import SharedObject.InputUtility;
 import drawing.manager.DialogPane;
 import javafx.geometry.Pos;

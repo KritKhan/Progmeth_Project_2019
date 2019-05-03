@@ -5,6 +5,7 @@ import static javafx.scene.layout.BorderStrokeStyle.SOLID;
 import java.awt.event.MouseEvent;
 
 import SharedObject.RenderableHolder;
+import SharedObject.ResourceLoader;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -25,12 +26,13 @@ public class HeroButton extends Button {
 		this.hero = hero;
 		setPadding(new Insets(20));
 		setBackground(new Background(new BackgroundFill(Color.CORNSILK, CornerRadii.EMPTY, Insets.EMPTY)));
+		this.setPrefSize(75, 75);
 		
 		WritableImage heroFace = null;
 		switch(hero) {
-		case "Magician" : heroFace = new WritableImage(RenderableHolder.magicianFace.getPixelReader(), 64, 0,32, 32); break;
-		case "Archer" : heroFace = new WritableImage(RenderableHolder.archerFace.getPixelReader(),0,0,32,32); break;
-		case "Knight" : heroFace = new WritableImage(RenderableHolder.knightFace.getPixelReader(), 0,0,32,32); break;
+		case "Magician" : heroFace = new WritableImage(ResourceLoader.magicianFace.getPixelReader(), 64, 0,32, 32); break;
+		case "Archer" : heroFace = new WritableImage(ResourceLoader.archerFace.getPixelReader(),0,0,32,32); break;
+		case "Knight" : heroFace = new WritableImage(ResourceLoader.knightFace.getPixelReader(), 0,0,32,32); break;
 		}
 		ImageView face = new ImageView(heroFace);
 		setGraphic(face);

@@ -26,7 +26,7 @@ public class SelectCanvas extends Canvas{
 	
 	public void drawSelectMenu() {
 		//draw bg
-		gc.drawImage(img, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.drawImage(ResourceLoader.selectbg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
@@ -43,6 +43,7 @@ public class SelectCanvas extends Canvas{
 		//draw input name
 		
 		//draw ok btn
+		gc.drawImage(ResourceLoader.okbtn, Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
 	}
 	
 	public void goToBattleField() {

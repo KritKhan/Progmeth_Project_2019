@@ -2,6 +2,7 @@ package drawing.home;
 
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
+import SharedObject.ResourceLoader;
 import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -20,7 +21,6 @@ public class HomeCanvas extends Canvas {
 	private GraphicsContext gc;
 	private Font f;
 	
-	
 	public HomeCanvas() {
 		super(Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		gc = this.getGraphicsContext2D();
@@ -30,17 +30,17 @@ public class HomeCanvas extends Canvas {
 	
 	public void drawMainMenu() {
 		//draw bg
-		gc.drawImage(img, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.drawImage(ResourceLoader.homebg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
 		gc.setFill(Color.DARKTURQUOISE);
-		f = Font.font("Georgia", 200);
+		f = Font.font("Georgia", 100);
 		gc.setFont(f);
 		gc.setTextAlign(TextAlignment.CENTER);
 		gc.fillText("B x M", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
 		
 		//draw btn
-		gc.drawImage(img, Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/2);
+		gc.drawImage(ResourceLoader.startbtn, Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/2);
 	}
 	
 	public void goToSeclect() {
