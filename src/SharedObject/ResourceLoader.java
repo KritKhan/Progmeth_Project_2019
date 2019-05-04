@@ -64,21 +64,10 @@ public abstract class ResourceLoader {
 			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
 			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
 			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
-			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH2.png").toString());
-			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
-			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
-			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
-			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
-			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
 			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
 			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
 			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
-			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
-			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
-			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
-			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
-			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
-			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
+			
 			
 			//BG
 			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
