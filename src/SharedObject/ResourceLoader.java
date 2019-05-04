@@ -43,6 +43,11 @@ public abstract class ResourceLoader {
 	public static Image starthili;
 	public static Image okbtn;
 	public static Image okhili;
+	
+	//item
+	public static Image hp;
+	public static Image mp;
+	public static Image mix;
 
 	
 	public static Thread loadThread;
@@ -55,22 +60,25 @@ public abstract class ResourceLoader {
 		try {
 			fontLoader = Toolkit.getToolkit().getFontLoader();
 			
-			//Character
-//			magician = new Image(ClassLoader.getSystemResource("Character/Magician.png").toString());
-//			knight = new Image(ClassLoader.getSystemResource("Character/Knight.png").toString());
-//			archer = new Image(ClassLoader.getSystemResource("Character/Archer.png").toString());
-//			viper = new Image(ClassLoader.getSystemResource("Character/Viper.png").toString());
-//			witch = new Image(ClassLoader.getSystemResource("Character/Witch.png").toString());
-//			darklorde = new Image(ClassLoader.getSystemResource("Character/Darklorde.png").toString());
-//			minion = new Image(ClassLoader.getSystemResource("Character/Minion.png").toString());
-			
 			//Hero Face
-			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.jpg").toString());
-			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.jpg").toString());
-			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.jpg").toString());
-			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.jpg").toString());
-			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.jpg").toString());
-			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.jpg").toString());
+			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
+			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
+			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
+			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
+			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
+			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
+			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
+			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
+			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
+			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
+			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
+			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
+			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
+			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
+			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
+			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
+			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
+			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
 			
 			//BG
 			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
@@ -88,6 +96,11 @@ public abstract class ResourceLoader {
 			starthili = new Image(ClassLoader.getSystemResource("BGandButton/StartbuttonH.png").toString());
 			okbtn = new Image(ClassLoader.getSystemResource("BGandButton/OKbutton.png").toString());
 			okhili = new Image(ClassLoader.getSystemResource("BGandButton/OKbuttonH.png").toString());
+			
+			//item
+			hp = new Image(ClassLoader.getSystemResource("Potion/hpPotion.png").toString());
+			mp = new Image(ClassLoader.getSystemResource("Potion/mpPotion.png").toString());
+			mix = new Image(ClassLoader.getSystemResource("Potion/mixPotion.png").toString());
 			
 		}catch (NullPointerException e) {
 			System.out.println("resource not found");

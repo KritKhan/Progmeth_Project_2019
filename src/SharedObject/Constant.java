@@ -30,5 +30,7 @@ public class Constant {
 //	public static final double MAX_MAGIC_TIME = ((Weapons) Inventory.getBag()[STAFF]).getWidth() * 5;
 	public static final int MAX_SPELL_ACTIVE = 3;
 	public static final int MAX_NUMBER_RENDERABLE_HOLD = 35;
+	public static final int hero_height = 150;
+	public static final int hero_width = 150;
 
 }
