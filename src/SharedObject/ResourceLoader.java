@@ -99,7 +99,7 @@ public abstract class ResourceLoader {
 			mphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
 			mixhili = new Image(ClassLoader.getSystemResource("Potion/MixPotion.png").toString());
 			
-			logo = new Image(ClassLoader.getSystemResource("BGandButton/Logo3.png").toString());
+			logo = new Image(ClassLoader.getSystemResource("BGandButton/Logo8.png").toString());
 			
 			//Select
 			select = new Image(ClassLoader.getSystemResource("BGandButton/choose hero2.png").toString());
