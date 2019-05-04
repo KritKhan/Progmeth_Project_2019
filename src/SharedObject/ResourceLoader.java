@@ -54,7 +54,8 @@ public abstract class ResourceLoader {
 	
 	public static Image logo;
 
-	
+	//select
+	public static Image select;
 	public static Thread loadThread;
 	
 	static {
@@ -99,6 +100,9 @@ public abstract class ResourceLoader {
 			mixhili = new Image(ClassLoader.getSystemResource("Potion/MixPotion.png").toString());
 			
 			logo = new Image(ClassLoader.getSystemResource("BGandButton/Logo2.png").toString());
+			
+			//Select
+			select = new Image(ClassLoader.getSystemResource("BGandButton/choose hero2.png").toString());
 			
 		}catch (NullPointerException e) {
 			System.out.println("resource not found");

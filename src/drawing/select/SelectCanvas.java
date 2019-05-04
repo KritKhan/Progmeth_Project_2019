@@ -40,12 +40,7 @@ public class SelectCanvas extends Canvas {
 		gc.drawImage(ResourceLoader.selectbg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 
 		// draw title
-		gc.setFill(Color.DARKTURQUOISE);
-		f = Font.font("Georgia", 70);
-		gc.setFont(f);
-		gc.setTextAlign(TextAlignment.CENTER);
-		gc.fillText("Select Hero", Constant.SCENE_WIDTH / 2, Constant.SCENE_HEIGHT / 4);
-
+		gc.drawImage(ResourceLoader.select,Constant.SCENE_WIDTH / 2 - ResourceLoader.select.getWidth()/2 , Constant.SCENE_HEIGHT / 2.2 - ResourceLoader.select.getHeight()*1.7);
 		// draw hero1
 		double h, w;
 		w = Constant.hero_width / 2;
