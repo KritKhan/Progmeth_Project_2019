@@ -7,8 +7,10 @@ import SharedObject.IRenderable;
 import SharedObject.InputUtility;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
+import creature.Hero;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import main.BattleFieldMain;
 
@@ -16,8 +18,9 @@ public class BattleFieldCanvas extends Canvas {
 	
 	private GraphicsContext gc;
 	private BattleFieldScene scene;
+	private ImageView heroImg;
 	
-	public BattleFieldCanvas(BattleFieldScene scene) {
+	public BattleFieldCanvas(BattleFieldScene scene,String hero) {
 		super(Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();

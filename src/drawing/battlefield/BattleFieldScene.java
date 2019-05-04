@@ -64,5 +64,3 @@ public class BattleFieldScene extends Scene{
 	}
 
 }
-
-
