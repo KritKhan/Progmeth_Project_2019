@@ -67,18 +67,6 @@ public abstract class ResourceLoader {
 			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
 			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
 			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
-			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
-			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
-			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
-			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
-			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
-			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
-			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
-			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
-			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
-			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
-			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
-			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
 			
 			//BG
 			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
@@ -89,7 +77,7 @@ public abstract class ResourceLoader {
 			grassland = new Image(ClassLoader.getSystemResource("BGandButton/Grass.jpg").toString());
 			waterland = new Image(ClassLoader.getSystemResource("BGandButton/Water.jpg").toString());
 			homebg = new Image(ClassLoader.getSystemResource("BGandButton/Main.jpg").toString());
-			selectbg = new Image(ClassLoader.getSystemResource("BGandButton/Select4.jpg").toString());
+			selectbg = new Image(ClassLoader.getSystemResource("BGandButton/Select8.jpg").toString());
 			
 			//Button
 			startbtn = new Image(ClassLoader.getSystemResource("BGandButton/Startbutton.png").toString());
