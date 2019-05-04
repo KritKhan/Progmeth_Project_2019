@@ -9,7 +9,6 @@ public class SelectMain extends Application {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Override
 	public void stop() {
 		// TODO Auto-generated method stub
 		

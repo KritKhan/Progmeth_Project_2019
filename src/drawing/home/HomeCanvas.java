@@ -73,7 +73,7 @@ public class HomeCanvas extends Canvas {
 			@Override
 			public void handle(KeyEvent event) {
 				if (event.getCode() == KeyCode.ESCAPE) {
-					SelectMain.stop();
+					//SelectMain.stop();
 					Runtime.getRuntime().exit(0);
 				}
 				if (event.getCode() == KeyCode.ENTER) {
