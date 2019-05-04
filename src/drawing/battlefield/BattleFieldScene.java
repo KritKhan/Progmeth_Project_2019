@@ -12,6 +12,7 @@ public class BattleFieldScene extends Scene{
 	private StackPane root;
 	private Canvas canvas;
 	private DialogPane dialog;
+	private String hero;
 
 	public BattleFieldScene() {
 		super(new StackPane());
@@ -64,5 +65,3 @@ public class BattleFieldScene extends Scene{
 	}
 
 }
-
-

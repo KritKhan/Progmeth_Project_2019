@@ -4,6 +4,7 @@ import com.sun.javafx.tk.FontLoader;
 
 import SharedObject.Constant;
 import SharedObject.ResourceLoader;
+import drawing.battlefield.BattleFieldScene;
 import drawing.manager.SceneManager;
 import exception.HeroException;
 import javafx.event.EventHandler;
@@ -21,7 +22,7 @@ import main.BattleFieldMain;
 public class SelectCanvas extends Canvas {
 	private GraphicsContext gc;
 	private FontLoader fontloader = ResourceLoader.fontLoader;
-	private String selected = "";
+	public static String selected = "";
 	private Image[] hero = new Image[3];
 
 	public SelectCanvas() {

@@ -16,6 +16,7 @@ public class SceneManager {
 	public static BattleFieldScene BattleFieldScene = new BattleFieldScene();
 	
 	public static void initialize(Stage primaryStage) {
+		
 		stage = primaryStage;
 		stage.setTitle("Game Name");
 		stage.show();

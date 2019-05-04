@@ -4,19 +4,14 @@ import SharedObject.ResourceLoader;
 import drawing.battlefield.BattleFieldScene;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class DialogPane extends VBox {
-	private ImageView HpPotion;
-	private ImageView MpPotion;
-	private ImageView MixPotion;
 	private BattleFieldScene scene;
 	
 	public DialogPane(BattleFieldScene battleScene) {
@@ -30,11 +25,5 @@ public class DialogPane extends VBox {
 		setAlignment(Pos.CENTER);
 		setBackground(new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, 
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-	}
-	
-	
-	public HBox generate() {
-		HpPotion = new ImageView(ResourceLoader.hp);
-		return null;
 	}
 }
