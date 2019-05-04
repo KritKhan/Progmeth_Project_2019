@@ -36,7 +36,7 @@ public class HomeCanvas extends Canvas {
 		f = Font.font("Georgia", 90);
 		gc.setFont(f);
 		gc.setTextAlign(TextAlignment.CENTER);
-		gc.fillText("Battle x Monster", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
+		gc.fillText("Battle x Monsters", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
 		
 		//draw btn
 		double h = ResourceLoader.startbtn.getHeight()/2.0;
@@ -73,7 +73,7 @@ public class HomeCanvas extends Canvas {
 			@Override
 			public void handle(KeyEvent event) {
 				if (event.getCode() == KeyCode.ESCAPE) {
-					SelectMain.stop();
+					//SelectMain.stop();
 					Runtime.getRuntime().exit(0);
 				}
 				if (event.getCode() == KeyCode.ENTER) {

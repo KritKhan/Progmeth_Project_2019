@@ -33,31 +33,31 @@ public class BattleFieldScene extends Scene{
 		BattleFieldMain.start();
 		canvas.requestFocus();
 	}
-	public void toDialog(int c) {
-		dialog.getChildren().clear();
-		dialog.setVisible(true);
-		dialog.requestFocus();
-		BattleFieldMain.stop();
-		switch(c) {
-		case 0:			
-			dialog.opening();
-			break;
-		case 1:
-			dialog.inventory();
-			break;
-		case 2:
-			dialog.shop();
-			break;
-		case 3:
-			dialog.setting();
-			break;
-		case 4:
-			dialog.dead();
-			break;
-		case 5 :
-			dialog.openingNext();
-		}
-	}
+//	public void toDialog(int c) {
+//		dialog.getChildren().clear();
+//		dialog.setVisible(true);
+//		dialog.requestFocus();
+//		BattleFieldMain.stop();
+//		switch(c) {
+//		case 0:			
+//			dialog.opening();
+//			break;
+//		case 1:
+//			dialog.inventory();
+//			break;
+//		case 2:
+//			dialog.shop();
+//			break;
+//		case 3:
+//			dialog.setting();
+//			break;
+//		case 4:
+//			dialog.dead();
+//			break;
+//		case 5 :
+//			dialog.openingNext();
+//		}
+//	}
 
 	public Canvas getCanvas() {
 		return canvas;

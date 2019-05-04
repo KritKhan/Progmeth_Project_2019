@@ -54,6 +54,6 @@ public class DialogPane extends VBox {
 	}
 	
 	public HBox generate() {
-		HpPotion = new ImageView(ResourceLoader)
+		HpPotion = new ImageView(ResourceLoader.hp);
 	}
 }

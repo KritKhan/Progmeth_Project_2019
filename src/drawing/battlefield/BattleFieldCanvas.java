@@ -21,6 +21,9 @@ public class BattleFieldCanvas extends Canvas {
 		super(Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();
+		
+		gc.drawImage(ResourceLoader.dungeon1, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 
