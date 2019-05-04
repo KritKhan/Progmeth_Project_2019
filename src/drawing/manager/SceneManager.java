@@ -14,9 +14,10 @@ public class SceneManager {
 	private static Stage stage;
 	public static HomeScene MainScene = new HomeScene();
 	public static SelectScene SelectScene = new SelectScene();
-	public static BattleFieldScene BattleFieldScene;
+	public static BattleFieldScene BattleFieldScene = new BattleFieldScene();
 	
 	public static void initialize(Stage primaryStage) {
+		
 		stage = primaryStage;
 		stage.setTitle("Game Name");
 		stage.show();

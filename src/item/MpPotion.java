@@ -1,5 +1,7 @@
 package item;
 
+import SharedObject.ResourceLoader;
+
 public class MpPotion extends Item{
 	private static final String des = "Immediately heals MP by +500";
 
@@ -9,7 +11,7 @@ public class MpPotion extends Item{
 		this.description = des;
 		this.increaseHp = 0;
 		this.increaseMp = 500;
-//		this.imgae = 
+		this.imgae = ResourceLoader.mp;
 	}
 
 }
