@@ -33,12 +33,12 @@ public class HomeCanvas extends Canvas {
 		gc.drawImage(ResourceLoader.homebg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 		//draw title
-//		gc.setFill(Color.DARKTURQUOISE);
-//		f = Font.font("Georgia", 90);
-//		gc.setFont(f);
-//		gc.setTextAlign(TextAlignment.CENTER);
-//		gc.fillText("Battle x Monsters", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
-		gc.drawImage(ResourceLoader.logo, 250, 700/10, 500, 700/10+250);
+		gc.setFill(Color.DARKTURQUOISE);
+		f = Font.font("Georgia", 90);
+		gc.setFont(f);
+		gc.setTextAlign(TextAlignment.CENTER);
+		gc.fillText("Battle x Monsters", Constant.SCENE_WIDTH/2, Constant.SCENE_HEIGHT/3);
+//		gc.drawImage(ResourceLoader.logo, 250, 700/10, 500, 700/10+250);
 		//draw btn
 		double h = ResourceLoader.startbtn.getHeight()/2.0;
 		double w = ResourceLoader.startbtn.getWidth()/2.0;

@@ -48,6 +48,9 @@ public abstract class ResourceLoader {
 	public static Image hp;
 	public static Image mp;
 	public static Image mix;
+	public static Image hphili;
+	public static Image mphili;
+	public static Image mixhili;
 	
 	public static Image logo;
 
@@ -91,6 +94,9 @@ public abstract class ResourceLoader {
 			hp = new Image(ClassLoader.getSystemResource("Potion/hpPotion.png").toString());
 			mp = new Image(ClassLoader.getSystemResource("Potion/mpPotion.png").toString());
 			mix = new Image(ClassLoader.getSystemResource("Potion/mixPotion.png").toString());
+			hphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
+			mphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
+			mixhili = new Image(ClassLoader.getSystemResource("Potion/MixPotion.png").toString());
 			
 			logo = new Image(ClassLoader.getSystemResource("BGandButton/Logo2.png").toString());
 			

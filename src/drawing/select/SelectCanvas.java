@@ -50,14 +50,14 @@ public class SelectCanvas extends Canvas {
 		double h, w;
 		w = Constant.hero_width / 2;
 		h = Constant.hero_height/2;
-		gc.drawImage(hero[0], (Constant.SCENE_WIDTH / 4) * 2 - w, Constant.SCENE_HEIGHT / 2.2 - h);
-		gc.drawImage(hero[1], Constant.SCENE_WIDTH / 4 - w, Constant.SCENE_HEIGHT / 2.2 - h);
-		gc.drawImage(hero[2], (Constant.SCENE_WIDTH / 4) * 3 - w, Constant.SCENE_HEIGHT / 2.2 - h);
+		gc.drawImage(hero[0], (Constant.SCENE_WIDTH / 4) * 2 - w, Constant.SCENE_HEIGHT / 2 - h);
+		gc.drawImage(hero[1], Constant.SCENE_WIDTH / 4 - w, Constant.SCENE_HEIGHT / 2 - h);
+		gc.drawImage(hero[2], (Constant.SCENE_WIDTH / 4) * 3 - w, Constant.SCENE_HEIGHT / 2 - h);
 
 		// draw ok btn
 		h = ResourceLoader.okbtn.getHeight() / 2.0;
 		w = ResourceLoader.okbtn.getWidth() / 2.0;
-		gc.drawImage(ResourceLoader.okbtn, Constant.SCENE_WIDTH / 2 - w, Constant.SCENE_HEIGHT / 1.3 - h);
+		gc.drawImage(ResourceLoader.okbtn, Constant.SCENE_WIDTH / 2 - w, Constant.SCENE_HEIGHT / 1.2 - h);
 	}
 
 	public void goToBattleField() {
@@ -74,8 +74,8 @@ public class SelectCanvas extends Canvas {
 
 		if (event.getSceneX() >= (Constant.SCENE_WIDTH / 4) * 2 - w
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) * 2 + w
-				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2.2) - h
-				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2.2 + h) {
+				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2) - h
+				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + h) {
 			if (isClicked) {
 				this.initialHeroImage();
 				hero[0] = ResourceLoader.archerFaceH;
@@ -83,12 +83,12 @@ public class SelectCanvas extends Canvas {
 				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.archerFaceH, (Constant.SCENE_WIDTH / 4) * 2 - w,
-						Constant.SCENE_HEIGHT / 2.2 - h);
+						Constant.SCENE_HEIGHT / 2 - h);
 			}
 		} else if (event.getSceneX() >= (Constant.SCENE_WIDTH / 4) - w
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) + w
-				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2.2) - h
-				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2.2 + h) {
+				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2) - h
+				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + h) {
 			if (isClicked) {
 				this.initialHeroImage();
 				hero[1] = ResourceLoader.magicianFaceH;
@@ -96,12 +96,12 @@ public class SelectCanvas extends Canvas {
 				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.magicianFaceH, Constant.SCENE_WIDTH / 4 - w,
-						Constant.SCENE_HEIGHT / 2.2 - h);
+						Constant.SCENE_HEIGHT / 2 - h);
 			}
 		} else if (event.getSceneX() >= (Constant.SCENE_WIDTH / 4) * 3 - w
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) * 3 + w
-				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2.2) - h
-				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2.2 + h) {
+				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2) - h
+				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2 + h) {
 			if (isClicked) {
 				this.initialHeroImage();
 				hero[2] = ResourceLoader.knightFaceH;
@@ -109,18 +109,18 @@ public class SelectCanvas extends Canvas {
 				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.knightFaceH, (Constant.SCENE_WIDTH / 4) * 3 - w,
-						Constant.SCENE_HEIGHT / 2.2 - h);
+						Constant.SCENE_HEIGHT / 2 - h);
 			}
 		} else if (event.getSceneX() >= Constant.SCENE_WIDTH / 2 - wok
 				&& event.getSceneX() <= Constant.SCENE_WIDTH / 2 + wok
-				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 1.3 - hok
-				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 1.3 + hok) {
+				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 1.2 - hok
+				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 1.2 + hok) {
 			// area of event
 			if (isClicked) {
 				goToBattleField();
 				System.out.println(getSelected());
 			} else {
-				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.3 - hok);
+				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);
 			}
 		} else {
 			drawSelectMenu();
