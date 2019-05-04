@@ -6,6 +6,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import drawing.battlefield.BattleFieldScene;
 import drawing.home.*;
+import drawing.select.SelectCanvas;
 import drawing.select.SelectScene;
 
 public class SceneManager {
@@ -13,7 +14,7 @@ public class SceneManager {
 	private static Stage stage;
 	public static HomeScene MainScene = new HomeScene();
 	public static SelectScene SelectScene = new SelectScene();
-	public static BattleFieldScene BattleFieldScene = new BattleFieldScene();
+	public static BattleFieldScene BattleFieldScene;
 	
 	public static void initialize(Stage primaryStage) {
 		stage = primaryStage;

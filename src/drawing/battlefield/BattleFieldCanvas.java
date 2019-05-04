@@ -20,7 +20,7 @@ public class BattleFieldCanvas extends Canvas {
 	private BattleFieldScene scene;
 	private ImageView heroImg;
 	
-	public BattleFieldCanvas(BattleFieldScene scene,String hero) {
+	public BattleFieldCanvas(BattleFieldScene scene) {
 		super(Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();

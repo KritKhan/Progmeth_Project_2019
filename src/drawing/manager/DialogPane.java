@@ -23,12 +23,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class DialogPane extends VBox {
-	private ImageView HpPotion;
-	private ImageView MpPotion;
-	private ImageView MixPotion;
-	private ImageView HpPotionH;
-	private ImageView MpPotionH;
-	private ImageView MixPotionH;
+	
 	private BattleFieldScene scene;
 	
 	public DialogPane(BattleFieldScene battleScene) {
