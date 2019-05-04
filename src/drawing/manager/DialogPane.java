@@ -1,7 +1,9 @@
 package drawing.manager;
 
 import SharedObject.RenderableHolder;
+import SharedObject.ResourceLoader;
 import drawing.battlefield.BattleFieldScene;
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,6 +17,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import model.attribute.Attribute;
 
 public class DialogPane extends VBox {
 	private ImageView HpPotion;
@@ -48,5 +51,9 @@ public class DialogPane extends VBox {
 		okBtn.setFont(Font.font("Lucida Console",36));
 		
 		this.getChildren().addAll(text,textField,okBtn);
+	}
+	
+	public HBox generate() {
+		HpPotion = new ImageView(ResourceLoader)
 	}
 }
