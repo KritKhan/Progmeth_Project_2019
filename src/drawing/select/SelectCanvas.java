@@ -1,8 +1,11 @@
 package drawing.select;
 
+import com.sun.javafx.tk.FontLoader;
+
 import SharedObject.Constant;
 import SharedObject.ResourceLoader;
 import drawing.manager.SceneManager;
+import exception.HeroException;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -12,13 +15,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
+import javafx.scene.text.FontWeight;
 import main.BattleFieldMain;
 
 public class SelectCanvas extends Canvas {
 	private GraphicsContext gc;
-	private Font f;
-	private String selected;
+	private FontLoader fontloader = ResourceLoader.fontLoader;
+	private String selected = "";
 	private Image[] hero = new Image[3];
 
 	public SelectCanvas() {
@@ -28,7 +31,7 @@ public class SelectCanvas extends Canvas {
 		this.drawSelectMenu();
 		this.addKeyEventHandler();
 	}
-	
+
 	public void initialHeroImage() {
 		hero[0] = ResourceLoader.archerFace;
 		hero[1] = ResourceLoader.magicianFace;
@@ -40,14 +43,29 @@ public class SelectCanvas extends Canvas {
 		gc.drawImage(ResourceLoader.selectbg, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 
 		// draw title
-		gc.drawImage(ResourceLoader.select,Constant.SCENE_WIDTH / 2 - ResourceLoader.select.getWidth()/2 , Constant.SCENE_HEIGHT / 2.2 - ResourceLoader.select.getHeight()*1.7);
+		gc.drawImage(ResourceLoader.select, Constant.SCENE_WIDTH / 2 - ResourceLoader.select.getWidth() / 2,
+				Constant.SCENE_HEIGHT / 2.2 - ResourceLoader.select.getHeight() * 1.7);
 		// draw hero1
 		double h, w;
 		w = Constant.hero_width / 2;
-		h = Constant.hero_height/2;
+		h = Constant.hero_height / 2;
 		gc.drawImage(hero[0], (Constant.SCENE_WIDTH / 4) * 2 - w, Constant.SCENE_HEIGHT / 2 - h);
 		gc.drawImage(hero[1], Constant.SCENE_WIDTH / 4 - w, Constant.SCENE_HEIGHT / 2 - h);
 		gc.drawImage(hero[2], (Constant.SCENE_WIDTH / 4) * 3 - w, Constant.SCENE_HEIGHT / 2 - h);
+
+		Font theFont = Font.font("Times New Roman", FontWeight.BOLD, 30);
+		gc.setFont(theFont);
+		gc.setFill(Color.FLORALWHITE);
+
+		double font_width;
+		font_width = fontloader.computeStringWidth("Ancher", gc.getFont());
+		gc.fillText("Ancher", Constant.SCENE_WIDTH / 2 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
+
+		font_width = fontloader.computeStringWidth("Magician", gc.getFont());
+		gc.fillText("Magician", Constant.SCENE_WIDTH / 4 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
+
+		font_width = fontloader.computeStringWidth("Knight", gc.getFont());
+		gc.fillText("Knight", (Constant.SCENE_WIDTH / 4) * 3 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
 
 		// draw ok btn
 		h = ResourceLoader.okbtn.getHeight() / 2.0;
@@ -61,12 +79,11 @@ public class SelectCanvas extends Canvas {
 	}
 
 	private void onButton(MouseEvent event, boolean isClicked) {
-		double h,w,hok,wok;
-		h = Constant.hero_height/2;
-		w = Constant.hero_width/2;
-		hok = ResourceLoader.okbtn.getHeight()/2;
-		wok = ResourceLoader.okbtn.getWidth()/2;
-
+		double h, w, hok, wok;
+		h = Constant.hero_height / 2;
+		w = Constant.hero_width / 2;
+		hok = ResourceLoader.okbtn.getHeight() / 2;
+		wok = ResourceLoader.okbtn.getWidth() / 2;
 		if (event.getSceneX() >= (Constant.SCENE_WIDTH / 4) * 2 - w
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) * 2 + w
 				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2) - h
@@ -90,8 +107,7 @@ public class SelectCanvas extends Canvas {
 				this.selected = "Magician";
 				drawSelectMenu();
 			} else {
-				gc.drawImage(ResourceLoader.magicianFaceH, Constant.SCENE_WIDTH / 4 - w,
-						Constant.SCENE_HEIGHT / 2 - h);
+				gc.drawImage(ResourceLoader.magicianFaceH, Constant.SCENE_WIDTH / 4 - w, Constant.SCENE_HEIGHT / 2 - h);
 			}
 		} else if (event.getSceneX() >= (Constant.SCENE_WIDTH / 4) * 3 - w
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) * 3 + w
@@ -111,7 +127,7 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 1.2 - hok
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 1.2 + hok) {
 			// area of event
-			if (isClicked) {
+			if (isClicked && !selected.equals("")) {
 				goToBattleField();
 				System.out.println(getSelected());
 			} else {
@@ -127,7 +143,7 @@ public class SelectCanvas extends Canvas {
 			@Override
 			public void handle(KeyEvent event) {
 				if (event.getCode() == KeyCode.ESCAPE) {
-					//SelectMain.stop();
+					// SelectMain.stop();
 					Runtime.getRuntime().exit(0);
 				}
 			}
@@ -139,6 +155,7 @@ public class SelectCanvas extends Canvas {
 		setOnMouseClicked((MouseEvent event) -> {
 			onButton(event, true);
 		});
+		
 		setOnMouseDragEntered((MouseEvent event) -> {
 			onButton(event, true);
 		});

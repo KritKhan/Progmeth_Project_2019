@@ -1,20 +1,51 @@
 package main;
 
-public class BattleFieldMain {
+import java.util.ConcurrentModificationException;
 
+import SharedObject.RenderableHolder;
+import SharedObject.ResourceLoader;
+import drawing.battlefield.BattleFieldCanvas;
+import drawing.manager.SceneManager;
+import javafx.animation.AnimationTimer;
+
+public class BattleFieldMain {
+	private static BattleFieldCanvas canvas;
+	//private static GameLogic logic;
+	
 	public BattleFieldMain() {
-		super();
-		// TODO Auto-generated constructor stub
+		canvas = (BattleFieldCanvas) SceneManager.BattleFieldScene.getCanvas();
 	}
 
 	public static void start() {
-		// TODO Auto-generated method stub
-		
+		Main.isGameRunning = true;
+		animation.start();
 	}
+	
+	private static AnimationTimer animation = new AnimationTimer() {
+		public void handle(long now) {
+			if (ResourceLoader.isLoadFinish()) {
+				try {
+					canvas.canvasUpdate();
+					//logic.logicUpdate();
+					RenderableHolder.getInstance().update();
+				} catch (IllegalArgumentException | ConcurrentModificationException e) {
+					System.out.println("cannot update");
+				}
+			}else {
+				canvas.canvasUpdate();
+			}
+		}
+	};
 
 	public static void stop() {
-		// TODO Auto-generated method stub
-		
+		Main.isGameRunning = false;
+		animation.stop();
 	}
+
+	public static BattleFieldCanvas getBattleFieldCanvas() {
+		return canvas;
+	}
+	
+	
 
 }

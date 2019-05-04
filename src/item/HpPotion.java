@@ -1,5 +1,7 @@
 package item;
 
+import SharedObject.ResourceLoader;
+
 public class HpPotion extends Item{
 	private static final String des = "Immediately heals HP by + 500";
 	
@@ -9,7 +11,7 @@ public class HpPotion extends Item{
 		this.description = des;
 		this.increaseHp = 500;
 		this.increaseMp = 0;
-//		this.imgae =
+		this.imgae = ResourceLoader.hp;
 	}
 
 }

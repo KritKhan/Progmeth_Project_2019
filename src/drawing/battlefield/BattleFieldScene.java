@@ -33,11 +33,11 @@ public class BattleFieldScene extends Scene{
 		BattleFieldMain.start();
 		canvas.requestFocus();
 	}
-//	public void toDialog(int c) {
-//		dialog.getChildren().clear();
-//		dialog.setVisible(true);
-//		dialog.requestFocus();
-//		BattleFieldMain.stop();
+	public void toDialog(int c) {
+		dialog.getChildren().clear();
+		dialog.setVisible(true);
+		dialog.requestFocus();
+		BattleFieldMain.stop();
 //		switch(c) {
 //		case 0:			
 //			dialog.opening();
@@ -57,7 +57,7 @@ public class BattleFieldScene extends Scene{
 //		case 5 :
 //			dialog.openingNext();
 //		}
-//	}
+	}
 
 	public Canvas getCanvas() {
 		return canvas;
