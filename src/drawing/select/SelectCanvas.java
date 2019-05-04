@@ -59,8 +59,8 @@ public class SelectCanvas extends Canvas {
 		gc.setFill(Color.FLORALWHITE);
 
 		double font_width;
-		font_width = fontloader.computeStringWidth("Ancher", gc.getFont());
-		gc.fillText("Ancher", Constant.SCENE_WIDTH / 2 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
+		font_width = fontloader.computeStringWidth("Archer", gc.getFont());
+		gc.fillText("Archer", Constant.SCENE_WIDTH / 2 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
 
 		font_width = fontloader.computeStringWidth("Magician", gc.getFont());
 		gc.fillText("Magician", Constant.SCENE_WIDTH / 4 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);

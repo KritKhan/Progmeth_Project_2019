@@ -13,19 +13,16 @@ public abstract class GameObject implements IRenderable{
 	}
 	@Override
 	public int getZ() {
-		// TODO Auto-generated method stub
 		return z;
 	}
 
 	@Override
 	public boolean isVisible() {
-		// TODO Auto-generated method stub
 		return visible ==  true;
 	}
 
 	@Override
 	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
 		return visible == false;
 	}
 	
@@ -52,6 +49,7 @@ public abstract class GameObject implements IRenderable{
 	}
 	
 	public abstract double getWidth();
+	
 	public abstract double getHeight();
 
 }
