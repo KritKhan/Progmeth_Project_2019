@@ -65,7 +65,7 @@ public class SelectCanvas extends Canvas {
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
 	}
 
-	private void onButton(MouseEvent event, boolean isGoNext) {
+	private void onButton(MouseEvent event, boolean isClicked) {
 		double h,w,hok,wok;
 		h = Constant.hero_height/2;
 		w = Constant.hero_width/2;
@@ -76,10 +76,11 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) * 2 + w
 				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2.2) - h
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2.2 + h) {
-			if (isGoNext) {
+			if (isClicked) {
 				this.initialHeroImage();
 				hero[0] = ResourceLoader.archerFaceH;
 				this.selected = "Archer";
+				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.archerFaceH, (Constant.SCENE_WIDTH / 4) * 2 - w,
 						Constant.SCENE_HEIGHT / 2.2 - h);
@@ -88,10 +89,11 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) + w
 				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2.2) - h
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2.2 + h) {
-			if (isGoNext) {
+			if (isClicked) {
 				this.initialHeroImage();
 				hero[1] = ResourceLoader.magicianFaceH;
 				this.selected = "Magician";
+				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.magicianFaceH, Constant.SCENE_WIDTH / 4 - w,
 						Constant.SCENE_HEIGHT / 2.2 - h);
@@ -100,10 +102,11 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneX() <= (Constant.SCENE_WIDTH / 4) * 3 + w
 				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 2.2) - h
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 2.2 + h) {
-			if (isGoNext) {
+			if (isClicked) {
 				this.initialHeroImage();
 				hero[2] = ResourceLoader.knightFaceH;
 				this.selected = "Knight";
+				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.knightFaceH, (Constant.SCENE_WIDTH / 4) * 3 - w,
 						Constant.SCENE_HEIGHT / 2.2 - h);
@@ -113,7 +116,7 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 1.3 - hok
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 1.3 + hok) {
 			// area of event
-			if (isGoNext) {
+			if (isClicked) {
 				goToBattleField();
 				System.out.println(getSelected());
 			} else {
