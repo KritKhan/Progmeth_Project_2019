@@ -68,7 +68,6 @@ public abstract class ResourceLoader {
 			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
 			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
 			
-			
 			//BG
 			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
 			dirtland = new Image(ClassLoader.getSystemResource("BGandButton/Dirt.jpg").toString());
@@ -78,7 +77,7 @@ public abstract class ResourceLoader {
 			grassland = new Image(ClassLoader.getSystemResource("BGandButton/Grass.jpg").toString());
 			waterland = new Image(ClassLoader.getSystemResource("BGandButton/Water.jpg").toString());
 			homebg = new Image(ClassLoader.getSystemResource("BGandButton/Main.jpg").toString());
-			selectbg = new Image(ClassLoader.getSystemResource("BGandButton/Select4.jpg").toString());
+			selectbg = new Image(ClassLoader.getSystemResource("BGandButton/Select8.jpg").toString());
 			
 			//Button
 			startbtn = new Image(ClassLoader.getSystemResource("BGandButton/Startbutton.png").toString());
