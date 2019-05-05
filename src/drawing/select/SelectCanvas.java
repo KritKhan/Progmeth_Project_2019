@@ -128,10 +128,6 @@ public class SelectCanvas extends Canvas {
 			// area of event
 			if (isClicked && !selected.equals("")) {
 				//create Hero here
-				
-				  switch(getSelected()) { 
-				  case "Archer" : BattleFieldMain.getLogic().newHero("Archer");
-				  }
 				 
 				goToBattleField();
 			} else {

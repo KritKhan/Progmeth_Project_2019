@@ -18,13 +18,8 @@ public class DialogPane extends VBox {
 	public DialogPane(BattleFieldScene battleScene,Image image) {
 		super(10);
 		this.scene = battleScene;
-<<<<<<< HEAD
 		defaultDraw(scene, image);
-||||||| merged common ancestors
-		defaultDraw(scene, ResourceLoader.dungeon1);
-=======
-		defaultDraw(scene, ResourceLoader.grassland);
->>>>>>> b620ca6ede30795c2fca328c92d1d4710f2b19c1
+
 	}
 	
 	public void defaultDraw(BattleFieldScene battleScene, Image image) {

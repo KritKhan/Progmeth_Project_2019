@@ -11,16 +11,19 @@ import SharedObject.GameObject;
 import SharedObject.Pair;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
+import creature.entity.BattleFieldableEntity;
 import creature.entity.Entity;
+import creature.entity.HeroInBat;
 import creature.hero.Hero;
+import creature.monster.MonsterGen;
 import drawing.manager.SceneManager;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class BattleField extends Field {
-	private static final Set<DungeonableEntity<Attribute>> entities_holder = new HashSet<>();
-	private static final Set<DungeonableEntity<Attribute>> graveyard = new HashSet<>();
-	public static MonsterDen monsterDen;
+	private static final Set<BattleFieldableEntity<Hero>> entities_holder = new HashSet<>();
+	private static final Set<BattleFieldableEntity<Hero>> graveyard = new HashSet<>();
+	public static MonsterGen monsterGen;
 	private int lvl;
 	private static int lvlChangetimer;
 	
@@ -29,7 +32,7 @@ public class BattleField extends Field {
 				new Pair(0, 150));
 		this.lvl = 0;
 		this.z = -99999;
-		monsterDen = new MonsterDen();
+		monsterGen = new MonsterGen();
 		lvlChangetimer = Constant.DUNGEON_CHANGE_TIME_MAX;
 	}
 
@@ -53,26 +56,26 @@ public class BattleField extends Field {
 		}
 	}
 
-	public static void addEntities(DungeonableEntity<Attribute> e) {
+	public static void addEntities(BattleFieldableEntity<Hero> e) {
 		RenderableHolder.getInstance().add(e);
 		getEntitiesHolder().add(e);
 		if (lvlChangetimer != 0)
 			lvlChangetimer = 0;
 	}
 
-	public static <T extends Attribute> void destroyEntities(DungeonableEntity<T> e) {
+	public static <T extends Hero> void destroyEntities(BattleFieldableEntity<T> e) {
 		e.setVisible(false);
-		graveyard.add((DungeonableEntity<Attribute>) e);
+		graveyard.add((BattleFieldableEntity<Hero>) e);
 	}
 
 	public void update() {
-		monsterDen.update();
+		monsterGen.update();
 		graveyard.clear();
-		for (DungeonableEntity<Attribute> e : entities_holder) {
+		for (BattleFieldableEntity<Hero> e : entities_holder) {
 			e.update();
 		}
-		for (DungeonableEntity<Attribute> e : graveyard) {
-			if (e instanceof Hero) {
+		for (BattleFieldableEntity<Hero> e : graveyard) {
+			if (e instanceof HeroInBat) {
 				SceneManager.BattleFieldScene; // dead
 			} else
 				entities_holder.remove(e);
@@ -84,33 +87,33 @@ public class BattleField extends Field {
 	}
 
 	public boolean isLevelClear() {
-		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.hero) && !monsterDen.isGenerate());
+		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.hero) && !monsterGen.isGenerate());
 	}
 
 	private void upLevel() {
 		if (lvlChangetimer == 0) {
 			lvl++;
 			lvlChangetimer = 400;
-			monsterDen.setDunLvl(this.lvl);
+			monsterGen.setDunLvl(this.lvl);
 		}
 	}
 
 	public void restart() {
 		lvl = 0;
 		lvlChangetimer = 0;
-		monsterDen.restart();
+		monsterGen.restart();
 		RenderableHolder.getInstance().clear();
 		entities_holder.clear();
 		graveyard.clear();
 	}
 
-	public static Set<DungeonableEntity<Attribute>> getEntitiesHolder() {
+	public static Set<BattleFieldableEntity<Hero>> getEntitiesHolder() {
 		return entities_holder;
 	}
 
-	public static ArrayList<DungeonableEntity<Attribute>> getEntityInArea(GameObject object, double x, double y) {
-		ArrayList<DungeonableEntity<Attribute>> result = new ArrayList<>();
-		for (DungeonableEntity<Attribute> e : entities_holder) {
+	public static ArrayList<BattleFieldableEntity<Hero>> getEntityInArea(GameObject object, double x, double y) {
+		ArrayList<BattleFieldableEntity<Hero>> result = new ArrayList<>();
+		for (BattleFieldableEntity<Hero> e : entities_holder) {
 			if (e.hashCode() != object.hashCode() && object.isCollide(e, x, y)) {
 				result.add(e);
 			}

@@ -20,7 +20,7 @@ public abstract class ResourceLoader {
 	public static Image lion;
 	public static Image wolf;
 	public static Image armor;
-	
+	public static Image[] monsterImage = new Image[3];
 	//hero face
 	public static Image magicianFace;
 	public static Image knightFace;
@@ -79,6 +79,11 @@ public abstract class ResourceLoader {
 			lion = new Image(ClassLoader.getSystemResource("Character/Lion.png").toString());
 			wolf = new Image(ClassLoader.getSystemResource("Character/Wolf.png").toString());
 			armor = new Image(ClassLoader.getSystemResource("Character/Armor.png").toString());
+			
+			monsterImage[0] = lion;
+			monsterImage[1] = wolf;
+			monsterImage[2] = armor;
+			
 			//Hero Face
 			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
 			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
