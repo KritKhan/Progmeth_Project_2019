@@ -4,20 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
-	public List<Item> inventory = new ArrayList<>();
+	public static List<Item> inventory = new ArrayList<>();
 	Item hp = new HpPotion();
 	Item mp = new MpPotion();
 	Item mix = new MixPotion();
 	
 	public Inventory() {
-		hp.amount = 0;
-		mp.amount = 0;
-		mix.amount = 0;
+		reset();
 		inventory.add(hp);
 		inventory.add(mp);
 		inventory.add(mix);
 	}
 	
+	public void reset() {
+		hp.amount = 0;
+		mp.amount = 0;
+		mix.amount = 0;
+	}
 	public void add(Item item) {
 		if(item instanceof HpPotion) {
 			inventory.get(0).amount++;
@@ -43,4 +46,10 @@ public class Inventory {
 		return item;
 		
 	}
+
+	public static List<Item> getInventory() {
+		return inventory;
+	}
+	
+	
 }

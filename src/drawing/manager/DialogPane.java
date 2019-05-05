@@ -18,7 +18,7 @@ public class DialogPane extends VBox {
 	public DialogPane(BattleFieldScene battleScene) {
 		super(10);
 		this.scene = battleScene;
-		defaultDraw(scene, ResourceLoader.dungeon1);
+		defaultDraw(scene, ResourceLoader.grassland);
 	}
 	
 	public void defaultDraw(BattleFieldScene battleScene, Image image) {

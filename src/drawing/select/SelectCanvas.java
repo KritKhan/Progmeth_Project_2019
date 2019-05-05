@@ -58,8 +58,8 @@ public class SelectCanvas extends Canvas {
 		gc.setFill(Color.FLORALWHITE);
 
 		double font_width;
-		font_width = fontloader.computeStringWidth("Ancher", gc.getFont());
-		gc.fillText("Ancher", Constant.SCENE_WIDTH / 2 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
+		font_width = fontloader.computeStringWidth("Archer", gc.getFont());
+		gc.fillText("Archer", Constant.SCENE_WIDTH / 2 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
 
 		font_width = fontloader.computeStringWidth("Magician", gc.getFont());
 		gc.fillText("Magician", Constant.SCENE_WIDTH / 4 - font_width / 2, Constant.SCENE_HEIGHT / 1.5);
@@ -74,7 +74,6 @@ public class SelectCanvas extends Canvas {
 	}
 
 	public void goToBattleField() {
-		BattleFieldMain battle = new BattleFieldMain();
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
 	}
 
@@ -128,8 +127,13 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 1.2 + hok) {
 			// area of event
 			if (isClicked && !selected.equals("")) {
+				//create Hero here
+				
+				  switch(getSelected()) { 
+				  case "Archer" : BattleFieldMain.getLogic().newHero("Archer");
+				  }
+				 
 				goToBattleField();
-				System.out.println(getSelected());
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);
 			}

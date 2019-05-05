@@ -3,6 +3,7 @@ package Logic;
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
 import creature.Hero;
+import drawing.field.Navigation;
 
 public class GameLogic {
 	public static Dungeon dungeon;

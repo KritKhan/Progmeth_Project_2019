@@ -2,6 +2,7 @@ package main;
 
 import java.util.ConcurrentModificationException;
 
+import Logic.GameLogic;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
 import drawing.battlefield.BattleFieldCanvas;
@@ -10,9 +11,10 @@ import javafx.animation.AnimationTimer;
 
 public class BattleFieldMain {
 	private static BattleFieldCanvas canvas;
-	//private static GameLogic logic;
+	private static GameLogic logic;
 	
 	public BattleFieldMain() {
+		logic = new GameLogic();
 		canvas = (BattleFieldCanvas) SceneManager.BattleFieldScene.getCanvas();
 	}
 
@@ -26,7 +28,7 @@ public class BattleFieldMain {
 			if (ResourceLoader.isLoadFinish()) {
 				try {
 					canvas.canvasUpdate();
-					//logic.logicUpdate();
+					logic.logicUpdate();
 					RenderableHolder.getInstance().update();
 				} catch (IllegalArgumentException | ConcurrentModificationException e) {
 					System.out.println("cannot update");
@@ -46,6 +48,8 @@ public class BattleFieldMain {
 		return canvas;
 	}
 	
-	
+	public static GameLogic getLogic() {
+		return logic;
+	}
 
 }

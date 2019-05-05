@@ -17,7 +17,9 @@ public abstract class ResourceLoader {
 	public static Image viper;
 	public static Image witch;
 	public static Image darklorde;
-	public static Image minion;
+	public static Image lion;
+	public static Image wolf;
+	public static Image armor;
 	
 	//hero face
 	public static Image magicianFace;
@@ -54,6 +56,7 @@ public abstract class ResourceLoader {
 	
 	public static Image logo;
 
+	public static Image statusBar;
 	//select
 	public static Image select;
 	public static Thread loadThread;
@@ -66,6 +69,16 @@ public abstract class ResourceLoader {
 		try {
 			fontLoader = Toolkit.getToolkit().getFontLoader();
 			
+			//Character
+			magician = new Image(ClassLoader.getSystemResource("Character/Magician.png").toString());
+			knight = new Image(ClassLoader.getSystemResource("Character/Knight.png").toString());
+			archer = new Image(ClassLoader.getSystemResource("Character/Archer.png").toString());
+			darklorde = new Image(ClassLoader.getSystemResource("Character/DarkLord.png").toString());
+			witch = new Image(ClassLoader.getSystemResource("Character/Witch.png").toString());
+			viper = new Image(ClassLoader.getSystemResource("Character/Viper.png").toString());
+			lion = new Image(ClassLoader.getSystemResource("Character/Lion.png").toString());
+			wolf = new Image(ClassLoader.getSystemResource("Character/Wolf.png").toString());
+			armor = new Image(ClassLoader.getSystemResource("Character/Armor.png").toString());
 			//Hero Face
 			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
 			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
@@ -104,6 +117,7 @@ public abstract class ResourceLoader {
 			//Select
 			select = new Image(ClassLoader.getSystemResource("BGandButton/choose hero2.png").toString());
 			
+			statusBar = new Image(ClassLoader.getSystemResource("BGandButton/StatusBar.png").toString());
 		}catch (NullPointerException e) {
 			System.out.println("resource not found");
 		}
