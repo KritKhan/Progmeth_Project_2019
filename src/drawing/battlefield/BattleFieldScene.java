@@ -1,5 +1,6 @@
 package drawing.battlefield;
 
+import Logic.GameLogic;
 import SharedObject.InputUtility;
 import SharedObject.ResourceLoader;
 import drawing.manager.DialogPane;
@@ -26,9 +27,10 @@ public class BattleFieldScene extends Scene{
 		canvas = new BattleFieldCanvas(this);
 		root.getChildren().add(canvas);
 		
-		//int i = BattleFieldMain.getGameLogic().battleField.getLel();
+		BattleFieldMain.getGameLogic();
+		//int i = BattleFieldMain.getGameLogic().battleField.getLvl();
 		
-		dialog = new DialogPane(this,images[1]);
+		dialog = new DialogPane(this,images[2]);
 		root.getChildren().add(dialog);
 		
 		InputUtility.bindListeners(this);

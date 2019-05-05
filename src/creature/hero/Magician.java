@@ -24,18 +24,19 @@ public abstract class Magician extends Hero{
 
 	public Magician() {
 		super();
+		heroImage = ResourceLoader.magician;
 		attackMultiply = 1.5;
 		//attackRange = new Pair(getHeroWeapon().getWidth() * 1.2, getHeroWeapon().getHeight());
 		attackSpeed = 0.6;
 		hpMultiply = 1;
 		hpRegen = 1;
 		mpRegen = 5;
-		maxMagicTime = Constant.MAX_MAGIC_TIME;
+		//maxMagicTime = Constant.MAX_MAGIC_TIME;
 		magicTime = new HashMap<>();
 		delTemp = new LinkedList<>();
 		magicW = attackRange.x*2;
 		magicH = attackRange.y*0.7;
-		animationImg = ResourceLoader.intelligence;
+		//animationImg = ResourceLoader.intelligence;
 		//attackObj = new GameObject(heroWeapon.getX() + 20, heroWeapon.getY(), 500)
 		
 	}

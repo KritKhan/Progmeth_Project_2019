@@ -4,6 +4,9 @@ import com.sun.javafx.tk.FontLoader;
 
 import SharedObject.Constant;
 import SharedObject.ResourceLoader;
+import creature.hero.Archer;
+import creature.hero.Knight;
+import creature.hero.Magician;
 import drawing.battlefield.BattleFieldScene;
 import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
@@ -128,11 +131,15 @@ public class SelectCanvas extends Canvas {
 			// area of event
 			if (isClicked && !selected.equals("")) {
 				//create Hero here
-				
-				  switch(getSelected()) { 
-				  case "Archer" : BattleFieldMain.getLogic().newHero("Archer");
-				  }
-				 
+				switch(selected) {
+				case "Archer" :
+					BattleFieldMain.getGameLogic().newHero(new Archer());
+				case "Magician" :
+					BattleFieldMain.getGameLogic().newHero(new Magician() {
+					});
+				case "Knight" :
+					BattleFieldMain.getGameLogic().newHero(new Knight());
+				}
 				goToBattleField();
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);

@@ -48,17 +48,10 @@ public class BattleFieldMain {
 		return canvas;
 	}
 	
-<<<<<<< HEAD
 	public static GameLogic getGameLogic() {
 		return logic;
 		
 	}
-||||||| merged common ancestors
-	
-=======
-	public static GameLogic getLogic() {
-		return logic;
-	}
->>>>>>> b620ca6ede30795c2fca328c92d1d4710f2b19c1
+
 
 }

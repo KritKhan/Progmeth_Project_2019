@@ -22,6 +22,7 @@ public abstract class Hero {
 	protected int attackTime;
 	protected BattleFieldableEntity<Hero> owner;
 	protected Image animationImg;
+	protected Image heroImage;
 
 	public Hero() {
 		attackTime = 0;
@@ -100,7 +101,9 @@ public abstract class Hero {
 	public Image getImage() {
 		return animationImg;
 	}
-
+	public Image getHeroImage() {
+		return heroImage;
+	}
 	public abstract int getManaUsed();
 	
 }
