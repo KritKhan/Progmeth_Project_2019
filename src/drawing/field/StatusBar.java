@@ -3,18 +3,18 @@ package drawing.field;
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
+import Logic.GameLogic;
 import SharedObject.Constant;
+import SharedObject.InputUtility;
 import SharedObject.Pair;
 import SharedObject.ResourceLoader;
+import drawing.manager.SceneManager;
 import item.Inventory;
 import item.Item;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import logic.GameLogic;
-import utility.InputUtility;
-import view.SceneManeger;
 
 
 public class StatusBar extends Field {
@@ -58,13 +58,13 @@ public class StatusBar extends Field {
 		
 		//money
 		gc.setFont(Font.font("Castellar", 25));
-		gc.fillText(Double.toString(Logic.GameLogic.hero.getCoin()), 855, 120);
+		gc.fillText(Double.toString(Logic.GameLogic.heroInBat.getMoney()), 855, Constant.SCENE_HEIGHT - 30);
 	
 		// Hp & Mp
-		double maxH = Logic.GameLogic.hero.getMaxHp();
-		double currentH = Logic.GameLogic.hero.getHp();
-		double maxM = Logic.GameLogic.hero.getMaxMp();
-		double currentM = Logic.GameLogic.hero.getMp();
+		double maxH = GameLogic.heroInBat.getMaxHp();
+		double currentH = GameLogic.heroInBat.getCurrentHp();
+		double maxM = GameLogic.heroInBat.getMaxMp();
+		double currentM = GameLogic.heroInBat.getCurrentMp();
 		
 		gc.setFill(Color.CRIMSON);
 		gc.fillRect(236, 47, Math.min((currentH / maxH),1) * 247, 15);
@@ -72,7 +72,9 @@ public class StatusBar extends Field {
 		gc.setFill(Color.DODGERBLUE);
 		gc.fillRect(236, 89, Math.min((currentM / maxM),1) * 247, 15);
 
-		gc.drawImage(Logic.GameLogic.hero.getName().getImage(), 44, 18, 91, 91);
+
+		gc.drawImage(GameLogic.heroInBat.getAtkType().getImage(), 45, 567, 91, 91);
+
 	}
 	
 	public void update() {

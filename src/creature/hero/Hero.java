@@ -1,91 +1,106 @@
 package creature.hero;
 
 import Interface.Regenable;
-import creature.Creature;
+import Logic.GameLogic;
+import SharedObject.Constant;
+import SharedObject.GameObject;
+import SharedObject.Pair;
+import SharedObject.RenderableHolder;
 import creature.entity.BattleFieldableEntity;
 import item.Inventory;
+import javafx.scene.image.Image;
 
-public abstract class Hero extends BattleFieldableEntity implements Regenable {
+public abstract class Hero {
 
-	private int mp;
-	private int maxMp;
-	private int mpConsumption;
-	public Inventory inventory;
-	private int lvl;
+	protected GameObject attackObj;
+	protected double attackMultiply;
+	protected Pair attackRange;
+	protected double attackSpeed;
+	protected double hpMultiply;
+	protected int hpRegen;
+	protected int mpRegen;
+	protected int attackTime;
+	protected BattleFieldableEntity<Hero> owner;
+	protected Image animationImg;
 
-	public Hero(String name, int maxHp, int coin, int atk, int maxMp, int mpConsumption) { 
-		super(name, maxHp, coin, atk);
-		setMp(maxHp);
-		setMaxHp(maxHp);
-		setMpConsumption(mpConsumption);
-		inventory = new Inventory();
-		lvl = 1;
+	public Hero() {
+		attackTime = 0;
 	}
 	
-	public boolean canConsumeMp() {
-		if(getMp() - getMpConsumption()> 0 ) return true;
-		return false;
-	}
+	public void update(int direction, double x, double y) {
+		if (attackTime > 0)
+			attackTime--;
+		if (this.owner.isDestroyed())
+			this.attackObj.setVisible(false);
+	};
 
-	public void mpConsume() {
-		if(canConsumeMp()) {
-			setMp(getMp() - getMpConsumption());
+	public <T1 extends Hero, T2 extends Hero> void attack(BattleFieldableEntity<T1> attacker,
+			BattleFieldableEntity<T2> other) {
+		if (other.getDmgTimer() < Constant.DMG_TIME_MAX / 2) {
+			other.damage((int) (attacker.getBaseAtk() * attackMultiply * ((GameLogic.battleField.getLvl() / 20) + 1)),
+					ForceUtility.calculateDirection(attacker.getDirection()));
 		}
 	}
-	
-	public void recieveCoin(int coin) {
-		this.setCoin(getCoin()+coin);
-	}
-	public int getMpConsumption() {
-		return mpConsumption;
+
+	public GameObject getAttackObj() {
+		return attackObj;
 	}
 
-	public void setMpConsumption(int mpConsumption) {
-		if(mpConsumption < 1) mpConsumption = 1;
-		this.mpConsumption = mpConsumption;
+	public void setAttackObj(GameObject attackObj) {
+		this.attackObj = attackObj;
 	}
 
-	public int getMp() {
-		return mp;
+	public int getAtkTimeMax() {
+		return (int) (Constant.BASE_ATTACK_TIMER_MAX / getAttackSpeed());
 	}
 
-	public void setMp(int mp) {
-		if(mp < 0) mp = 0;
-		this.mp = mp;
+	public double getAttackMultiply() {
+		return attackMultiply;
 	}
 
-	public int getMaxMp() {
-		return maxMp;
+	public Pair getAttackRange() {
+		return attackRange;
 	}
 
-	public void setMaxMp(int maxMp) {
-		if(maxMp < 1) maxMp = 1;
-		this.maxMp = maxMp;
+	public double getAttackSpeed() {
+		return attackSpeed;
 	}
 
-	public int lvlUp() {
-		if(lvl>0 && lvl<=15) {
-			lvl++;
-			setMaxHp((int)(getMaxHp()*1.3));
-			setMaxMp((int)(getMaxMp()*1.15));
-			setAtk((int)(getAtk()*1.2));
-			setMpConsumption((int)(getMpConsumption()*1.1));
-		}
-		return lvl;
-	}
-	
-	@Override
-	public void regenHp() {
-		setHp((int)(getHp()+(30*Math.pow(1.25, lvl))));
+	public double getHpMultiply() {
+		return hpMultiply;
 	}
 
-	@Override
-	public void regenMp() {
-		setMp((int)(getMp()+(25*Math.pow(1.1, lvl))));
+	public int getHpRegen() {
+		return hpRegen;
 	}
 
-	public Inventory getInventory() {
-		return inventory;
+	public int getMpRegen() {
+		return mpRegen;
 	}
+
+	public int getAttackTime() {
+		return attackTime;
+	}
+
+	public void resetAttackTime() {
+		if (getAttackTime() == 0)
+			attackTime = getAtkTimeMax();
+	}
+
+	public void setOwner(BattleFieldableEntity<Hero> owner) {
+		this.owner = owner;
+		attackObj.setVisible(true);
+		RenderableHolder.getInstance().add(getAttackObj());
+	}
+
+	public void use() {
+		resetAttackTime();
+	}
+
+	public Image getImage() {
+		return animationImg;
+	}
+
+	public abstract int getManaUsed();
 	
 }

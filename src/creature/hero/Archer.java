@@ -1,22 +1,17 @@
 package creature.hero;
 
-import creature.Creature;
 import javafx.scene.canvas.GraphicsContext;
 
-public abstract class Archer extends Hero{
+public class Archer extends Hero{
 
 	public Archer() {
-		super("Archer", 200, 0, 25, 200, 15);
+		super();
 	}
 
 	@Override
-	public void attack(Creature creature) {
-		creature.setHp(creature.getHp()-this.getAtk());
+	public int getManaUsed() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	@Override
-	public void draw(GraphicsContext gc) {
-		
-	}
-	
+
 }
