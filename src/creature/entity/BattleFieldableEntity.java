@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import SharedObject.Constant;
 import creature.hero.Hero;
+import drawing.field.BattleField;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -38,7 +39,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 	@Override
 	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
-		if (!(this instanceof Hero) && (dmgTimer != 0 || hpBarTimer != 0)) {
+		if (!(this instanceof HeroInBat) && (dmgTimer != 0 || hpBarTimer != 0)) {
 			gc.setFill(Color.BLACK);
 			gc.fillRect(pos.x + this.getWidth() / 6, pos.y - this.getHeight() / 6, this.getWidth() * 5 / 6, 8);
 			gc.setFill(Color.DARKRED);

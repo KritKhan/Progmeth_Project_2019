@@ -2,34 +2,30 @@ package Logic;
 
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
-<<<<<<< HEAD
+import creature.entity.HeroInBat;
 import creature.hero.Hero;
-||||||| merged common ancestors
-import creature.Hero;
-=======
-import creature.Hero;
-import drawing.field.Navigation;
->>>>>>> b620ca6ede30795c2fca328c92d1d4710f2b19c1
+import drawing.field.BattleField;
+import drawing.field.StatusBar;
 
 public class GameLogic {
 	public static BattleField battleField;
-	public static Hero hero;
-	public static Navigation navig;
+	public static HeroInBat heroInBat;
+	public static StatusBar status;
 
 	public GameLogic() {
 		battleField = new BattleField();
 		RenderableHolder.getInstance().add(battleField);
-		navig = new Navigation();
-		RenderableHolder.getInstance().add(navig);
+		status = new StatusBar();
+		RenderableHolder.getInstance().add(status);
 	}
 	
 	public <T extends Hero>void newHero(T atkType) {
-		hero = new Hero(Constant.ENTITY_FRONT, atkType);
-		BattleField.addEntities(hero);
+		heroInBat = new HeroInBat(Constant.ENTITY_FRONT, atkType);
+		BattleField.addEntities(heroInBat);
 	}
 
 	public void logicUpdate() {
 		battleField.update();
-		navig.update();
+		status.update();
 	}
 }
