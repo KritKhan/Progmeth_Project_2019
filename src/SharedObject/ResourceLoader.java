@@ -53,10 +53,18 @@ public abstract class ResourceLoader {
 	public static Image hphili;
 	public static Image mphili;
 	public static Image mixhili;
+	
+	//effect
 	public static Image aEffect;
 	public static Image aEffect2;
 	public static Image aEffect3;
 	public static Image aEffect4;
+	public static Image mEffect;
+	public static Image mEffect2;
+	public static Image mEffect3;
+	public static Image mEffect4;
+	public static Image kEffect;
+	public static Image kEffect2;
 	
 	public static Image logo;
 
@@ -67,6 +75,7 @@ public abstract class ResourceLoader {
 	
 	static {
 		ResourceLoader.loadResource();
+		initializeSecondLoad();
 	}
 	
 	static void loadResource() {
@@ -84,9 +93,6 @@ public abstract class ResourceLoader {
 			wolf = new Image(ClassLoader.getSystemResource("Character/Wolf.png").toString());
 			armor = new Image(ClassLoader.getSystemResource("Character/Armor.png").toString());
 			
-			monsterImage[0] = lion;
-			monsterImage[1] = wolf;
-			monsterImage[2] = armor;
 			
 			//Hero Face
 			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
@@ -128,7 +134,7 @@ public abstract class ResourceLoader {
 			
 			statusBar = new Image(ClassLoader.getSystemResource("BGandButton/StatusBar.png").toString());
 		}catch (NullPointerException e) {
-			System.out.println("resource not found");
+			System.out.println("resource1 not found");
 		}
 		
 	}
@@ -140,16 +146,22 @@ public abstract class ResourceLoader {
 			@Override
 			public void run() {
 				try {
-					aEffect = new Image(ClassLoader.getSystemResource("Potion/aEffect.gif").toString());
-					aEffect2 = new Image(ClassLoader.getSystemResource("Potion/aEffect2.gif").toString());
-					aEffect3 = new Image(ClassLoader.getSystemResource("Potion/aEffect3.gif").toString());
-					aEffect4 = new Image(ClassLoader.getSystemResource("Potion/aEffect4.gif").toString());
+					aEffect = new Image(ClassLoader.getSystemResource("Character/ArcherFxR.gif").toString());
+					aEffect2 = new Image(ClassLoader.getSystemResource("Character/ArcherFxL.gif").toString());
+					aEffect3 = new Image(ClassLoader.getSystemResource("Character/ArcherFxU.gif").toString());
+					aEffect4 = new Image(ClassLoader.getSystemResource("Character/ArcherFxD.gif").toString());
+					mEffect = new Image(ClassLoader.getSystemResource("Character/MageFxR.gif").toString());
+					mEffect2 = new Image(ClassLoader.getSystemResource("Character/MageFxL.gif").toString());
+					mEffect3 = new Image(ClassLoader.getSystemResource("Character/MageFxU.gif").toString());
+					mEffect4 = new Image(ClassLoader.getSystemResource("Character/MageFxD.gif").toString());
+					kEffect = new Image(ClassLoader.getSystemResource("Character/KnightFxL.gif").toString());
+					kEffect2 = new Image(ClassLoader.getSystemResource("Character/KnightFxR.gif").toString());
 					
-					for(int i=0;i<5;i++) {
-					monsterImage[i] = new Image(ClassLoader.getSystemResource("8bit/monster"+Integer.toString(i+1)+".png").toString());
-					}
+					monsterImage[0] = lion;
+					monsterImage[1] = wolf;
+					monsterImage[2] = armor;
 				}catch (NullPointerException e) {
-					System.out.println("resource not found");
+					System.out.println("resource2 not found");
 				}
 			}
 		});
