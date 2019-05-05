@@ -6,7 +6,6 @@ import SharedObject.Constant;
 import SharedObject.ResourceLoader;
 import drawing.battlefield.BattleFieldScene;
 import drawing.manager.SceneManager;
-import exception.HeroException;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

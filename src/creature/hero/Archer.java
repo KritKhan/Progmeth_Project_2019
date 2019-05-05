@@ -1,7 +1,6 @@
 package creature.hero;
 
 import creature.Creature;
-import creature.Hero;
 import javafx.scene.canvas.GraphicsContext;
 
 public abstract class Archer extends Hero{

@@ -1,9 +1,11 @@
-package creature;
+package creature.hero;
 
 import Interface.Regenable;
+import creature.Creature;
+import creature.entity.BattleFieldableEntity;
 import item.Inventory;
 
-public abstract class Hero extends Creature implements Regenable {
+public abstract class Hero extends BattleFieldableEntity implements Regenable {
 
 	private int mp;
 	private int maxMp;

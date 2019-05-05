@@ -1,7 +1,6 @@
 package creature.hero;
 
 import creature.Creature;
-import creature.Hero;
 
 public abstract class Knight extends Hero {
 

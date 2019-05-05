@@ -1,6 +1,6 @@
 package item;
 
-import creature.Hero;
+import creature.hero.Hero;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 

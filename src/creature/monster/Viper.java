@@ -1,7 +1,6 @@
-package creature.boss;
+package creature.monster;
 
 import creature.Creature;
-import creature.Monster;
 
 public abstract class Viper extends Monster {
 

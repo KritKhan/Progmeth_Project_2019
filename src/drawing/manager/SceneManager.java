@@ -6,6 +6,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import drawing.battlefield.BattleFieldScene;
 import drawing.home.*;
+import drawing.select.SelectCanvas;
 import drawing.select.SelectScene;
 
 public class SceneManager {

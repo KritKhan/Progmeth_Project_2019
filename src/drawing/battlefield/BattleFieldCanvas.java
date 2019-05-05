@@ -7,34 +7,37 @@ import SharedObject.IRenderable;
 import SharedObject.InputUtility;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
-import creature.Hero;
 import drawing.select.SelectCanvas;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import main.BattleFieldMain;
 
 public class BattleFieldCanvas extends Canvas {
 	
 	private GraphicsContext gc;
 	private BattleFieldScene scene;
 	private String hero = SelectCanvas.selected;
-	private ImageView heroImg;
+	private IRenderable heroImg;
 	
 	public BattleFieldCanvas(BattleFieldScene scene) {
 		super(Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();
+//		gc.drawImage(ResourceLoader.map, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+//		gc.setFill(Color.BLACK);
+//		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
-		gc.drawImage(ResourceLoader.dungeon1, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
-		
-		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
-
 		InputUtility.bindMouseOnListeners(this);
+		switch(hero) {
+		case "Archer": heroImg = (IRenderable)ResourceLoader.archer;
+		case "Knight": heroImg = (IRenderable)ResourceLoader.knight;
+		case "Magician": heroImg = (IRenderable)ResourceLoader.magician;
+		}
+		RenderableHolder.getInstance().add(heroImg);
 	}
 	
+
+
 	public void canvasUpdate() throws ConcurrentModificationException {
 		if (!ResourceLoader.isLoadFinish()) {
 			gc.setFill(Color.WHITE);

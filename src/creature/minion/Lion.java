@@ -1,7 +1,7 @@
 package creature.minion;
 
 import creature.Creature;
-import creature.Monster;
+import creature.monster.Monster;
 
 public abstract class Lion extends Monster{
 
