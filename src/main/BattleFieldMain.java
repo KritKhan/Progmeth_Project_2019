@@ -14,6 +14,7 @@ public class BattleFieldMain {
 	private static GameLogic logic;
 	
 	public BattleFieldMain() {
+		logic = new GameLogic();
 		canvas = (BattleFieldCanvas) SceneManager.BattleFieldScene.getCanvas();
 	}
 
@@ -27,7 +28,7 @@ public class BattleFieldMain {
 			if (ResourceLoader.isLoadFinish()) {
 				try {
 					canvas.canvasUpdate();
-					//logic.logicUpdate();
+					logic.logicUpdate();
 					RenderableHolder.getInstance().update();
 				} catch (IllegalArgumentException | ConcurrentModificationException e) {
 					System.out.println("cannot update");
@@ -47,9 +48,17 @@ public class BattleFieldMain {
 		return canvas;
 	}
 	
+<<<<<<< HEAD
 	public static GameLogic getGameLogic() {
 		return logic;
 		
 	}
+||||||| merged common ancestors
+	
+=======
+	public static GameLogic getLogic() {
+		return logic;
+	}
+>>>>>>> b620ca6ede30795c2fca328c92d1d4710f2b19c1
 
 }

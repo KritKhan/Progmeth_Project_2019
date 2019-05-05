@@ -2,7 +2,14 @@ package Logic;
 
 import SharedObject.Constant;
 import SharedObject.RenderableHolder;
+<<<<<<< HEAD
 import creature.hero.Hero;
+||||||| merged common ancestors
+import creature.Hero;
+=======
+import creature.Hero;
+import drawing.field.Navigation;
+>>>>>>> b620ca6ede30795c2fca328c92d1d4710f2b19c1
 
 public class GameLogic {
 	public static BattleField battleField;

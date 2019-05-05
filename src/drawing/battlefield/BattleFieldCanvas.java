@@ -23,10 +23,20 @@ public class BattleFieldCanvas extends Canvas {
 		super(Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();
+<<<<<<< HEAD
 //		gc.drawImage(ResourceLoader.map, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 //		gc.setFill(Color.BLACK);
 //		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
+||||||| merged common ancestors
+		gc.drawImage(ResourceLoader.dungeon1, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+=======
+		gc.drawImage(ResourceLoader.grassland, 0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+>>>>>>> b620ca6ede30795c2fca328c92d1d4710f2b19c1
 		InputUtility.bindMouseOnListeners(this);
 		switch(hero) {
 		case "Archer": heroImg = (IRenderable)ResourceLoader.archer;
@@ -34,10 +44,9 @@ public class BattleFieldCanvas extends Canvas {
 		case "Magician": heroImg = (IRenderable)ResourceLoader.magician;
 		}
 		RenderableHolder.getInstance().add(heroImg);
+		
 	}
 	
-
-
 	public void canvasUpdate() throws ConcurrentModificationException {
 		if (!ResourceLoader.isLoadFinish()) {
 			gc.setFill(Color.WHITE);
