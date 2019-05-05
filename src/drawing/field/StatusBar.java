@@ -18,7 +18,7 @@ import view.SceneManeger;
 
 
 public class StatusBar extends Field {
-	
+	private Inventory inventory = new Inventory();
 	private static String name;
 	
 	public StatusBar() {
@@ -45,20 +45,20 @@ public class StatusBar extends Field {
 		
 		gc.setFill(Color.MEDIUMSLATEBLUE);
 		gc.setFont(Font.font("Castellar",15));
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(0)).getAmount()), 555, 655);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 640, 655);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 725, 655);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(0)).getAmount()), 555, 105);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 640, 105);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 725, 105);
 	
 		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
 		double fontHieght = fontLoader.getFontMetrics(gc.getFont()).getLineHeight();
 	
 		//name
 		gc.setFont(Font.font("Castellar", 25));
-		gc.fillText(name, 75, 575);
+		gc.fillText(name, 75, 125);
 		
 		//money
 		gc.setFont(Font.font("Castellar", 25));
-		gc.fillText(Double.toString(Logic.GameLogic.hero.getCoin()), 855, Constant.SCENE_HEIGHT - 30);
+		gc.fillText(Double.toString(Logic.GameLogic.hero.getCoin()), 855, 120);
 	
 		// Hp & Mp
 		double maxH = Logic.GameLogic.hero.getMaxHp();
@@ -67,12 +67,12 @@ public class StatusBar extends Field {
 		double currentM = Logic.GameLogic.hero.getMp();
 		
 		gc.setFill(Color.CRIMSON);
-		gc.fillRect(236, 598, Math.min((currentH / maxH),1) * 247, 15);
+		gc.fillRect(236, 47, Math.min((currentH / maxH),1) * 247, 15);
 
 		gc.setFill(Color.DODGERBLUE);
-		gc.fillRect(236, 639, Math.min((currentM / maxM),1) * 247, 15);
+		gc.fillRect(236, 89, Math.min((currentM / maxM),1) * 247, 15);
 
-		gc.drawImage(Logic.GameLogic.hero.getName().getImage(), 45, 567, 91, 91);
+		gc.drawImage(Logic.GameLogic.hero.getName().getImage(), 44, 18, 91, 91);
 	}
 	
 	public void update() {
@@ -80,28 +80,42 @@ public class StatusBar extends Field {
 		double xPos = InputUtility.mouseX;
 		double yPos = InputUtility.mouseY;
 
-		if ((xPos >= 704 && xPos <= 741 && yPos >= 575 && yPos <= 615 && InputUtility.isMouseClick())
+		if ((xPos >= 529 && xPos <= 590 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
+				|| (InputUtility.isKeyPressed(KeyCode.U))) {
+			//use HpPotion
+			try {
+				inventory.use(Inventory.getInventory().get(0));
+			}Catch (//out of potion){
+				
+			}
+		} else if ((xPos >= 608 && xPos <= 669 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.I))) {
-			InputUtility.mouseX = 0;
-			InputUtility.mouseY = 0;
-			ResourceLoader.clickSound.play(100);
-			SceneManeger.dungeonScene.toDialog(1);
-		} else if ((xPos >= 762 && xPos <= 800 && yPos >= 575 && yPos <= 615 && InputUtility.isMouseClick())
-				|| (InputUtility.isKeyPressed(KeyCode.B))) {
-			InputUtility.mouseX = 0;
-			InputUtility.mouseY = 0;
-			ResourceLoader.clickSound.play(100);
-			SceneManeger.dungeonScene.toDialog(2);
-		} else if ((xPos >= 823 && xPos <= 861 && yPos >= 575 && yPos <= 615 && InputUtility.isMouseClick())
-				|| (InputUtility.isKeyPressed(KeyCode.ESCAPE))) {
-			InputUtility.mouseX = 0;
-			InputUtility.mouseY = 0;
-			ResourceLoader.clickSound.play(100);
-			SceneManeger.dungeonScene.toDialog(3);
-		} else if (xPos >= 484 && xPos <= 527 && yPos >= 576 && yPos <= 615 && InputUtility.isMouseClick()) {
-			Inventory.getBag()[0].use();
+			//use MpPotion
+			try {
+				inventory.use(Inventory.getInventory().get(1));
+			}Catch (//out of potion){
+				
+			}
+		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
+				|| (InputUtility.isKeyPressed(KeyCode.O))) {
+			//use MixPotion
+			try {
+				inventory.use(Inventory.getInventory().get(2));
+			}Catch (//out of potion){
+		
+			}
+		} else if (xPos >= 811 && xPos <= 871 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick())
+			|| (InputUtility.isKeyPressed(KeyCode.B))) {
+				InputUtility.mouseX = 0;
+				InputUtility.mouseY = 0;
+				ResourceLoader.clickSound.play(100);
+				//open shop
 		} else if (xPos >= 545 && xPos <= 585 && yPos >= 576 && yPos <= 615 && InputUtility.isMouseClick()) {
-			Inventory.getBag()[1].use();
+			|| (InputUtility.isKeyPressed(KeyCode.P))) {
+				InputUtility.mouseX = 0;
+				InputUtility.mouseY = 0;
+				ResourceLoader.clickSound.play(100);
+				//open pause
 		}
 	}
 }
