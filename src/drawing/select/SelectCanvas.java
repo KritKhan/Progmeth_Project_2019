@@ -131,6 +131,7 @@ public class SelectCanvas extends Canvas {
 			// area of event
 			if (isClicked && !selected.equals("")) {
 				//create Hero here
+<<<<<<< HEAD
 				switch(selected) {
 				case "Archer" :
 					BattleFieldMain.getGameLogic().newHero(new Archer());
@@ -140,6 +141,15 @@ public class SelectCanvas extends Canvas {
 				case "Knight" :
 					BattleFieldMain.getGameLogic().newHero(new Knight());
 				}
+||||||| merged common ancestors
+				
+				  switch(getSelected()) { 
+				  case "Archer" : BattleFieldMain.getLogic().newHero("Archer");
+				  }
+				 
+=======
+				 
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 				goToBattleField();
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);

@@ -15,14 +15,25 @@ import creature.entity.BattleFieldableEntity;
 import creature.entity.Entity;
 import creature.entity.HeroInBat;
 import creature.hero.Hero;
+import creature.monster.MonsterGen;
 import drawing.manager.SceneManager;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class BattleField extends Field {
+<<<<<<< HEAD
 	private static final Set<BattleFieldableEntity<Hero>> entities_holder = new HashSet<>();
 	private static final Set<BattleFieldableEntity<Hero>> graveyard = new HashSet<>();
 //	public static MonsterDen monsterDen;
+||||||| merged common ancestors
+	private static final Set<DungeonableEntity<Attribute>> entities_holder = new HashSet<>();
+	private static final Set<DungeonableEntity<Attribute>> graveyard = new HashSet<>();
+	public static MonsterDen monsterDen;
+=======
+	private static final Set<BattleFieldableEntity<Hero>> entities_holder = new HashSet<>();
+	private static final Set<BattleFieldableEntity<Hero>> graveyard = new HashSet<>();
+	public static MonsterGen monsterGen;
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 	private int lvl;
 	private static int lvlChangetimer;
 	
@@ -31,7 +42,13 @@ public class BattleField extends Field {
 				new Pair(0, 150));
 		this.lvl = 0;
 		this.z = -99999;
+<<<<<<< HEAD
 //		monsterDen = new MonsterDen();
+||||||| merged common ancestors
+		monsterDen = new MonsterDen();
+=======
+		monsterGen = new MonsterGen();
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 		lvlChangetimer = Constant.DUNGEON_CHANGE_TIME_MAX;
 	}
 
@@ -68,14 +85,30 @@ public class BattleField extends Field {
 	}
 
 	public void update() {
+<<<<<<< HEAD
 //		monsterDen.update();
+||||||| merged common ancestors
+		monsterDen.update();
+=======
+		monsterGen.update();
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 		graveyard.clear();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
 			e.update();
 		}
+<<<<<<< HEAD
 		for (BattleFieldableEntity<Hero> e : graveyard) {
 			if (e instanceof HeroInBat) {
 				//SceneManager.BattleFieldScene; // dead
+||||||| merged common ancestors
+		for (DungeonableEntity<Attribute> e : graveyard) {
+			if (e instanceof Hero) {
+				SceneManager.BattleFieldScene; // dead
+=======
+		for (BattleFieldableEntity<Hero> e : graveyard) {
+			if (e instanceof HeroInBat) {
+				SceneManager.BattleFieldScene; // dead
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 			} else
 				entities_holder.remove(e);
 		}
@@ -85,22 +118,44 @@ public class BattleField extends Field {
 			lvlChangetimer--;
 	}
 
+<<<<<<< HEAD
 //	public boolean isLevelClear() {
 //		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.heroInBat) && !monsterDen.isGenerate());
 //	}
+||||||| merged common ancestors
+	public boolean isLevelClear() {
+		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.hero) && !monsterDen.isGenerate());
+	}
+=======
+	public boolean isLevelClear() {
+		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.hero) && !monsterGen.isGenerate());
+	}
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 
 	private void upLevel() {
 		if (lvlChangetimer == 0) {
 			lvl++;
 			lvlChangetimer = 400;
+<<<<<<< HEAD
 //			monsterDen.setDunLvl(this.lvl);
+||||||| merged common ancestors
+			monsterDen.setDunLvl(this.lvl);
+=======
+			monsterGen.setDunLvl(this.lvl);
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 		}
 	}
 
 	public void restart() {
 		lvl = 0;
 		lvlChangetimer = 0;
+<<<<<<< HEAD
 //		monsterDen.restart();
+||||||| merged common ancestors
+		monsterDen.restart();
+=======
+		monsterGen.restart();
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 		RenderableHolder.getInstance().clear();
 		entities_holder.clear();
 		graveyard.clear();
@@ -110,10 +165,22 @@ public class BattleField extends Field {
 		return entities_holder;
 	}
 
+<<<<<<< HEAD
 	public static ArrayList<BattleFieldableEntity<Hero>> getEntityInArea(GameObject object, double x, double y) {
 		ArrayList<BattleFieldableEntity<Hero>> result = new ArrayList<>();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
 			if (e.hashCode() != object.hashCode() && ((Entity) object).isCollide(e, x, y)) {
+||||||| merged common ancestors
+	public static ArrayList<DungeonableEntity<Attribute>> getEntityInArea(GameObject object, double x, double y) {
+		ArrayList<DungeonableEntity<Attribute>> result = new ArrayList<>();
+		for (DungeonableEntity<Attribute> e : entities_holder) {
+			if (e.hashCode() != object.hashCode() && object.isCollide(e, x, y)) {
+=======
+	public static ArrayList<BattleFieldableEntity<Hero>> getEntityInArea(GameObject object, double x, double y) {
+		ArrayList<BattleFieldableEntity<Hero>> result = new ArrayList<>();
+		for (BattleFieldableEntity<Hero> e : entities_holder) {
+			if (e.hashCode() != object.hashCode() && object.isCollide(e, x, y)) {
+>>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
 				result.add(e);
 			}
 		}

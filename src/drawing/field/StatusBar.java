@@ -83,7 +83,7 @@ public class StatusBar extends Field {
 		double yPos = InputUtility.mouseY;
 
 		if ((xPos >= 529 && xPos <= 590 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
-				|| (InputUtility.isKeyPressed(KeyCode.U))) {
+				|| (InputUtility.isKeyPressed(KeyCode.F1))) {
 			//use HpPotion
 			try {
 				inventory.use(Inventory.getInventory().get(0));
@@ -91,7 +91,7 @@ public class StatusBar extends Field {
 				
 			}
 		} else if ((xPos >= 608 && xPos <= 669 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
-				|| (InputUtility.isKeyPressed(KeyCode.I))) {
+				|| (InputUtility.isKeyPressed(KeyCode.F2))) {
 			//use MpPotion
 			try {
 				inventory.use(Inventory.getInventory().get(1));
@@ -99,7 +99,7 @@ public class StatusBar extends Field {
 				
 			}
 		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
-				|| (InputUtility.isKeyPressed(KeyCode.O))) {
+				|| (InputUtility.isKeyPressed(KeyCode.F3))) {
 			//use MixPotion
 			try {
 				inventory.use(Inventory.getInventory().get(2));
@@ -113,7 +113,7 @@ public class StatusBar extends Field {
 				ResourceLoader.clickSound.play(100);
 				//open shop
 		} else if (xPos >= 545 && xPos <= 585 && yPos >= 576 && yPos <= 615 && InputUtility.isMouseClick()) {
-			|| (InputUtility.isKeyPressed(KeyCode.P))) {
+			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
 				InputUtility.mouseX = 0;
 				InputUtility.mouseY = 0;
 				ResourceLoader.clickSound.play(100);
