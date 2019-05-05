@@ -2,7 +2,9 @@ package creature.hero;
 
 import SharedObject.Constant;
 import SharedObject.GameObject;
+import SharedObject.Pair;
 import SharedObject.ResourceLoader;
+import item.Inventory;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Archer extends Hero{
@@ -10,15 +12,14 @@ public class Archer extends Hero{
 	public Archer() {
 		super();
 		heroImage = ResourceLoader.archer;
-		//heroWeapon = (Weapons) Inventory.getBag()[3];
 		attackMultiply = 0.8;
-		//attackRange = new Pair(getHeroWeapon().getWidth() * 3, getHeroWeapon().getHeight());
+		attackRange = new Pair(50 * 3, 50);
 		attackSpeed = 2;
 		hpMultiply = 0.9;
 		hpRegen = 2;
 		mpRegen = 3;
-		//animationImg = ResourceLoader.agility;
-		attackObj = new GameObject(heroWeapon.getX() + 20, heroWeapon.getY(), 500) {
+		animationImg = ResourceLoader.archerFace;
+		attackObj = new GameObject(200 + 20, 200, 500) {
 
 			@Override
 			public void draw(GraphicsContext gc) {
@@ -46,6 +47,27 @@ public class Archer extends Hero{
 				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x : attackRange.y * 0.7;
 			}
 		};
+	}
+	
+	@Override
+	public void update(int direction, double x, double y) {
+		super.update(direction, x, y);
+		if (direction == Constant.ENTITY_RIGHT) {
+			this.attackObj.setX(x + owner.getWidth() * 2 / 3);
+			this.attackObj.setY(y + owner.getHeight() / 3);
+		} else if (direction == Constant.ENTITY_LEFT) {
+			this.attackObj.setX(x + owner.getWidth() / 3 - attackRange.x);
+			this.attackObj.setY(y + owner.getHeight() / 3);
+		} else if (direction == Constant.ENTITY_BACK) {
+			this.attackObj.setX(x + owner.getWidth() / 6);
+			this.attackObj.setY(y - attackObj.getHeight() + owner.getHeight() * 5 / 6);
+		} else if (direction == Constant.ENTITY_FRONT) {
+			this.attackObj.setX(x + owner.getWidth() / 6);
+			this.attackObj.setY(y + owner.getHeight() * 2 / 3);
+		} else if (direction == Constant.ENTITY_BACK) {
+			this.attackObj.setZ(owner.getZ() - 10);
+		} else
+			this.attackObj.setZ(owner.getZ() + 10);
 	}
 	
 

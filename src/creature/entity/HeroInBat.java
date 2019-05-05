@@ -2,6 +2,7 @@ package creature.entity;
 
 import java.util.ArrayList;
 
+import Interface.Obstructable;
 import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.InputUtility;
@@ -23,7 +24,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 	
 
 	public HeroInBat(int direction, Hero atkType) {
-		super(Constant.SCENE_WIDTH / 2, (Constant.SCENE_HEIGHT - 100) / 2, atkType.getHeroImage(), 0, 3, direction,
+		super(Constant.SCENE_WIDTH / 2, (Constant.SCENE_HEIGHT - 100) / 2, atkType.getImage(), 0, 3, direction,
 				5, 50, 1000, 60, atkType);
 		this.maxMp = 400;
 		this.currentMp = 0;
@@ -37,14 +38,14 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 	
 	@Override
 	public boolean attack() {
-		if (atkType.getManaUsed() < currentMp ) {
-			boolean r = super.attack();
-			if (r)
-				this.healMp(15);
-			else
-				this.atkType.getHeroWeapon().use();
-			return r;
-		}
+//		if (atkType.getManaUsed() < currentMp ) {
+//			boolean r = super.attack();
+//			if (r)
+//				this.healMp(15);
+//			else
+//				//this.atkType.getHeroWeapon().use();
+//			return r;
+//		}
 		return false;
 	}
 
@@ -84,11 +85,6 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 							&& InputUtility.isMousePressed())))
 					&& atkType.getAttackTime() == 0)
 				attack();
-			// if ((InputUtility.isKeyPressed(KeyCode.ENTER) ||
-			// ((!(GameLogic.navig.isInBoarder(InputUtility.mouseX, InputUtility.mouseY)) &&
-			// InputUtility.isMousePressed())))
-			// && atkType.getAttackTime()==0 && currentMana==getMaxMana)
-			// ultimate();
 
 			if (isBlock(pos.x, pos.y))
 				struct = true;
@@ -100,7 +96,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 				healMp(Constant.BASE_HEAL_AMOUNT);
 		}
 		if (isAlive) {
-			this.atkType.getHeroWeapon().update(direction, pos.x, pos.y);
+			//this.atkType.getHeroWeapon().update(direction, pos.x, pos.y);
 			this.atkType.update(this.direction, this.pos.x, this.pos.y);
 			moneyDelay = moneyDelay <= 1 ? moneyDelay = 120 : moneyDelay - 1;
 			if (moneyDelay == 5)

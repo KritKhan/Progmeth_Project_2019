@@ -2,9 +2,11 @@ package drawing.select;
 
 import com.sun.javafx.tk.FontLoader;
 
+import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.ResourceLoader;
 import creature.hero.Archer;
+import creature.hero.Hero;
 import creature.hero.Knight;
 import creature.hero.Magician;
 import drawing.battlefield.BattleFieldScene;
@@ -26,6 +28,7 @@ public class SelectCanvas extends Canvas {
 	private FontLoader fontloader = ResourceLoader.fontLoader;
 	public static String selected = "";
 	private Image[] hero = new Image[3];
+	private Hero he;
 
 	public SelectCanvas() {
 		super(1000, 700);
@@ -76,9 +79,13 @@ public class SelectCanvas extends Canvas {
 		gc.drawImage(ResourceLoader.okbtn, Constant.SCENE_WIDTH / 2 - w, Constant.SCENE_HEIGHT / 1.2 - h);
 	}
 
-	public void goToBattleField() {
+	public void goToBattleField(Hero hero) {
+		ResourceLoader.startSecondLoad();
+		BattleFieldMain battleMain = new BattleFieldMain();
+		BattleFieldMain.getGameLogic().newHero(he);
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
 	}
+
 
 	private void onButton(MouseEvent event, boolean isClicked) {
 		double h, w, hok, wok;
@@ -131,26 +138,18 @@ public class SelectCanvas extends Canvas {
 			// area of event
 			if (isClicked && !selected.equals("")) {
 				//create Hero here
-<<<<<<< HEAD
 				switch(selected) {
-				case "Archer" :
-					BattleFieldMain.getGameLogic().newHero(new Archer());
 				case "Magician" :
-					BattleFieldMain.getGameLogic().newHero(new Magician() {
-					});
+					he = new Magician();
+					break;
+				case "Archer" :
+					he = new Archer();
+					break;
 				case "Knight" :
-					BattleFieldMain.getGameLogic().newHero(new Knight());
+					he = new Knight();
+					break;
 				}
-||||||| merged common ancestors
-				
-				  switch(getSelected()) { 
-				  case "Archer" : BattleFieldMain.getLogic().newHero("Archer");
-				  }
-				 
-=======
-				 
->>>>>>> c2ca9cdda72c67dd90723de57a56051dbfb2d146
-				goToBattleField();
+				goToBattleField(he);
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);
 			}

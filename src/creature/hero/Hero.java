@@ -3,6 +3,7 @@ package creature.hero;
 import Interface.Regenable;
 import Logic.GameLogic;
 import SharedObject.Constant;
+import SharedObject.ForceUtility;
 import SharedObject.GameObject;
 import SharedObject.Pair;
 import SharedObject.RenderableHolder;

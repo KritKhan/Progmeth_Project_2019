@@ -23,7 +23,7 @@ public abstract class Field implements IRenderable {
 		this.bg = new WritableImage(bgImage.getPixelReader(), (int) width, (int) height);
 		this.topLeft = topLeft;
 	}
-
+	
 	@Override
 	public int getZ() {
 		return z;

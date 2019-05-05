@@ -27,10 +27,9 @@ public class BattleFieldScene extends Scene{
 		canvas = new BattleFieldCanvas(this);
 		root.getChildren().add(canvas);
 		
-		BattleFieldMain.getGameLogic();
 		//int i = BattleFieldMain.getGameLogic().battleField.getLvl();
 		
-		dialog = new DialogPane(this,images[2]);
+		dialog = new DialogPane(this,images[8]);
 		root.getChildren().add(dialog);
 		
 		InputUtility.bindListeners(this);

@@ -53,6 +53,10 @@ public abstract class ResourceLoader {
 	public static Image hphili;
 	public static Image mphili;
 	public static Image mixhili;
+	public static Image aEffect;
+	public static Image aEffect2;
+	public static Image aEffect3;
+	public static Image aEffect4;
 	
 	public static Image logo;
 
@@ -127,6 +131,37 @@ public abstract class ResourceLoader {
 			System.out.println("resource not found");
 		}
 		
+	}
+	
+	public static void initializeSecondLoad() {
+
+		loadThread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				try {
+					aEffect = new Image(ClassLoader.getSystemResource("Potion/aEffect.gif").toString());
+					aEffect2 = new Image(ClassLoader.getSystemResource("Potion/aEffect2.gif").toString());
+					aEffect3 = new Image(ClassLoader.getSystemResource("Potion/aEffect3.gif").toString());
+					aEffect4 = new Image(ClassLoader.getSystemResource("Potion/aEffect4.gif").toString());
+					
+					for(int i=0;i<5;i++) {
+					monsterImage[i] = new Image(ClassLoader.getSystemResource("8bit/monster"+Integer.toString(i+1)+".png").toString());
+					}
+				}catch (NullPointerException e) {
+					System.out.println("resource not found");
+				}
+			}
+		});
+		loadThread.setPriority(Thread.MAX_PRIORITY);		
+	}
+	
+	public static void startSecondLoad() {
+		try {
+			loadThread.start();
+		} catch (NullPointerException e) {
+			System.out.println("not initialize");
+		}
 	}
 	
 	public static boolean isLoadFinish() {

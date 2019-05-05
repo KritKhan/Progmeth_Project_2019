@@ -3,6 +3,7 @@ package creature.entity;
 import java.util.ArrayList;
 
 import SharedObject.Constant;
+import SharedObject.ForceUtility;
 import creature.hero.Hero;
 import drawing.field.BattleField;
 import javafx.scene.canvas.GraphicsContext;

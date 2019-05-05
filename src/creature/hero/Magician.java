@@ -14,8 +14,9 @@ import SharedObject.ResourceLoader;
 import creature.entity.BattleFieldableEntity;
 import creature.entity.HeroInBat;
 import drawing.field.BattleField;
+import javafx.scene.canvas.GraphicsContext;
 
-public abstract class Magician extends Hero{
+public class Magician extends Hero{
 	private Map<Pair, Pair> magicTime;
 	private double maxMagicTime;
 	private List<Pair> delTemp;
@@ -26,19 +27,91 @@ public abstract class Magician extends Hero{
 		super();
 		heroImage = ResourceLoader.magician;
 		attackMultiply = 1.5;
-		//attackRange = new Pair(getHeroWeapon().getWidth() * 1.2, getHeroWeapon().getHeight());
+		attackRange = new Pair(100, 20);
 		attackSpeed = 0.6;
 		hpMultiply = 1;
 		hpRegen = 1;
 		mpRegen = 5;
-		//maxMagicTime = Constant.MAX_MAGIC_TIME;
+		maxMagicTime = 10;
 		magicTime = new HashMap<>();
 		delTemp = new LinkedList<>();
 		magicW = attackRange.x*2;
 		magicH = attackRange.y*0.7;
-		//animationImg = ResourceLoader.intelligence;
-		//attackObj = new GameObject(heroWeapon.getX() + 20, heroWeapon.getY(), 500)
-		
+		animationImg = ResourceLoader.magicianFace;
+//		attackObj = new GameObject(heroWeapon.getX() + 20, heroWeapon.getY(), 500) {
+//			{
+//
+//				@Override
+//				public void draw(GraphicsContext gc) {
+//					for (Entry<Pair, Pair> e : magicTime.entrySet()) {
+//						double a = 0, b = 0;
+//						if (e.getValue().x ==  Constant.ENTITY_FRONT) {
+//							a = e.getKey().x + (owner.getWidth() - magicW) ;
+//							b = e.getKey().y + e.getValue().y + owner.getHeight() / 3;
+//						} else if (e.getValue().x ==  Constant.ENTITY_BACK) {
+//							a = e.getKey().x + (owner.getWidth() - magicW) ;
+//							b = e.getKey().y - e.getValue().y ;
+//						} else if (e.getValue().x ==  Constant.ENTITY_LEFT) {
+//							a = e.getKey().x - e.getValue().y-magicW/2;
+//							b = e.getKey().y ;
+//						} else if (e.getValue().x ==  Constant.ENTITY_RIGHT) {
+//							a = e.getKey().x + e.getValue().y;
+//							b = e.getKey().y ;
+//						}
+////						gc.fillRect(a, b, magicW, magicH);
+//						gc.drawImage(ResourceLoader.mEffect, a- getWidth() *0.5, b - getHeight()/2 -owner.getHeight()*0.5,
+//								ResourceLoader.mEffect.getWidth() / 2.5, ResourceLoader.mEffect.getHeight() / 2.5);
+//					}
+//				}
+//
+//				@Override
+//				public double getWidth() {
+//					return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y * 0.7 : attackRange.x;
+//				}
+//
+//				@Override
+//				public double getHeight() {
+//					return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 1.5 : attackRange.y * 0.6;
+//				}
+//
+//				@Override
+//				public boolean isCollide(GameObject other, double x, double y) {
+//					boolean isMagicHit = false;
+//					if (GameLogic.hero.getCurrentMp() > 5) {
+//						for (Entry<Pair, Pair> e : magicTime.entrySet()) {
+//							double a = 0, b = 0;
+//							if (e.getValue().x ==  Constant.ENTITY_FRONT) {
+//								a = e.getKey().x + (owner.getWidth() - magicW) ;
+//								b = e.getKey().y + e.getValue().y + owner.getHeight() / 3;
+//							} else if (e.getValue().x ==  Constant.ENTITY_BACK) {
+//								a = e.getKey().x + (owner.getWidth() - magicW) ;
+//								b = e.getKey().y - e.getValue().y ;
+//							} else if (e.getValue().x ==  Constant.ENTITY_LEFT) {
+//								a = e.getKey().x - e.getValue().y-magicW/2;
+//								b = e.getKey().y ;
+//							} else if (e.getValue().x ==  Constant.ENTITY_RIGHT) {
+//								a = e.getKey().x + e.getValue().y;
+//								b = e.getKey().y ;
+//							}
+//							if ((((a - other.getWidth()) <= other.getX())
+//									&& (other.getX() <= (a + magicW + other.getWidth())))
+//									&& (((b - other.getHeight()) <= other.getY())
+//											&& (other.getY() <= (b + other.getHeight() + magicH)))
+//									&& ((((a - other.getWidth()) <= (other.getX() + other.getWidth()))
+//											&& ((other.getX() + other.getWidth()) <= (a + magicW + other.getWidth())))
+//									&& (((b - other.getHeight()) <= (other.getY() + other.getHeight())) && ((other.getY()
+//											+ other.getHeight()) <= (b + other.getHeight()  + magicH)))))
+//								isMagicHit = true;						
+//						}
+//					}
+//					if((owner instanceof Hero) && magicTime.size()==0 && getAttackTime()==0) return false;
+//					else if(owner.getAtkType().getAttackTime() ==0) return (super.isCollide(other, x, y)|| isMagicHit);
+//					return isMagicHit;
+//				}
+//
+//			};
+//		}
+//		
 	}
 	@Override
 	public void update(int direction, double x, double y) {

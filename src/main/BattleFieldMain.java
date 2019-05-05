@@ -3,6 +3,7 @@ package main;
 import java.util.ConcurrentModificationException;
 
 import Logic.GameLogic;
+import SharedObject.ForceUtility;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
 import drawing.battlefield.BattleFieldCanvas;
@@ -12,10 +13,13 @@ import javafx.animation.AnimationTimer;
 public class BattleFieldMain {
 	private static BattleFieldCanvas canvas;
 	private static GameLogic logic;
+	private static ForceUtility forcemanager;
 	
 	public BattleFieldMain() {
 		logic = new GameLogic();
 		canvas = (BattleFieldCanvas) SceneManager.BattleFieldScene.getCanvas();
+		forcemanager = new ForceUtility();
+
 	}
 
 	public static void start() {
@@ -51,6 +55,9 @@ public class BattleFieldMain {
 	public static GameLogic getGameLogic() {
 		return logic;
 		
+	}
+	public static ForceUtility getForceManager() {
+		return forcemanager;
 	}
 
 

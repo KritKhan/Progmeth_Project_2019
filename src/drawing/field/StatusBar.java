@@ -85,38 +85,26 @@ public class StatusBar extends Field {
 		if ((xPos >= 529 && xPos <= 590 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.F1))) {
 			//use HpPotion
-			try {
 				inventory.use(Inventory.getInventory().get(0));
-			}Catch (//out of potion){
-				
-			}
 		} else if ((xPos >= 608 && xPos <= 669 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.F2))) {
 			//use MpPotion
-			try {
 				inventory.use(Inventory.getInventory().get(1));
-			}Catch (//out of potion){
-				
-			}
 		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.F3))) {
 			//use MixPotion
-			try {
 				inventory.use(Inventory.getInventory().get(2));
-			}Catch (//out of potion){
-		
-			}
-		} else if (xPos >= 811 && xPos <= 871 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick())
+		} else if (xPos >= 811 && xPos <= 871 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick()
 			|| (InputUtility.isKeyPressed(KeyCode.B))) {
 				InputUtility.mouseX = 0;
 				InputUtility.mouseY = 0;
-				ResourceLoader.clickSound.play(100);
+				//ResourceLoader.clickSound.play(100);
 				//open shop
-		} else if (xPos >= 545 && xPos <= 585 && yPos >= 576 && yPos <= 615 && InputUtility.isMouseClick()) {
+		} else if (xPos >= 545 && xPos <= 585 && yPos >= 576 && yPos <= 615 && InputUtility.isMouseClick()
 			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
 				InputUtility.mouseX = 0;
 				InputUtility.mouseY = 0;
-				ResourceLoader.clickSound.play(100);
+				//ResourceLoader.clickSound.play(100);
 				//open pause
 		}
 	}

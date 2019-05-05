@@ -51,5 +51,9 @@ public abstract class GameObject implements IRenderable{
 	public abstract double getWidth();
 	
 	public abstract double getHeight();
+	public boolean isCollide(GameObject other, double x, double y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }
