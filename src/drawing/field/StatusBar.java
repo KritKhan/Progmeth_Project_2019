@@ -24,7 +24,7 @@ public class StatusBar extends Field {
 	
 	public StatusBar() {
 		super(ResourceLoader.statusBar,ResourceLoader.statusBar.getWidth(),ResourceLoader.statusBar.getHeight(),
-				new Pair(0,Constant.SCENE_HEIGHT-ResourceLoader.statusBar.getHeight()));
+				new Pair(0,150));
 		this.z = 2000;
 	}
 	
@@ -47,8 +47,8 @@ public class StatusBar extends Field {
 		gc.setFill(Color.MEDIUMSLATEBLUE);
 		gc.setFont(Font.font("Castellar",15));
 		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(0)).getAmount()), 555, 110);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 638, 110);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 721, 110);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 637, 110);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 720, 110);
 		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
 		double fontHieght = fontLoader.getFontMetrics(gc.getFont()).getLineHeight();
 	
@@ -72,7 +72,6 @@ public class StatusBar extends Field {
 		gc.setFill(Color.DODGERBLUE);
 		gc.fillRect(236, 89, Math.min((currentM / maxM),1) * 246, 15);
 
-
 		gc.drawImage(GameLogic.heroInBat.getAtkType().getImage(), 38, 11, 102, 100);
 
 	}
@@ -81,7 +80,6 @@ public class StatusBar extends Field {
 		// TODO Auto-generated method stub
 		double xPos = InputUtility.mouseX;
 		double yPos = InputUtility.mouseY;
-
 		if ((xPos >= 529 && xPos <= 590 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.F1))) {
 			//use HpPotion
@@ -94,18 +92,20 @@ public class StatusBar extends Field {
 				|| (InputUtility.isKeyPressed(KeyCode.F3))) {
 			//use MixPotion
 				inventory.use(Inventory.getInventory().get(2));
-		} else if (xPos >= 811 && xPos <= 871 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick()
+		} else if ((xPos >= 811 && xPos <= 876 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick())
+			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
+				InputUtility.mouseX = 0;
+				InputUtility.mouseY = 0;
+				//ResourceLoader.clickSound.play(100);
+				//open setting
+				System.out.println("setting open");
+		} else if ((xPos >= 545 && xPos <= 590 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick())
 			|| (InputUtility.isKeyPressed(KeyCode.B))) {
 				InputUtility.mouseX = 0;
 				InputUtility.mouseY = 0;
 				//ResourceLoader.clickSound.play(100);
 				//open shop
-		} else if (xPos >= 545 && xPos <= 585 && yPos >= 576 && yPos <= 615 && InputUtility.isMouseClick()
-			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
-				InputUtility.mouseX = 0;
-				InputUtility.mouseY = 0;
-				//ResourceLoader.clickSound.play(100);
-				//open pause
+				System.out.println("shop open");
 		}
 	}
 }

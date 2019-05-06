@@ -29,8 +29,8 @@ public class BattleField extends Field {
 	private static int lvlChangetimer;
 	
 	public BattleField() {
-		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - ResourceLoader.statusBar.getHeight(),
-				new Pair(0, 0));
+		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT ,
+				new Pair(0, 150));
 		this.lvl = 0;
 		this.z = -99999;
 //		monsterDen = new MonsterDen();
@@ -38,8 +38,7 @@ public class BattleField extends Field {
 	}
 
 	public boolean isInBoarder(Entity e, double x, double y) {
-		return (0 - e.getWidth() / 6 <= x && x <= this.width - e.getWidth() * 5 / 6)
-				&& (0 <= y && y <= this.height - e.getHeight());
+		return (-7.5 <= x && x <= 935) || (150 <=y && y <= 620);
 	}
 
 	@Override

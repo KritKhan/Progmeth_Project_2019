@@ -51,7 +51,7 @@ public abstract class Field implements IRenderable {
 	}
 
 	protected boolean isInBorderY(double y) {
-		if (this.getTopLeft().y < y && this.getTopLeft().y + this.getHeight() > y)
+		if (this.getTopLeft().y < y && this.getHeight() > y)
 			return true;
 		return false;
 	}

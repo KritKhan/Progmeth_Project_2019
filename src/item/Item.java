@@ -1,8 +1,9 @@
 package item;
 
+import Interface.Useable;
 import javafx.scene.image.Image;
 
-public class Item {
+public abstract class Item implements Useable {
 	protected String name;
 	protected int price;
 	protected String description;
@@ -10,6 +11,9 @@ public class Item {
 	protected int increaseMp;
 	protected Image imgae;
 	protected int amount;
+	
+	public abstract boolean isBuyable();
+	public abstract boolean isUsable();
 	
 	public String getName() {
 		return name;
@@ -31,5 +35,7 @@ public class Item {
 		return amount;
 	}
 	
-	
+	public void add() {
+		this.amount++;
+	}
 }

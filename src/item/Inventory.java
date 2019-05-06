@@ -17,31 +17,31 @@ public class Inventory {
 	}
 	
 	public void reset() {
-		hp.amount = 0;
-		mp.amount = 0;
-		mix.amount = 0;
+		hp.amount = 1;
+		mp.amount = 99;
+		mix.amount = 1;
 	}
 	public void add(Item item) {
 		if(item instanceof HpPotion) {
-			inventory.get(0).amount++;
+			inventory.get(0).add();;
 		}
 		else if(item instanceof MpPotion) {
-			inventory.get(1).amount++;
+			inventory.get(1).add();
 		}
 		else if(item instanceof MixPotion) {
-			inventory.get(2).amount++;
+			inventory.get(2).add();
 		}
 	}
 	
 	public Item use(Item item) {
 		if(item instanceof HpPotion) {
-			inventory.get(0).amount--;
+			inventory.get(0).use();
 		}
 		else if(item instanceof MpPotion) {
-			inventory.get(1).amount--;
+			inventory.get(1).use();
 		}
 		else if(item instanceof MixPotion) {
-			inventory.get(2).amount--;
+			inventory.get(2).use();
 		}
 		return item;
 		

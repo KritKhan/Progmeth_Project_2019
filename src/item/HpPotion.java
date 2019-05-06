@@ -2,6 +2,7 @@ package item;
 
 import SharedObject.ResourceLoader;
 
+
 public class HpPotion extends Item{
 	private static final String des = "Immediately heals HP by + 500";
 	
@@ -12,6 +13,27 @@ public class HpPotion extends Item{
 		this.increaseHp = 500;
 		this.increaseMp = 0;
 		this.imgae = ResourceLoader.hp;
+	}
+
+	@Override
+	public void use() {
+		// TODO Auto-generated method stub
+		if (isUsable()) {
+			Logic.GameLogic.heroInBat.healHp(increaseHp);
+			amount--;
+		}
+	}
+
+	@Override
+	public boolean isBuyable() {
+		// TODO Auto-generated method stub
+		return Logic.GameLogic.heroInBat.getMoney()>=this.price;
+	}
+
+	@Override
+	public boolean isUsable() {
+		// TODO Auto-generated method stub
+		return this.amount > 0;
 	}
 
 }

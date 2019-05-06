@@ -1,5 +1,7 @@
 package item;
 
+import javax.xml.ws.handler.LogicalHandler;
+
 import SharedObject.ResourceLoader;
 
 public class MixPotion extends Item {
@@ -12,6 +14,28 @@ public class MixPotion extends Item {
 		this.increaseHp = 250;
 		this.increaseMp = 250;
 		this.imgae = ResourceLoader.mix;
+	}
+
+	@Override
+	public void use() {
+		// TODO Auto-generated method stub
+		if (isUsable()) {
+			Logic.GameLogic.heroInBat.healHp(increaseHp);
+			Logic.GameLogic.heroInBat.healMp(increaseMp);
+			amount--;
+		}
+	}
+
+	@Override
+	public boolean isBuyable() {
+		// TODO Auto-generated method stub
+		return Logic.GameLogic.heroInBat.getMoney()>=this.price;
+	}
+
+	@Override
+	public boolean isUsable() {
+		// TODO Auto-generated method stub
+		return this.amount > 0;
 	}
 
 }
