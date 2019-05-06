@@ -108,7 +108,7 @@ public class StatusBar extends Field {
 				InputUtility.mouseY = 0;
 				BattleFieldMain.stop();
 				//ResourceLoader.clickSound.play(100);
-				//open shop
+				SceneManager.BattleFieldScene.toDialog(0);
 		} else if (xPos >= Constant.SCENE_WIDTH -106 && xPos <= Constant.SCENE_WIDTH - 38
 				&& yPos >= 25+550 && yPos <= 95+550 && InputUtility.isMouseClick()
 			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
@@ -117,6 +117,7 @@ public class StatusBar extends Field {
 				BattleFieldMain.stop();
 				//ResourceLoader.clickSound.play(100);
 				//open pause
+				SceneManager.BattleFieldScene.toDialog(1);
 		}
 	}
 }

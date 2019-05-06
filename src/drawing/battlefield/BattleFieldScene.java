@@ -26,8 +26,8 @@ public class BattleFieldScene extends Scene{
 		canvas = new BattleFieldCanvas(this);
 		root.getChildren().add(canvas);
 		
-		//dialog = new DialogPane(this,ResourceLoader.logo);
-		//root.getChildren().add(dialog);
+		dialog = new DialogPane(this,ResourceLoader.logo);
+		root.getChildren().add(dialog);
 //		this.toBattleField();
 		
 		InputUtility.bindListeners(this);
@@ -49,8 +49,8 @@ public class BattleFieldScene extends Scene{
 	}
 	
 	public void toBattleField() {
-//		dialog.getChildren().clear();
-//		dialog.setVisible(false);
+		dialog.getChildren().clear();
+		dialog.setVisible(false);
 		BattleFieldMain.start();
 		canvas.requestFocus();
 	}
@@ -59,25 +59,17 @@ public class BattleFieldScene extends Scene{
 		dialog.setVisible(true);
 		dialog.requestFocus();
 		BattleFieldMain.stop();
-//		switch(c) {
-//		case 0:			
-//			dialog.opening();
-//			break;
-//		case 1:
-//			dialog.inventory();
-//			break;
-//		case 2:
-//			dialog.shop();
-//			break;
-//		case 3:
-//			dialog.setting();
-//			break;
-//		case 4:
-//			dialog.dead();
-//			break;
-//		case 5 :
-//			dialog.openingNext();
-//		}
+		switch(c) {
+		case 0:			
+			dialog.shop();
+			break;
+		case 1:
+			dialog.setting();
+			break;
+		case 2:
+			dialog.dead();
+			break;
+		}
 	}
 
 	public Canvas getCanvas() {
