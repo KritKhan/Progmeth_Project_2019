@@ -15,22 +15,20 @@ public class BattleFieldScene extends Scene{
 	private StackPane root;
 	private Canvas canvas;
 	private DialogPane dialog;
-	private String hero;
 	private Image[] images;
 
 	public BattleFieldScene() {
 		super(new StackPane());
-		initialImages();
+		initialImages(); 
 		root = (StackPane) this.getRoot();
 		root.setAlignment(Pos.CENTER);
 		
 		canvas = new BattleFieldCanvas(this);
 		root.getChildren().add(canvas);
 		
-		//int i = BattleFieldMain.getGameLogic().battleField.getLvl();
-		
-		dialog = new DialogPane(this,images[8]);
-		root.getChildren().add(dialog);
+		//dialog = new DialogPane(this,ResourceLoader.logo);
+		//root.getChildren().add(dialog);
+//		this.toBattleField();
 		
 		InputUtility.bindListeners(this);
 	}
@@ -51,8 +49,8 @@ public class BattleFieldScene extends Scene{
 	}
 	
 	public void toBattleField() {
-		dialog.getChildren().clear();
-		dialog.setVisible(false);
+//		dialog.getChildren().clear();
+//		dialog.setVisible(false);
 		BattleFieldMain.start();
 		canvas.requestFocus();
 	}

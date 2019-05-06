@@ -30,7 +30,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 		this.atkType.setOwner((BattleFieldableEntity<Hero>) this);
 		this.baseAtk = baseAtk;
 		this.mass = mass;
-		this.maxHp = maxHp;
+		this.maxHp = maxHp; 
 		this.damageTake = new int[4];
 		this.currentHp = getMaxHp();
 		this.dmgTimer = 0;
@@ -38,7 +38,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 		dmgTimerDelay = new ArrayList<>();
 	}
 	@Override
-	public void draw(GraphicsContext gc) {
+	public void draw(GraphicsContext gc) { 
 		// TODO Auto-generated method stub
 		if (!(this instanceof HeroInBat) && (dmgTimer != 0 || hpBarTimer != 0)) {
 			gc.setFill(Color.BLACK);

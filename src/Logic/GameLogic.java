@@ -27,5 +27,5 @@ public class GameLogic {
 	public void logicUpdate() {
 		battleField.update();
 		status.update();
-	}
+	}  
 }

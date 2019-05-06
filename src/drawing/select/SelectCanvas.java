@@ -82,9 +82,11 @@ public class SelectCanvas extends Canvas {
 	public void goToBattleField(Hero hero) {
 		ResourceLoader.startSecondLoad();
 		BattleFieldMain battleMain = new BattleFieldMain();
+		System.out.println("create battleMain");
 		BattleFieldMain.getGameLogic().newHero(he);
+		System.out.println("pass add new hero");
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
-	}
+	} 
 
 
 	private void onButton(MouseEvent event, boolean isClicked) {
@@ -147,9 +149,9 @@ public class SelectCanvas extends Canvas {
 					break;
 				case "Knight" :
 					he = new Knight();
-					break;
 				}
-				goToBattleField(he);
+				System.out.println("pass select hero");
+				goToBattleField(he); 
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);
 			}

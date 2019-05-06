@@ -92,9 +92,10 @@ public class BattleField extends Field {
 	}
 
 
-//	public boolean isLevelClear() {
+	public boolean isLevelClear() {
+		return false;
 //		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.heroInBat) && !monsterDen.isGenerate());
-//	}
+	}
 
 
 	private void upLevel() {
@@ -118,12 +119,11 @@ public class BattleField extends Field {
 	public static Set<BattleFieldableEntity<Hero>> getEntitiesHolder() {
 		return entities_holder;
 	}
-
+ 
 	public static ArrayList<BattleFieldableEntity<Hero>> getEntityInArea(GameObject object, double x, double y) {
 		ArrayList<BattleFieldableEntity<Hero>> result = new ArrayList<>();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
-			if (e.hashCode() != object.hashCode() && ((Entity) object).isCollide(e, x, y)) {
-
+			if (e.hashCode() != object.hashCode() && object.isCollide(e, x, y)) {
 				result.add(e);
 			}
 		}

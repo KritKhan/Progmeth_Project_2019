@@ -12,14 +12,12 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 
 public class DialogPane extends VBox {
-
 	private BattleFieldScene scene;
 	
 	public DialogPane(BattleFieldScene battleScene,Image image) {
 		super(10);
 		this.scene = battleScene;
 		defaultDraw(scene, image);
-
 	}
 	
 	public void defaultDraw(BattleFieldScene battleScene, Image image) {

@@ -28,7 +28,7 @@ public abstract class Field implements IRenderable {
 	public int getZ() {
 		return z;
 	}
-
+  
 	@Override
 	public boolean isDestroyed() {
 		return visible == false;

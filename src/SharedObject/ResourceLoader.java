@@ -67,6 +67,7 @@ public abstract class ResourceLoader {
 	
 	static {
 		ResourceLoader.loadResource();
+		initializeSecondLoad();
 	}
 	
 	static void loadResource() {
@@ -113,13 +114,6 @@ public abstract class ResourceLoader {
 			okbtn = new Image(ClassLoader.getSystemResource("BGandButton/OKbutton.png").toString());
 			okhili = new Image(ClassLoader.getSystemResource("BGandButton/OKbuttonH.png").toString());
 			
-			//item
-			hp = new Image(ClassLoader.getSystemResource("Potion/hpPotion.png").toString());
-			mp = new Image(ClassLoader.getSystemResource("Potion/mpPotion.png").toString());
-			mix = new Image(ClassLoader.getSystemResource("Potion/mixPotion.png").toString());
-			hphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
-			mphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
-			mixhili = new Image(ClassLoader.getSystemResource("Potion/MixPotion.png").toString());
 			
 			logo = new Image(ClassLoader.getSystemResource("BGandButton/Logo8.png").toString());
 			
@@ -140,14 +134,19 @@ public abstract class ResourceLoader {
 			@Override
 			public void run() {
 				try {
+					//item
+					hp = new Image(ClassLoader.getSystemResource("Potion/hpPotion.png").toString());
+					mp = new Image(ClassLoader.getSystemResource("Potion/mpPotion.png").toString());
+					mix = new Image(ClassLoader.getSystemResource("Potion/mixPotion.png").toString());
+					hphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
+					mphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
+					mixhili = new Image(ClassLoader.getSystemResource("Potion/MixPotion.png").toString());
+					
 					aEffect = new Image(ClassLoader.getSystemResource("Potion/aEffect.gif").toString());
 					aEffect2 = new Image(ClassLoader.getSystemResource("Potion/aEffect2.gif").toString());
 					aEffect3 = new Image(ClassLoader.getSystemResource("Potion/aEffect3.gif").toString());
 					aEffect4 = new Image(ClassLoader.getSystemResource("Potion/aEffect4.gif").toString());
 					
-					for(int i=0;i<5;i++) {
-					monsterImage[i] = new Image(ClassLoader.getSystemResource("8bit/monster"+Integer.toString(i+1)+".png").toString());
-					}
 				}catch (NullPointerException e) {
 					System.out.println("resource not found");
 				}
