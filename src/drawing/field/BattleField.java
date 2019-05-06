@@ -25,8 +25,8 @@ public class BattleField extends Field {
 	private static final Set<BattleFieldableEntity<Hero>> graveyard = new HashSet<>();
 //	public static MonsterGen monsterGen;
 	private int lvl;
-	private static int lvlChangetimer; 
-	
+	private static int lvlChangetimer;
+
 	public BattleField() {
 		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - Constant.STATUSBAR_HEIGHT,
 				new Pair(0, 0));
@@ -44,15 +44,16 @@ public class BattleField extends Field {
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		super.draw(gc); 
+		super.draw(gc);
 		if (lvlChangetimer != 0) {
 			gc.setGlobalAlpha(0.6);
 			gc.setFill(Color.BLACK);
-			gc.fillRect(0, height / 2 - 50, width, 100 + ResourceLoader.fontLoader.getFontMetrics(gc.getFont()).getLineHeight());
+			gc.fillRect(0, height / 2 - 50, width,
+					100 + ResourceLoader.fontLoader.getFontMetrics(gc.getFont()).getLineHeight());
 			gc.setFill(Color.WHITE);
 			gc.fillText("LEVEL " + lvl,
-					(width - ResourceLoader.fontLoader.computeStringWidth("LEVEL " + lvl, gc.getFont()) )/ 2,
-					(height + ResourceLoader.fontLoader.getFontMetrics(gc.getFont()).getLineHeight() )/ 2);
+					(width - ResourceLoader.fontLoader.computeStringWidth("LEVEL " + lvl, gc.getFont())) / 2,
+					(height + ResourceLoader.fontLoader.getFontMetrics(gc.getFont()).getLineHeight()) / 2);
 			gc.setGlobalAlpha(1.0);
 		}
 	}
@@ -80,7 +81,7 @@ public class BattleField extends Field {
 
 		for (BattleFieldableEntity<Hero> e : graveyard) {
 			if (e instanceof HeroInBat) {
-				//SceneManager.BattleFieldScene; // dead
+				// SceneManager.BattleFieldScene; // dead
 
 			} else
 				entities_holder.remove(e);
@@ -91,12 +92,10 @@ public class BattleField extends Field {
 			lvlChangetimer--;
 	}
 
-
 	public boolean isLevelClear() {
 		return false;
 //		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.heroInBat) && !monsterDen.isGenerate());
 	}
-
 
 	private void upLevel() {
 		if (lvlChangetimer == 0) {
@@ -119,7 +118,7 @@ public class BattleField extends Field {
 	public static Set<BattleFieldableEntity<Hero>> getEntitiesHolder() {
 		return entities_holder;
 	}
- 
+
 	public static ArrayList<BattleFieldableEntity<Hero>> getEntityInArea(GameObject object, double x, double y) {
 		ArrayList<BattleFieldableEntity<Hero>> result = new ArrayList<>();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
