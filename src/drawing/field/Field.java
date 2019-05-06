@@ -13,7 +13,7 @@ public abstract class Field implements IRenderable {
 	protected WritableImage bg;
 	protected Pair topLeft;
 	protected int z;
-	protected double width;
+	protected double width; 
 	protected double height; 
 
 	public Field(Image bgImage, double width, double height, Pair topLeft) {
@@ -41,7 +41,7 @@ public abstract class Field implements IRenderable {
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(bg, topLeft.x, topLeft.y,Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT );
+		gc.drawImage(bg, topLeft.x, topLeft.y,Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT-Constant.STATUSBAR_HEIGHT);
 	}
 
 	protected boolean isInBorderX(double x) {

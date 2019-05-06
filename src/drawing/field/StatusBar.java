@@ -29,7 +29,7 @@ public class StatusBar extends Field {
 	
 	public StatusBar() {
 		super(ResourceLoader.statusBar,ResourceLoader.statusBar.getWidth(),ResourceLoader.statusBar.getHeight(),
-				new Pair(0,Constant.SCENE_HEIGHT - ResourceLoader.statusBar.getHeight()));
+				new Pair(0,Constant.SCENE_HEIGHT-ResourceLoader.statusBar.getHeight()));
 		this.z = 2000;
 	}
 	
@@ -52,8 +52,8 @@ public class StatusBar extends Field {
 		gc.setFill(Color.MEDIUMSLATEBLUE);
 		gc.setFont(Font.font("Castellar",15));
 		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(0)).getAmount()), 555, 660);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 637, 660);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 720, 660);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 638, 660);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 721, 660);
 		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
 		double fontHieght = fontLoader.getFontMetrics(gc.getFont()).getLineHeight();
 	
@@ -77,7 +77,8 @@ public class StatusBar extends Field {
 		gc.fillRect(236, 597, Math.min((currentH / maxH),1) * 246, 15);
 
 		gc.setFill(Color.DODGERBLUE);
-		gc.fillRect(236, 639, Math.min((currentM / maxM),1) * 246, 15);
+		gc.fillRect(236, 89+550, Math.min((currentM / maxM),1) * 246, 15);
+
 
 		gc.drawImage(GameLogic.heroInBat.getAtkType().getImage(), 38, 561, 102, 100);
 
@@ -87,34 +88,35 @@ public class StatusBar extends Field {
 		// TODO Auto-generated method stub
 		double xPos = InputUtility.mouseX;
 		double yPos = InputUtility.mouseY;
-		if ((xPos >= 529 && xPos <= 590 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
+
+		if ((xPos >= 529 && xPos <= 590 && yPos >= 30+550 && yPos <= 90+550 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.DIGIT1))) {
 			//use HpPotion
 				inventory.use(Inventory.getInventory().get(0));
-		} else if ((xPos >= 608 && xPos <= 669 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
+		} else if ((xPos >= 608 && xPos <= 669 && yPos >= 30+550 && yPos <= 90+550 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.DIGIT2))) {
 			//use MpPotion
 				inventory.use(Inventory.getInventory().get(1));
-		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30 && yPos <= 90 && InputUtility.isMouseClick())
+		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30+550 && yPos <= 90+550 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.DIGIT3))) {
 			//use MixPotion
 				inventory.use(Inventory.getInventory().get(2));
-		} else if ((xPos >= 811 && xPos <= 876 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick())
-			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
-				InputUtility.mouseX = 0;
-				InputUtility.mouseY = 0;
-				BattleFieldMain.stop();
-				//ResourceLoader.clickSound.play(100);
-				//open setting
-				System.out.println("setting open");
-		} else if ((xPos >= 545 && xPos <= 590 && yPos >= 27 && yPos <= 92 && InputUtility.isMouseClick())
+		} else if (xPos >= Constant.SCENE_WIDTH -192 && xPos <= Constant.SCENE_WIDTH - 124 
+				&& yPos >= 25_550 && yPos <= 95+550 && InputUtility.isMouseClick()
 			|| (InputUtility.isKeyPressed(KeyCode.B))) {
 				InputUtility.mouseX = 0;
 				InputUtility.mouseY = 0;
 				BattleFieldMain.stop();
 				//ResourceLoader.clickSound.play(100);
 				//open shop
-				System.out.println("shop open");
+		} else if (xPos >= Constant.SCENE_WIDTH -106 && xPos <= Constant.SCENE_WIDTH - 38
+				&& yPos >= 25+550 && yPos <= 95+550 && InputUtility.isMouseClick()
+			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
+				InputUtility.mouseX = 0;
+				InputUtility.mouseY = 0;
+				BattleFieldMain.stop();
+				//ResourceLoader.clickSound.play(100);
+				//open pause
 		}
 	}
 }

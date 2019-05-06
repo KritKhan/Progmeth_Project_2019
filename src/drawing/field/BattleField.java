@@ -23,23 +23,23 @@ import javafx.scene.paint.Color;
 public class BattleField extends Field {
 	private static final Set<BattleFieldableEntity<Hero>> entities_holder = new HashSet<>();
 	private static final Set<BattleFieldableEntity<Hero>> graveyard = new HashSet<>();
-//	public static MonsterDen monsterDen;
-
+//	public static MonsterGen monsterGen;
 	private int lvl;
-	private static int lvlChangetimer;
+	private static int lvlChangetimer; 
 	
 	public BattleField() {
-		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT,
+		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - Constant.STATUSBAR_HEIGHT,
 				new Pair(0, 0));
 		this.lvl = 0;
 		this.z = -99999;
-//		monsterDen = new MonsterDen();
+//		monsterGen = new MonsterGen();
 		lvlChangetimer = Constant.DUNGEON_CHANGE_TIME_MAX;
 	}
 
 	public boolean isInBoarder(Entity e, double x, double y) {
-		return (0 - e.getWidth()/6 <= x && x <= this.width - e.getWidth() * 5 / 6)
+		return (0 - e.getWidth() / 6 <= x && x <= this.width - e.getWidth() * 5 / 6)
 				&& (0 <= y && y <= this.height - e.getHeight());
+
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class BattleField extends Field {
 
 	public void update() {
 
-//		monsterDen.update();
+//		monsterGen.update();
 
 		graveyard.clear();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
@@ -102,7 +102,7 @@ public class BattleField extends Field {
 		if (lvlChangetimer == 0) {
 			lvl++;
 			lvlChangetimer = 400;
-//			monsterDen.setDunLvl(this.lvl);
+//			monsterGen.setDunLvl(this.lvl);
 
 		}
 	}
@@ -110,7 +110,7 @@ public class BattleField extends Field {
 	public void restart() {
 		lvl = 0;
 		lvlChangetimer = 0;
-//		monsterDen.restart();
+//		monsterGen.restart();
 		RenderableHolder.getInstance().clear();
 		entities_holder.clear();
 		graveyard.clear();
