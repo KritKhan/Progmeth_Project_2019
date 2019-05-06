@@ -83,8 +83,8 @@ public class SelectCanvas extends Canvas {
 		ResourceLoader.startSecondLoad();
 		BattleFieldMain battleMain = new BattleFieldMain();
 		BattleFieldMain.getGameLogic().newHero(he);
-		System.out.println(he.getClass());
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
+		SceneManager.BattleFieldScene.toBattleField();
 	}
 
 

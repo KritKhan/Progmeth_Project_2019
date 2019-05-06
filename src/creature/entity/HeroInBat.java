@@ -33,7 +33,12 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 		this.race = Constant.ENTITY_HUMANITY;
 		HeroInBat.inventory = new Inventory();
 		setAtktype(atkType);
-		name = StatusBar.getName();
+		name =atkType.getClass().toString();
+		switch(name) {
+		case "class creature.hero.Archer": name = "Archer"; break;
+		case "class creature.hero.Knight": name = "Knight"; break;
+		case "class creature.hero.Magician": name = "Magician"; break;
+		}
 	}
 	
 	@Override

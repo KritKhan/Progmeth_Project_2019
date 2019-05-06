@@ -30,7 +30,7 @@ public class BattleField extends Field {
 	
 	public BattleField() {
 		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - ResourceLoader.statusBar.getHeight(),
-				new Pair(0, 150));
+				new Pair(0, 0));
 		this.lvl = 0;
 		this.z = -99999;
 //		monsterDen = new MonsterDen();

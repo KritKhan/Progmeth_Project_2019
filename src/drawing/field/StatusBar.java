@@ -8,6 +8,7 @@ import SharedObject.Constant;
 import SharedObject.InputUtility;
 import SharedObject.Pair;
 import SharedObject.ResourceLoader;
+import creature.entity.HeroInBat;
 import drawing.manager.SceneManager;
 import item.Inventory;
 import item.Item;
@@ -41,24 +42,23 @@ public class StatusBar extends Field {
 	
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(ResourceLoader.statusBar, 0, Constant.SCENE_HEIGHT-ResourceLoader.statusBar.getHeight());
+		gc.drawImage(ResourceLoader.statusBar, 0, 0);
 		
 		gc.setFill(Color.MEDIUMSLATEBLUE);
 		gc.setFont(Font.font("Castellar",15));
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(0)).getAmount()), 555, 105);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 640, 105);
-		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 725, 105);
-	
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(0)).getAmount()), 555, 110);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(1)).getAmount()), 638, 110);
+		gc.fillText(Integer.toString(((Item) Inventory.getInventory().get(3)).getAmount()), 721, 110);
 		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
 		double fontHieght = fontLoader.getFontMetrics(gc.getFont()).getLineHeight();
 	
 		//name
-		gc.setFont(Font.font("Castellar", 25));
-		gc.fillText(name, 75, 125);
+		gc.setFont(Font.font("Castellar", 20));
+		gc.fillText(GameLogic.heroInBat.getName(), 60, 132);
 		
 		//money
-		gc.setFont(Font.font("Castellar", 25));
-		gc.fillText(Double.toString(Logic.GameLogic.heroInBat.getMoney()), 855, Constant.SCENE_HEIGHT - 30);
+		gc.setFont(Font.font("Castellar", 20));
+		gc.fillText(Double.toString(Logic.GameLogic.heroInBat.getMoney()), 855, 130);
 	
 		// Hp & Mp
 		double maxH = GameLogic.heroInBat.getMaxHp();
@@ -67,13 +67,13 @@ public class StatusBar extends Field {
 		double currentM = GameLogic.heroInBat.getCurrentMp();
 		
 		gc.setFill(Color.CRIMSON);
-		gc.fillRect(236, 47, Math.min((currentH / maxH),1) * 247, 15);
+		gc.fillRect(236, 47, Math.min((currentH / maxH),1) * 246, 15);
 
 		gc.setFill(Color.DODGERBLUE);
-		gc.fillRect(236, 89, Math.min((currentM / maxM),1) * 247, 15);
+		gc.fillRect(236, 89, Math.min((currentM / maxM),1) * 246, 15);
 
 
-		gc.drawImage(GameLogic.heroInBat.getAtkType().getImage(), 45, 567, 91, 91);
+		gc.drawImage(GameLogic.heroInBat.getAtkType().getImage(), 38, 11, 102, 100);
 
 	}
 	
