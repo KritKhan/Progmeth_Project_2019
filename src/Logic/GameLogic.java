@@ -22,7 +22,7 @@ public class GameLogic {
 	public <T extends Hero>void newHero(T atkType) {
 		heroInBat = new HeroInBat(Constant.ENTITY_FRONT, atkType);
 		BattleField.addEntities(heroInBat);
-	}
+	} 
 
 	public void logicUpdate() {
 		battleField.update();

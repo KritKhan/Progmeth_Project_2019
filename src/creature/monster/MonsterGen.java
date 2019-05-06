@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.InputUtility;
+import SharedObject.RandomUtility;
 import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
 import creature.entity.BattleFieldableEntity;
@@ -29,7 +30,7 @@ public class MonsterGen {
 		monsterCount = 0;
 		maxMonster = 0;
 		monsterThread = new Thread((new Runnable() {
-			@Override
+			@Override 
 			public void run() {
 				while (true) {
 					try {

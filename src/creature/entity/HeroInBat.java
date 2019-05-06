@@ -24,7 +24,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 	
 
 	public HeroInBat(int direction, Hero atkType) {
-		super(Constant.SCENE_WIDTH / 2, (Constant.SCENE_HEIGHT - 100) / 2, atkType.getHeroImage(), 0, 0, direction,
+		super(Constant.SCENE_WIDTH / 2, (Constant.SCENE_HEIGHT - 100) / 2, atkType.getHeroImage(), 0, 3, direction,
 				5, 50, 1000, 60, atkType);
 		this.maxMp = 400;
 		this.currentMp = 0;
@@ -33,7 +33,12 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 		this.race = Constant.ENTITY_HUMANITY;
 		HeroInBat.inventory = new Inventory();
 		setAtktype(atkType);
-		name = StatusBar.getName();
+		name =atkType.getClass().toString();
+		switch(name) {
+		case "class creature.hero.Archer": name = "Archer"; break;
+		case "class creature.hero.Knight": name = "Knight"; break;
+		case "class creature.hero.Magician": name = "Magician"; break;
+		}
 	}
 	
 	@Override

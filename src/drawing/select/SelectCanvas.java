@@ -42,7 +42,7 @@ public class SelectCanvas extends Canvas {
 		hero[0] = ResourceLoader.archerFace;
 		hero[1] = ResourceLoader.magicianFace;
 		hero[2] = ResourceLoader.knightFace;
-	}
+	} 
 
 	public void drawSelectMenu() {
 		// draw bg
@@ -86,8 +86,8 @@ public class SelectCanvas extends Canvas {
 		BattleFieldMain.getGameLogic().newHero(he);
 		System.out.println("pass add new hero");
 		SceneManager.goToScene(SceneManager.BattleFieldScene);
-	} 
-
+		SceneManager.BattleFieldScene.toBattleField();
+	}
 
 	private void onButton(MouseEvent event, boolean isClicked) {
 		double h, w, hok, wok;
@@ -151,6 +151,7 @@ public class SelectCanvas extends Canvas {
 					he = new Knight();
 				}
 				System.out.println("pass select hero");
+				System.out.println("Hero name : "+ he.getHeroName());
 				goToBattleField(he); 
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);

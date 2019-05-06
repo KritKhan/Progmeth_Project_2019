@@ -29,8 +29,8 @@ public class BattleField extends Field {
 	private static int lvlChangetimer;
 	
 	public BattleField() {
-		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - ResourceLoader.statusBar.getHeight(),
-				new Pair(0, 150));
+		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT,
+				new Pair(0, 0));
 		this.lvl = 0;
 		this.z = -99999;
 //		monsterDen = new MonsterDen();
@@ -39,12 +39,12 @@ public class BattleField extends Field {
 
 	public boolean isInBoarder(Entity e, double x, double y) {
 		return (0 - e.getWidth() / 6 <= x && x <= this.width - e.getWidth() * 5 / 6)
-				&& (0 <= y && y <= this.height - e.getHeight());
+				&& (150 <= y && y <= this.height - e.getHeight());
 	}
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		super.draw(gc);
+		super.draw(gc); 
 		if (lvlChangetimer != 0) {
 			gc.setGlobalAlpha(0.6);
 			gc.setFill(Color.BLACK);
