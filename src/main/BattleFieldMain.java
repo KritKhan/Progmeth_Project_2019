@@ -24,7 +24,7 @@ public class BattleFieldMain {
 
 	public static void start() {
 		Main.isGameRunning = true;
-		animation.start();
+		animation.start(); 
 	}
 	
 	private static AnimationTimer animation = new AnimationTimer() {

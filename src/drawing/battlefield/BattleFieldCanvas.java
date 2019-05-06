@@ -22,12 +22,12 @@ public class BattleFieldCanvas extends Canvas {
 		super(Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();
-		gc.setFill(Color.BLACK);
+		gc.setFill(Color.BLACK); 
 		gc.fillRect(0, 0, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
 		
 
 		InputUtility.bindMouseOnListeners(this);
-	}
+	} 
 	
 	public void canvasUpdate() throws ConcurrentModificationException {
 		if (!ResourceLoader.isLoadFinish()) {

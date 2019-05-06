@@ -31,7 +31,6 @@ public abstract class Entity extends GameObject {
 		this.counter = 0;
 		this.walktick = 1;
 		this.img = new WritableImage(img.getPixelReader(),0 , 0, (int) w * 3,(int) h * 4);
-
 	}
 
 	@Override
@@ -48,7 +47,7 @@ public abstract class Entity extends GameObject {
 	}
 
 	private void setEntityY(double y) {
-		if (GameLogic.battleField.isInBoarder(this, 0, this.pos.y + y) && !this.isBlock(this.pos.x, this.pos.y + y))
+		if (GameLogic.battleField.isInBoarder(this, 0, this.pos.y + y+150) && !this.isBlock(this.pos.x, this.pos.y + y))
 			this.pos.y += y;
 	}
 

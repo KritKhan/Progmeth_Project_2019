@@ -19,6 +19,7 @@ public class Archer extends Hero{
 		hpRegen = 2;
 		mpRegen = 3;
 		animationImg = ResourceLoader.archerFace;
+		heroName = "Archer";
 		attackObj = new GameObject(200 + 20, 200, 500) {
 
 			@Override

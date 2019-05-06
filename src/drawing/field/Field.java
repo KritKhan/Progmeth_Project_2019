@@ -14,7 +14,7 @@ public abstract class Field implements IRenderable {
 	protected Pair topLeft;
 	protected int z;
 	protected double width;
-	protected double height;
+	protected double height; 
 
 	public Field(Image bgImage, double width, double height, Pair topLeft) {
 		this.visible = true;
@@ -28,7 +28,7 @@ public abstract class Field implements IRenderable {
 	public int getZ() {
 		return z;
 	}
-
+   
 	@Override
 	public boolean isDestroyed() {
 		return visible == false;
@@ -41,7 +41,7 @@ public abstract class Field implements IRenderable {
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(bg, topLeft.x, topLeft.y,Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT);
+		gc.drawImage(bg, topLeft.x, topLeft.y,Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT );
 	}
 
 	protected boolean isInBorderX(double x) {
@@ -51,7 +51,7 @@ public abstract class Field implements IRenderable {
 	}
 
 	protected boolean isInBorderY(double y) {
-		if (this.getTopLeft().y < y && this.getHeight() > y)
+		if (this.getTopLeft().y < y && this.getTopLeft().y + this.getHeight() > y)
 			return true;
 		return false;
 	}

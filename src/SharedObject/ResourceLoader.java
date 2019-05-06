@@ -146,6 +146,7 @@ public abstract class ResourceLoader {
 			@Override
 			public void run() {
 				try {
+					
 					aEffect = new Image(ClassLoader.getSystemResource("Character/ArcherFxR.gif").toString());
 					aEffect2 = new Image(ClassLoader.getSystemResource("Character/ArcherFxL.gif").toString());
 					aEffect3 = new Image(ClassLoader.getSystemResource("Character/ArcherFxU.gif").toString());
@@ -156,7 +157,7 @@ public abstract class ResourceLoader {
 					mEffect4 = new Image(ClassLoader.getSystemResource("Character/MageFxD.gif").toString());
 					kEffect = new Image(ClassLoader.getSystemResource("Character/KnightFxL.gif").toString());
 					kEffect2 = new Image(ClassLoader.getSystemResource("Character/KnightFxR.gif").toString());
-					
+
 					monsterImage[0] = lion;
 					monsterImage[1] = wolf;
 					monsterImage[2] = armor;

@@ -29,8 +29,8 @@ public class BattleField extends Field {
 	private static int lvlChangetimer;
 	
 	public BattleField() {
-		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT ,
-				new Pair(0, 150));
+		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT,
+				new Pair(0, 0));
 		this.lvl = 0;
 		this.z = -99999;
 //		monsterDen = new MonsterDen();
@@ -38,12 +38,13 @@ public class BattleField extends Field {
 	}
 
 	public boolean isInBoarder(Entity e, double x, double y) {
-		return (-7.5 <= x && x <= 935) || (150 <=y && y <= 620);
+		return (0 - e.getWidth()/6 <= x && x <= this.width - e.getWidth() * 5 / 6)
+				&& (0 <= y && y <= this.height - e.getHeight());
 	}
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		super.draw(gc);
+		super.draw(gc); 
 		if (lvlChangetimer != 0) {
 			gc.setGlobalAlpha(0.6);
 			gc.setFill(Color.BLACK);
@@ -91,9 +92,10 @@ public class BattleField extends Field {
 	}
 
 
-//	public boolean isLevelClear() {
+	public boolean isLevelClear() {
+		return false;
 //		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.heroInBat) && !monsterDen.isGenerate());
-//	}
+	}
 
 
 	private void upLevel() {
@@ -117,12 +119,11 @@ public class BattleField extends Field {
 	public static Set<BattleFieldableEntity<Hero>> getEntitiesHolder() {
 		return entities_holder;
 	}
-
+ 
 	public static ArrayList<BattleFieldableEntity<Hero>> getEntityInArea(GameObject object, double x, double y) {
 		ArrayList<BattleFieldableEntity<Hero>> result = new ArrayList<>();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
-			if (e.hashCode() != object.hashCode() && ((Entity) object).isCollide(e, x, y)) {
-
+			if (e.hashCode() != object.hashCode() && object.isCollide(e, x, y)) {
 				result.add(e);
 			}
 		}

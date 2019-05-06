@@ -13,8 +13,8 @@ public class Constant {
 	public static final int ENTITY_HUMANITY = 1;
 	public static final int ENTITY_MONSTER = 0;
 	public static final int DUNGEON_CHANGE_TIME_MAX = 400;
-//	public static final double NAVIG_WIDTH = ResourceLoader.navigBar.getWidth();
-//	public static final double NAVIG_HEIGHT = ResourceLoader.navigBar.getHeight();
+	public static final double STATUSBAR_WIDTH = ResourceLoader.statusBar.getWidth();
+	public static final double STATUSBAR_HEIGHT = ResourceLoader.statusBar.getHeight();
 	public static final int NAVIG_BAR_HEIGHT = 30;
 	public static final int NAVIG_BORDER_WIDTH = 200;
 	public static final int ENTITY_WALK_TICK_DELAY = 8;

@@ -51,7 +51,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 //				//this.atkType.getHeroWeapon().use();
 //			return r;
 //		}
-		return false;
+		return false; 
 	}
 
 	@Override
