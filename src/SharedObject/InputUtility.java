@@ -70,7 +70,7 @@ public class InputUtility {
 	
 	//set unique listener on some canvas
 	public static void bindMouseOnListeners(Canvas canvas) {
-		canvas.setOnMouseDragEntered((MouseEvent e) -> mouseOnSceen = true);
+		canvas.setOnMouseEntered((MouseEvent e) -> mouseOnSceen = true);
 		canvas.setOnMouseExited((MouseEvent e) -> mouseOnSceen = false);
 		canvas.setOnMouseMoved((MouseEvent e) -> {
 			if(mouseOnSceen) {

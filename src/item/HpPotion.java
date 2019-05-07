@@ -1,5 +1,6 @@
 package item;
 
+import Logic.GameLogic;
 import SharedObject.ResourceLoader;
 
 

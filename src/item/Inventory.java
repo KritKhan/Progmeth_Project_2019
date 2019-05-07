@@ -18,7 +18,7 @@ public class Inventory {
 	
 	public void reset() {
 		hp.amount = 1;
-		mp.amount = 99;
+		mp.amount = 1;
 		mix.amount = 1;
 	}
 	public void add(Item item) {

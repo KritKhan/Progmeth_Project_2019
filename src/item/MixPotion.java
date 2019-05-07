@@ -1,7 +1,6 @@
 package item;
 
-import javax.xml.ws.handler.LogicalHandler;
-
+import Logic.GameLogic;
 import SharedObject.ResourceLoader;
 
 public class MixPotion extends Item {
@@ -20,8 +19,8 @@ public class MixPotion extends Item {
 	public void use() {
 		// TODO Auto-generated method stub
 		if (isUsable()) {
-			Logic.GameLogic.heroInBat.healHp(increaseHp);
-			Logic.GameLogic.heroInBat.healMp(increaseMp);
+			GameLogic.heroInBat.healHp(increaseHp);
+			GameLogic.heroInBat.healMp(increaseMp);
 			amount--;
 		}
 	}
@@ -29,7 +28,7 @@ public class MixPotion extends Item {
 	@Override
 	public boolean isBuyable() {
 		// TODO Auto-generated method stub
-		return Logic.GameLogic.heroInBat.getMoney()>=this.price;
+		return Logic.GameLogic.heroInBat.getMoney()>=this.price ;
 	}
 
 	@Override
