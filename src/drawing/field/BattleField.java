@@ -23,7 +23,7 @@ import javafx.scene.paint.Color;
 public class BattleField extends Field {
 	private static final Set<BattleFieldableEntity<Hero>> entities_holder = new HashSet<>();
 	private static final Set<BattleFieldableEntity<Hero>> graveyard = new HashSet<>();
-//	public static MonsterGen monsterGen;
+	public static MonsterGen monsterGen;
 	private int lvl;
 	private static int lvlChangetimer; 
 	
@@ -32,7 +32,7 @@ public class BattleField extends Field {
 				new Pair(0, 0));
 		this.lvl = 0;
 		this.z = -99999;
-//		monsterGen = new MonsterGen();
+		monsterGen = new MonsterGen();
 		lvlChangetimer = Constant.DUNGEON_CHANGE_TIME_MAX;
 	}
 
@@ -71,7 +71,7 @@ public class BattleField extends Field {
 
 	public void update() {
 
-//		monsterGen.update();
+		monsterGen.update();
 
 		graveyard.clear();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
@@ -80,21 +80,20 @@ public class BattleField extends Field {
 
 		for (BattleFieldableEntity<Hero> e : graveyard) {
 			if (e instanceof HeroInBat) {
-				//SceneManager.BattleFieldScene; // dead
+				SceneManager.BattleFieldScene.toDialog(2);; // dead
 
 			} else
 				entities_holder.remove(e);
 		}
-//		if (isLevelClear())
-//			upLevel();
+		if (isLevelClear())
+			upLevel();
 		if (lvlChangetimer > 0)
 			lvlChangetimer--;
 	}
 
 
 	public boolean isLevelClear() {
-		return false;
-//		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.heroInBat) && !monsterDen.isGenerate());
+		return (entities_holder.size() == 1 && entities_holder.contains(Logic.GameLogic.heroInBat) && !monsterGen.isGenerate());
 	}
 
 
@@ -102,7 +101,7 @@ public class BattleField extends Field {
 		if (lvlChangetimer == 0) {
 			lvl++;
 			lvlChangetimer = 400;
-//			monsterGen.setDunLvl(this.lvl);
+			monsterGen.setDunLvl(this.lvl);
 
 		}
 	}
@@ -110,7 +109,7 @@ public class BattleField extends Field {
 	public void restart() {
 		lvl = 0;
 		lvlChangetimer = 0;
-//		monsterGen.restart();
+		monsterGen.restart();
 		RenderableHolder.getInstance().clear();
 		entities_holder.clear();
 		graveyard.clear();

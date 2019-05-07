@@ -43,14 +43,14 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 	
 	@Override
 	public boolean attack() {
-//		if (atkType.getManaUsed() < currentMp ) {
-//			boolean r = super.attack();
-//			if (r)
-//				this.healMp(15);
-//			else
-//				//this.atkType.getHeroWeapon().use();
-//			return r;
-//		}
+		if (atkType.getManaUsed() < currentMp ) {
+			boolean r = super.attack();
+			if (r)
+				this.healMp(15);
+			else
+				//this.atkType.getHeroWeapon().use();
+			return r;
+		}
 		return false; 
 	}
 

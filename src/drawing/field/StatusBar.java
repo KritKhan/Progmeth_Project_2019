@@ -27,8 +27,8 @@ public class StatusBar extends Field {
 	private FontLoader fontloader = ResourceLoader.fontLoader;
 
 	public StatusBar() {
-		super(ResourceLoader.statusBar, ResourceLoader.statusBar.getWidth(), ResourceLoader.statusBar.getHeight(),
-				new Pair(0, Constant.SCENE_HEIGHT - ResourceLoader.statusBar.getHeight()));
+		super(ResourceLoader.statusBar, Constant.STATUSBAR_WIDTH, Constant.STATUSBAR_HEIGHT,
+				new Pair(0, Constant.SCENE_HEIGHT - Constant.STATUSBAR_HEIGHT));
 		this.z = 2000;
 	}
 
