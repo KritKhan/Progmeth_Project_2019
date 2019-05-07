@@ -28,7 +28,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 				5, 50, 1000, 60, atkType);
 		this.maxMp = 400;
 		this.currentMp = 0;
-		this.money = 0;
+		this.money = 9999;
 		this.z = -1;
 		this.race = Constant.ENTITY_HUMANITY;
 		HeroInBat.inventory = new Inventory();

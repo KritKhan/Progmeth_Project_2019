@@ -18,6 +18,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
@@ -65,7 +66,8 @@ public class DialogPane extends VBox {
 		gp.add(MixPotion, 2, 1);
 
 		Button close = new Button("X");
-		close.setStyle("-fx-color: red;-fx-border: none ");
+		close.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
+		close.setTextFill(Color.ANTIQUEWHITE);
 		close.setOnMouseClicked((MouseEvent e) -> {
 			this.getChildren().clear();
 			//ResourceLoader.clickSound.play(100);
@@ -99,11 +101,11 @@ public class DialogPane extends VBox {
 		money.setPrefSize(80, 20);
 
 		Button buy = new Button("BUY");
-		buy.setStyle("-fx-color: red;-fx-border: none");
-		buy.setPrefWidth(50);
+		buy.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
+		buy.setTextFill(Color.ANTIQUEWHITE);
 		gp.add(t1, 1, 3, 4, 4);
 		gp.add(t2, 1, 5, 4, 4);
-		gp.add(buy, 3, 9, 2, 2);
+		gp.add(buy, 3, 9);
 		gp.add(money, 3, 12, 2, 2);
 
 		HpPotion.setOnMouseClicked((MouseEvent e) -> {
@@ -126,13 +128,8 @@ public class DialogPane extends VBox {
 			t1.setText("Mix Potion\nHeal 250 points to Mp.\nHeal 250 points to Hp.");
 			t2.setText("Price : 120 g");
 		});
-		switch(selectedItem) {
-		case "MpPotion": item = new item.MpPotion();
-		case "HpPotion": item = new item.HpPotion();
-		case "MixPotion" : item = new item.MixPotion();
-		}
 		buy.setOnMouseClicked((MouseEvent event0) -> {
-			shop.buy(item);
+			shop.buy(selectedItem);
 			money.setText(Integer.toString(Logic.GameLogic.heroInBat.getMoney()) + " g");
 		});
 

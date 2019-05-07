@@ -29,7 +29,7 @@ public class MixPotion extends Item {
 	@Override
 	public boolean isBuyable() {
 		// TODO Auto-generated method stub
-		return Logic.GameLogic.heroInBat.getMoney()>=this.price;
+		return Logic.GameLogic.heroInBat.getMoney()>=this.price &&Logic.GameLogic.heroInBat.getMoney()!=0;
 	}
 
 	@Override

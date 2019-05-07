@@ -25,7 +25,7 @@ public class MpPotion extends Item {
 	@Override
 	public boolean isBuyable() {
 		// TODO Auto-generated method stub
-		return GameLogic.heroInBat.getMoney()>=this.price;
+		return GameLogic.heroInBat.getMoney()>=this.price && Logic.GameLogic.heroInBat.getMoney()!=0;
 	}
 
 	@Override
