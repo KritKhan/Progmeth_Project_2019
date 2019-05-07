@@ -2,6 +2,8 @@ package creature.entity;
 
 import java.util.ArrayList;
 
+import javax.xml.ws.handler.LogicalHandler;
+
 import Interface.Obstructable;
 import Logic.GameLogic;
 import SharedObject.Constant;
@@ -47,8 +49,8 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 			boolean r = super.attack();
 			if (r)
 				this.healMp(15);
-			else
-				//this.atkType.getHeroWeapon().use();
+			else 
+				this.atkType.use();
 			return r;
 		}
 		return false; 

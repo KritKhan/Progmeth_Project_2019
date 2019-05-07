@@ -137,9 +137,9 @@ public class MonsterGen {
 		int speed = (int) (9 - ((4 - col) / (row + 1)) - (mass / 2000.0));
 		Hero hero;
 		if (row == 0) {
-			hero = col % 2 == 0 ? new Archer() : new Knight();
+			hero = col % 2 == 0 ? new Magician() : new Knight();
 		} else {
-			hero = col > 1 ? new Magician() : new Knight();
+			hero = col > 1 ? new Archer() : new Knight();
 		}
 		for (int i = 0; i < time; i++) {
 			BattleField.addEntities(new Monster(monsterImg(RandomUtility.randomInt(0, 4)), row, col, speed, mass, hp * ((dunLvl / 20) + 1), Math.max(

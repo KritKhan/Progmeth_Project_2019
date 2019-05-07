@@ -65,6 +65,8 @@ public abstract class ResourceLoader {
 	public static Image mEffect4;
 	public static Image kEffect;
 	public static Image kEffect2;
+	public static Image kEffect3;
+	public static Image kEffect4;
 	
 	public static Image logo;
 
@@ -155,9 +157,12 @@ public abstract class ResourceLoader {
 					mEffect2 = new Image(ClassLoader.getSystemResource("Character/MageFxL.gif").toString());
 					mEffect3 = new Image(ClassLoader.getSystemResource("Character/MageFxU.gif").toString());
 					mEffect4 = new Image(ClassLoader.getSystemResource("Character/MageFxD.gif").toString());
-					kEffect = new Image(ClassLoader.getSystemResource("Character/KnightFxL.gif").toString());
-					kEffect2 = new Image(ClassLoader.getSystemResource("Character/KnightFxR.gif").toString());
-
+					kEffect = new Image(ClassLoader.getSystemResource("Character/KnightFxR.gif").toString());
+					kEffect2 = new Image(ClassLoader.getSystemResource("Character/KnightFxL.gif").toString());
+					kEffect3 = new Image(ClassLoader.getSystemResource("Character/KnightFxU.gif").toString());	
+					kEffect4 = new Image(ClassLoader.getSystemResource("Character/KnightFxD.gif").toString());
+		
+					
 					monsterImage[0] = lion;
 					monsterImage[1] = wolf;
 					monsterImage[2] = armor;

@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="creature.minion.Lion" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/minion/Lion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="2589" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="item.HpPotion" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/item/HpPotion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="122" x="2000" y="4662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="drawing.home.HomeCanvas" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/home/HomeCanvas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="200" x="1805" y="1120"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="drawing.manager.SceneManager" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/manager/SceneManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="154" x="2026" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="SharedObject.ResourceLoader" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/ResourceLoader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="1071" width="155" x="332" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="item.Shop" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/item/Shop.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="103" x="2074" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="creature.monster.Witch" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/monster/Witch.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="2757" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="main.BattleFieldMain" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/main/BattleFieldMain.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="224" x="1781" y="1421"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="exception.PotionException" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/exception/PotionException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="116" x="527" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="drawing.manager.PotionButton" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/manager/PotionButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="122" x="2611" y="945"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="creature.entity.BattleFieldableEntity" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/entity/BattleFieldableEntity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="423" width="334" x="3153" y="3080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="item.MpPotion" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/item/MpPotion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="122" x="2162" y="4662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="creature.hero.Magician" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/hero/Magician.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="236" x="2856" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="creature.minion.Armor" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/minion/Armor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="2925" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="15" language="java" name="Interface.Movable" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/Interface/Movable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="147" x="683" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="16" language="java" name="creature.entity.HeroInBat" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/entity/HeroInBat.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="495" width="176" x="2278" y="3543"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="SharedObject.InputUtility" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/InputUtility.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="205" x="870" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="drawing.field.StatusBar" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/field/StatusBar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="191" x="2257" y="2437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="drawing.select.SelectCanvas" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/select/SelectCanvas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="200" x="2749" y="1120"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="20" language="java" name="Interface.Useable" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/Interface/Useable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="103" x="2324" y="4662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="21" language="java" name="Interface.Obstructable" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/Interface/Obstructable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="103" x="3093" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="22" language="java" name="creature.monster.DarkLord" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/monster/DarkLord.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="3236" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="drawing.manager.DialogPane" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/manager/DialogPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="228" x="1968" y="3080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="item.Inventory" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/item/Inventory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="145" x="2238" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="SharedObject.Constant" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/Constant.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="221" x="1115" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="drawing.home.HomeScene" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/home/HomeScene.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="180" x="1825" y="945"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="creature.monster.Viper" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/monster/Viper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="3404" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="drawing.manager.ItemBox" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/manager/ItemBox.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="203" x="2611" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="Logic.GameLogic" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/Logic/GameLogic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="113" x="2066" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="main.Main" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="145" x="1376" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="31" language="java" name="SharedObject.IRenderable" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/IRenderable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="164" x="3436" y="2437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="32" language="java" name="item.MixPotion" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/item/MixPotion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="122" x="2467" y="4662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="drawing.battlefield.BattleFieldCanvas" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/battlefield/BattleFieldCanvas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="200" x="1805" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="SharedObject.ForceUtility" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/ForceUtility.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="260" x="1505" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="creature.hero.Knight" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/hero/Knight.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="171" x="2219" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="exception.HeroException" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/exception/HeroException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="107" x="1561" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="creature.hero.Hero" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/hero/Hero.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="585" width="327" x="3113" y="1421"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="drawing.battlefield.BattleFieldScene" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/battlefield/BattleFieldScene.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="126" x="1968" y="2437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="39" language="java" name="Interface.Regenable" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/Interface/Regenable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="103" x="1708" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="40" language="java" name="creature.hero.Archer" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/hero/Archer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="171" x="2430" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="creature.entity.Entity" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/entity/Entity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="243" x="3153" y="2437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="drawing.select.SelectScene" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/select/SelectScene.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="186" x="2385" y="945"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="exception.PurchaseException" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/exception/PurchaseException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="135" x="1851" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="SharedObject.RandomUtility" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/RandomUtility.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="173" x="2232" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="SharedObject.GameObject" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/GameObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="243" x="3153" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="46" language="java" name="Interface.Attackable" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/Interface/Attackable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="103" x="2456" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="47" language="java" name="item.Item" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/item/Item.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="126" x="2238" y="4271"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="SharedObject.RenderableHolder" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="212" x="3436" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="drawing.field.Field" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/field/Field.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="175" x="2641" y="2046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="creature.monster.Monster" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/monster/Monster.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="316" x="3093" y="3543"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="creature.minion.Wolf" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/minion/Wolf.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="128" x="3572" y="4078"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="creature.monster.MonsterGen" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/creature/monster/MonsterGen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="181" x="2488" y="3080"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="drawing.field.BattleField" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/drawing/field/BattleField.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="426" x="2488" y="2437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="SharedObject.Pair" project="Progmeth_Project_2019" 
+    file="/Progmeth_Project_2019/src/SharedObject/Pair.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3029" y="2532"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="55">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="56" name="he"/>      
+      <multiplicity id="57" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="50"/>  
+  </generalization>  
+  <association id="59">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="60" name="attackObj"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <bendpoint x="3122" y="2046"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="63" name="attackRange">        
+        <position height="18" width="70" x="2992" y="2330"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="67">    
+    <bendpoint x="3688" y="2046"/>    
+    <bendpoint x="3688" y="2437"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="68" name="owner"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="41"/>  
+  </generalization>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="47"/>  
+  </generalization>  
+  <association id="73">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="74" name="pos"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="77" name="entities"/>      
+      <multiplicity id="78" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="80" name="monsterGen"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="82">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="20"/>  
+  </realization>  
+  <association id="83">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="84" name="inventory"/>      
+      <multiplicity id="85" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="86">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="87" name="selectedPotion"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="90">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="91" name="scene"/>      
+      <multiplicity id="92" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="93">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="94" name="forcemanager"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="96">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="97" name="item"/>      
+      <multiplicity id="98" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="99">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="100" name="delTemp">        
+        <position height="18" width="47" x="2947" y="2397"/>      
+      </attribute>      
+      <multiplicity id="101" minimum="0" maximum="2147483647">        
+        <position height="16" width="21" x="3020" y="2370"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="102">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="103" name="MainScene"/>      
+      <multiplicity id="104" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="105">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="106" name="canvas"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="108">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="50"/>  
+  </generalization>  
+  <generalization id="109">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="47"/>  
+  </generalization>  
+  <association id="110">    
+    <bendpoint x="2226" y="2437"/>    
+    <bendpoint x="2226" y="3080"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="111" name="heroInBat"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="114" name="instance"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="117" name="magicTime">        
+        <position height="18" width="58" x="2909" y="2350"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="120" name="inventory"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="123" name="dialog"/>      
+      <multiplicity id="124" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="125">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="126" name="topLeft"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="128">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="129" name="graveyard"/>      
+      <multiplicity id="130" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="131">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="132" name="mp"/>      
+      <multiplicity id="133" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="134">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="135" name="logic"/>      
+      <multiplicity id="136" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="137">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="138" name="entities_holder"/>      
+      <multiplicity id="139" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="140">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="141" name="canvas"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="143">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="45"/>  
+  </generalization>  
+  <association id="144">    
+    <bendpoint x="2035" y="945"/>    
+    <bendpoint x="2035" y="1120"/>    
+    <bendpoint x="2035" y="1421"/>    
+    <bendpoint x="2035" y="2046"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="145" name="BattleFieldScene"/>      
+      <multiplicity id="146" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="147">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="50"/>  
+  </generalization>  
+  <association id="148">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="149" name="potionButtonList"/>      
+      <multiplicity id="150" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="151">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="152" name="canvas"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="154">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <association id="155">    
+    <bendpoint x="2207" y="3543"/>    
+    <bendpoint x="2207" y="4078"/>    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="156" name="item"/>      
+      <multiplicity id="157" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="158">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="159" name="battleField"/>      
+      <multiplicity id="160" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="161">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="162" name="status"/>      
+      <multiplicity id="163" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="164">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="47"/>  
+  </generalization>  
+  <generalization id="165">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <generalization id="166">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="50"/>  
+  </generalization>  
+  <association id="167">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="168" name="mix"/>      
+      <multiplicity id="169" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="170">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <generalization id="171">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="50"/>  
+  </generalization>  
+  <association id="172">    
+    <bendpoint x="3709" y="2437"/>    
+    <bendpoint x="3709" y="2046"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="173" name="atkType"/>      
+      <multiplicity id="174" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="175">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <realization id="176">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
+  <association id="177">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="178" name="scene"/>      
+      <multiplicity id="179" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="180">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="181" name="hp"/>      
+      <multiplicity id="182" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="183">    
+    <bendpoint x="2247" y="3080"/>    
+    <bendpoint x="2247" y="3543"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="184" name="inventory"/>      
+      <multiplicity id="185" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="186">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="187" name="SelectScene"/>      
+      <multiplicity id="188" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="189">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="50"/>  
+  </generalization>  
+  <realization id="190">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -66,7 +66,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 		if (atkType.getAttackTime() == 0) {
 			ArrayList<BattleFieldableEntity<Hero>> inArea = BattleField.getEntityInArea(atkType.getAttackObj(),
 					atkType.getAttackObj().getX(), atkType.getAttackObj().getY());
-			if (inArea == null || inArea.size() <= 1)
+			if (inArea == null || inArea.size() <= 1) 
 				return false;
 			for (BattleFieldableEntity<Hero> other : inArea) {
 				if (other.hashCode() != this.hashCode() && this.race != other.race) {

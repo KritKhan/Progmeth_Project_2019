@@ -6,7 +6,7 @@ import creature.monster.Monster;
 public abstract class Armor extends Monster{
 
 	public Armor(int lvl) {
-		super(ResourceLoader.armor, 25, 10, 20);
+		super("Armor", 25, 10, 20);
 		switch(lvl) {
 		case 1: break;
 		case 2: 

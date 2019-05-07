@@ -30,7 +30,7 @@ public class BattleField extends Field {
 	public BattleField() {
 		super(ResourceLoader.dungeon1, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - Constant.STATUSBAR_HEIGHT,
 				new Pair(0, 0));
-		this.lvl = 0;
+		this.lvl = 1;
 		this.z = -99999;
 		monsterGen = new MonsterGen();
 		lvlChangetimer = Constant.DUNGEON_CHANGE_TIME_MAX;
