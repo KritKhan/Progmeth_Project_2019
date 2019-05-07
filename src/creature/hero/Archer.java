@@ -1,9 +1,11 @@
 package creature.hero;
 
+import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.GameObject;
 import SharedObject.Pair;
 import SharedObject.ResourceLoader;
+import creature.entity.HeroInBat;
 import item.Inventory;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -13,14 +15,14 @@ public class Archer extends Hero{
 		super();
 		heroImage = ResourceLoader.archer;
 		attackMultiply = 0.8;
-		attackRange = new Pair(50 * 3, 50);
+		attackRange = new Pair(32,32);
 		attackSpeed = 2;
 		hpMultiply = 0.9;
 		hpRegen = 2;
 		mpRegen = 3;
 		animationImg = ResourceLoader.archerFace;
 		heroName = "Archer";
-		attackObj = new GameObject(200 + 20, 200, 500) {
+		attackObj = new GameObject(0, 0, 500) {
 
 			@Override
 			public void draw(GraphicsContext gc) {
@@ -40,12 +42,12 @@ public class Archer extends Hero{
 
 			@Override
 			public double getWidth() {
-				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y * 0.7 : attackRange.x;
+				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y : attackRange.x;
 			}
 
 			@Override
 			public double getHeight() {
-				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x : attackRange.y * 0.7;
+				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x : attackRange.y;
 			}
 		};
 	}
@@ -71,6 +73,12 @@ public class Archer extends Hero{
 			this.attackObj.setZ(owner.getZ() + 10);
 	}
 	
+	@Override
+	public void use() {
+		super.use();
+		if (owner instanceof HeroInBat)
+			GameLogic.heroInBat.useMp(getManaUsed());
+	}
 
 	@Override
 	public int getManaUsed() {

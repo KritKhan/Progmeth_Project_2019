@@ -89,8 +89,8 @@ public class Monster extends BattleFieldableEntity<Hero> implements Obstructable
 			return false;
 		ArrayList<BattleFieldableEntity<Hero>> inArea = BattleField.getEntityInArea(this, x, y);
 		for (BattleFieldableEntity<Hero> other : inArea) {
-//			if (this.race != other.getRace())
-//				other.damage(this.getBaseAtk(), other.getDirection());
+			if (this.race != other.getRace())
+				other.damage(this.getBaseAtk(), other.getDirection());
 			return true;
 		}
 		return false;

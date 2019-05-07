@@ -3,6 +3,7 @@ package creature.hero;
 import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.GameObject;
+import SharedObject.Pair;
 import SharedObject.ResourceLoader;
 import creature.entity.HeroInBat;
 import javafx.scene.canvas.GraphicsContext;
@@ -13,7 +14,7 @@ public class Knight extends Hero {
 		super();
 		heroImage = ResourceLoader.knight;
 		attackMultiply = 1;
-//		attackRange = new Pair(getHeroWeapon().getWidth(), getHeroWeapon().getHeight());
+		attackRange = new Pair(32,32);
 		attackSpeed = 1;
 		hpMultiply = 1.4;
 		hpRegen = 5;
@@ -26,7 +27,7 @@ public class Knight extends Hero {
 				try {
 					if (owner instanceof HeroInBat) {
 						if (owner.getAtkType().getAttackTime() > 3) {
-							// gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+							 //gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
 								gc.drawImage(ResourceLoader.kEffect2, pos.x - getWidth() / 2, pos.y - getHeight() / 2,
 										ResourceLoader.kEffect2.getWidth() * 0.8,
@@ -45,23 +46,23 @@ public class Knight extends Hero {
 										ResourceLoader.kEffect.getHeight() * 0.8);
 							}
 						}
-//					} else {
-//						if (owner.getAtkType().getAttackTime() > 0) {
-//							// gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-//							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-//								gc.drawImage(ResourceLoader.monsterEffect, pos.x - getWidth() * 5 / 6,
-//										pos.y - getHeight());
-//							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-//								gc.drawImage(ResourceLoader.monsterEffect, pos.x - getWidth() * 1.3,
-//										pos.y - getHeight());
-//							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-//								gc.drawImage(ResourceLoader.monsterEffect, pos.x - getWidth() / 2,
-//										pos.y - getHeight() * 5 / 6);
-//							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-//								gc.drawImage(ResourceLoader.monsterEffect, pos.x - getWidth() / 2,
-//										pos.y - getHeight() * 5 / 6);
-//							}
-//						}
+					} else {
+						if (owner.getAtkType().getAttackTime() > 0) {
+							 //gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
+								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() * 5 / 6,
+										pos.y - getHeight());
+							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
+								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() * 1.3,
+										pos.y - getHeight());
+							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
+								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() / 2,
+										pos.y - getHeight() * 5 / 6);
+							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
+								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() / 2,
+										pos.y - getHeight() * 5 / 6);
+							}
+						}
 					}
 				} catch (NullPointerException e) {
 					System.out.println("cannot draw attack effect");

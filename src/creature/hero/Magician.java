@@ -28,7 +28,7 @@ public class Magician extends Hero{
 		super();
 		heroImage = ResourceLoader.magician;
 		attackMultiply = 1.5;
-		attackRange = new Pair(100, 20);
+		attackRange = new Pair(32, 32);
 		attackSpeed = 0.6;
 		hpMultiply = 1;
 		hpRegen = 1; 

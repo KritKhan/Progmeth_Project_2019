@@ -28,7 +28,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 				5, 50, 1000, 60, atkType);
 		this.maxMp = 400;
 		this.currentMp = 0;
-		this.money = 0;
+		this.money = 9999;
 		this.z = -1;
 		this.race = Constant.ENTITY_HUMANITY;
 		HeroInBat.inventory = new Inventory();
@@ -43,14 +43,14 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 	
 	@Override
 	public boolean attack() {
-//		if (atkType.getManaUsed() < currentMp ) {
-//			boolean r = super.attack();
-//			if (r)
-//				this.healMp(15);
-//			else
-//				//this.atkType.getHeroWeapon().use();
-//			return r;
-//		}
+		if (atkType.getManaUsed() < currentMp ) {
+			boolean r = super.attack();
+			if (r)
+				this.healMp(15);
+			else
+				//this.atkType.getHeroWeapon().use();
+			return r;
+		}
 		return false; 
 	}
 

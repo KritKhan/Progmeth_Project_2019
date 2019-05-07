@@ -7,7 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class Shop {
-	public void buy(Item item) {
+	private Item item;
+	public void buy(String name) {
+		if(name.equals("HpPotion")) item = new HpPotion();
+		if(name.equals("MpPotion")) item = new MpPotion();
+		if(name.equals("MixPotion")) item = new MixPotion();
 		if(item.isBuyable()) {
 			GameLogic.heroInBat.useMoney(item.price);
 			HeroInBat.inventory.add(item);

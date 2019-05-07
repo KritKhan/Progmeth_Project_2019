@@ -65,7 +65,7 @@ public class DialogPane extends VBox {
 		gp.add(MixPotion, 2, 1);
 
 		Button close = new Button("X");
-		//close.setStyle("-fx-color: red;-fx-border: none ");
+
 		close.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
 		close.setTextFill(Color.WHITE);
 		close.setOnMouseClicked((MouseEvent e) -> {
@@ -128,19 +128,10 @@ public class DialogPane extends VBox {
 			t1.setText("Mix Potion\nHeal 250 points to Mp.\nHeal 250 points to Hp.");
 			t2.setText("Price : 120");
 		});
-		switch(selectedItem) {
-		case "MpPotion": 
-			item = new item.MpPotion();
-			break;
-		case "HpPotion": 
-			item = new item.HpPotion();
-			break;
-		case "MixPotion" : 
-			item = new item.MixPotion();
-		}
+
 		buy.setOnMouseClicked((MouseEvent event0) -> {
-			shop.buy(item);
-			money.setText(Integer.toString(Logic.GameLogic.heroInBat.getMoney()) );
+			shop.buy(selectedItem);
+			money.setText(Integer.toString(Logic.GameLogic.heroInBat.getMoney()) + " g");
 		});
 
 		this.getChildren().add(gp);

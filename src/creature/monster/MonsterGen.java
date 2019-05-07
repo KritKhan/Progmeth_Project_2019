@@ -49,10 +49,10 @@ public class MonsterGen {
 									| InvocationTargetException | SecurityException e) {
 								System.out.println("cannot add monster");
 							}
-						} else if (GameLogic.battleField.isLevelClear() && monsterCount >= maxMonster) {
-							maxMonster = RandomUtility.randomByLevel(GameLogic.battleField.getLvl());
-							maxMonster = maxMonster > 10 ? 10 : maxMonster;
-							monsterCount = 1;
+//						} else if (GameLogic.battleField.isLevelClear() && monsterCount >= maxMonster) {
+//							maxMonster = RandomUtility.randomByLevel(GameLogic.battleField.getLvl());
+//							maxMonster = maxMonster > 10 ? 10 : maxMonster;
+//							monsterCount = 1;
 						}
 					}
 
