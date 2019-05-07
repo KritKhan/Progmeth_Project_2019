@@ -25,15 +25,16 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 
 	public HeroInBat(int direction, Hero atkType) {
 		super(Constant.SCENE_WIDTH / 2, (Constant.SCENE_HEIGHT - 100) / 2, atkType.getHeroImage(), 0, 3, direction,
-				5, 50, 1000, 60, atkType);
+				5, 50, 1000, 60, atkType); //draw hero in the middle of screen
+		//initialize all power of hero
 		this.maxMp = 400;
 		this.currentMp = 0;
-		this.money = 9999;
+		this.money = 300;
 		this.z = -1;
-		this.race = Constant.ENTITY_HUMANITY;
-		HeroInBat.inventory = new Inventory();
-		setAtktype(atkType);
-		name =atkType.getClass().toString();
+		this.race = Constant.ENTITY_HUMANITY; //to identify hero of monster
+		HeroInBat.inventory = new Inventory(); //create hero's inventory
+		setAtktype(atkType); // type of hero
+		name =atkType.getClass().toString(); //set name
 		switch(name) {
 		case "class creature.hero.Archer": name = "Archer"; break;
 		case "class creature.hero.Knight": name = "Knight"; break;
@@ -43,12 +44,12 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 	
 	@Override
 	public boolean attack() {
-		if (atkType.getManaUsed() < currentMp ) {
-			boolean r = super.attack();
+		if (atkType.getManaUsed() <= currentMp ) {
+			boolean r = super.attack(); // can the hero attack
 			if (r)
 				this.healMp(15);
-			else
-				//this.atkType.getHeroWeapon().use();
+//			else
+//				this.atkType.getHeroWeapon().use();
 			return r;
 		}
 		return false; 
@@ -61,9 +62,9 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 		if (dmgTimer != 0)
 			return false;
 		ArrayList<BattleFieldableEntity<Hero>> inArea = BattleField.getEntityInArea(this, x, y);
-		for (BattleFieldableEntity<Hero> other : inArea) {
+		for (BattleFieldableEntity<Hero> other : inArea) { //if it not the same type -> attack each other and return true, it is blocked
 			// System.out.println(other.getClass().getSimpleName());
-			if (this.race != other.race)
+			if (this.race != other.race) 
 				this.damage(other.baseAtk, this.direction);
 			if (other instanceof Obstructable)
 				return true;

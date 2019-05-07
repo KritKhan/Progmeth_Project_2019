@@ -41,17 +41,17 @@ public abstract class Entity extends GameObject {
 
 	protected abstract boolean isBlock(double x, double y);
 
-	private void setEntityX(double x) {
+	private void setEntityX(double x) { //adding X, check isInBoarder
 		if (GameLogic.battleField.isInBoarder(this, this.pos.x + x, 0) && !this.isBlock(this.pos.x + x, this.pos.y))
 			this.pos.x += x;
 	}
 
-	private void setEntityY(double y) {
+	private void setEntityY(double y) { //adding Y, check isInBoarder
 		if (GameLogic.battleField.isInBoarder(this, 0, this.pos.y + y) && !this.isBlock(this.pos.x, this.pos.y + y))
 			this.pos.y += y;
 	}
 
-	public synchronized void setPos(double dPos, int direction) {
+	public synchronized void setPos(double dPos, int direction) { //move x or y by look at the direction
 //		System.out.println(this.getClass().getSimpleName() + " sync");
 		if (direction == Constant.ENTITY_BACK || direction == Constant.ENTITY_FRONT)
 			setEntityY(dPos);
@@ -60,7 +60,7 @@ public abstract class Entity extends GameObject {
 
 	}
 
-	private void addWalkTick() {
+	private void addWalkTick() { //every 8 update time will change 1 position(picture)
 		if (counter == Constant.ENTITY_WALK_TICK_DELAY) {
 			this.walktick = (this.walktick + 1) % Constant.ENTITY_WALK_STAGE;
 			counter = 0;
@@ -68,7 +68,7 @@ public abstract class Entity extends GameObject {
 		counter++;
 	}
 
-	@Override
+	@Override 
 	public boolean isCollide(GameObject other, double x, double y) {
 		if ((other.getX() - getWidth() * 4 / 6 <= x && x <= other.getX() + getWidth() * 4 / 6)
 				&& ((other.getY() - getHeight() / 6 + 5 <= y && y <= other.getY() + getHeight()))) {
@@ -93,12 +93,12 @@ public abstract class Entity extends GameObject {
 		return false;
 	}
 
-	protected void move(int direction) {
+	protected void move(int direction) { //
 		if ((this.direction != direction) && ((this.direction + direction) % Constant.ENTITY_WALK_STAGE == 0)) {
-			this.counter = 0;
+			this.counter = 0; //direction is change -> 
 			this.walktick = 1;
 		} else if (this.direction == direction || ((this.direction + direction) % Constant.ENTITY_WALK_STAGE != 0)) {
-			addWalkTick();
+			addWalkTick(); //if direct is same, walkTrick++ 
 		}
 
 		if (direction == Constant.ENTITY_FRONT)
@@ -110,7 +110,7 @@ public abstract class Entity extends GameObject {
 		if (direction == Constant.ENTITY_LEFT)
 			setPos((-1) * (movespeed / 10.0) * Constant.SCENE_WIDTH / 200, Constant.ENTITY_LEFT);
 
-		this.direction = direction;
+		this.direction = direction; // change direction of entity
 	}
 
 	public abstract void update();

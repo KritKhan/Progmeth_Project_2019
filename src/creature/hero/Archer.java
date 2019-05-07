@@ -42,12 +42,12 @@ public class Archer extends Hero{
 
 			@Override
 			public double getWidth() {
-				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y : attackRange.x;
+				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y*0.7 : attackRange.x;
 			}
 
 			@Override
 			public double getHeight() {
-				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x : attackRange.y;
+				return ((owner.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x : attackRange.y*0.7;
 			}
 		};
 	}
@@ -80,7 +80,7 @@ public class Archer extends Hero{
 			GameLogic.heroInBat.useMp(getManaUsed());
 	}
 
-	@Override
+	
 	public int getManaUsed() {
 		return Constant.BASE_MP_USE;
 	}

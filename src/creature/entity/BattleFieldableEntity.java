@@ -27,7 +27,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 			int maxHp, int baseAtk, T atkType) {
 		super(x, y, img, row, col, direction, movespeed, mass);
 		this.atkType = atkType;
-		this.atkType.setOwner((BattleFieldableEntity<Hero>) this);
+		this.atkType.setOwner((BattleFieldableEntity<Hero>) this); //add the entity to list
 		this.baseAtk = baseAtk;
 		this.mass = mass;
 		this.maxHp = maxHp; 
@@ -41,6 +41,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 	public void draw(GraphicsContext gc) { 
 		// TODO Auto-generated method stub
 		if (!(this instanceof HeroInBat) && (dmgTimer != 0 || hpBarTimer != 0)) {
+			// draw hp bar of monsters
 			gc.setFill(Color.BLACK);
 			gc.fillRect(pos.x + this.getWidth() / 6, pos.y - this.getHeight() / 6, this.getWidth() * 5 / 6, 8);
 			gc.setFill(Color.DARKRED);
@@ -49,6 +50,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 			hpBarTimer--;
 		}
 		if (!dmgTimerDelay.isEmpty()) {
+			// draw damage to hero
 			gc.setFill(Color.RED);
 			for (int i = 0; i < dmgTimerDelay.size(); i++) {
 				gc.fillText("-" + Integer.toString(dmg), pos.x + getWidth() / 3,
@@ -65,19 +67,19 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 	public boolean attack() {
 		if (atkType.getAttackTime() == 0) {
 			ArrayList<BattleFieldableEntity<Hero>> inArea = BattleField.getEntityInArea(atkType.getAttackObj(),
-					atkType.getAttackObj().getX(), atkType.getAttackObj().getY());
+					atkType.getAttackObj().getX(), atkType.getAttackObj().getY()); // get character and its position
 			if (inArea == null || inArea.size() <= 1)
 				return false;
 			for (BattleFieldableEntity<Hero> other : inArea) {
 				if (other.hashCode() != this.hashCode() && this.race != other.race) {
-					atkType.use();
-					atkType.attack(this, other);
+					atkType.use(); //use mana
+					atkType.attack(this, other); 
 				}
 			}
 
 			return true;
 		}
-		return false;
+		return false; // if attackTime != 0 -> it can't attack to other
 	}
 
 	public void damage(int dmg, int direction) {
@@ -118,13 +120,13 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 
 	@Override
 	public void update() {
-		if (!isAlive || this.currentHp == 0) {
+		if (!isAlive || this.currentHp == 0) { // if entity is dead -> delete it ; if not ->
 			BattleField.destroyEntities(this);
 			this.atkType.getAttackObj().setVisible(false);
 		} else if (isAlive) {
 			dmgTimer = dmgTimer == 0 ? 0 : dmgTimer - 1;
 		}
-		this.atkType.update(this.direction, this.pos.x, this.pos.y);
+		this.atkType.update(this.direction, this.pos.x, this.pos.y); // update the position of hero
 	}
 
 }

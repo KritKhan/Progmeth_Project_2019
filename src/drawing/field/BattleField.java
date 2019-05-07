@@ -72,7 +72,7 @@ public class BattleField extends Field {
 
 	public void update() {
 
-//		monsterGen.update();
+		monsterGen.update();
 
 		graveyard.clear();
 		for (BattleFieldableEntity<Hero> e : entities_holder) {
@@ -81,13 +81,13 @@ public class BattleField extends Field {
 
 		for (BattleFieldableEntity<Hero> e : graveyard) {
 			if (e instanceof HeroInBat) {
-				// SceneManager.BattleFieldScene; // dead
 
+				SceneManager.BattleFieldScene.toDialog(2); // dead
 			} else
 				entities_holder.remove(e);
 		}
-//		if (isLevelClear())
-//			upLevel();
+		if (isLevelClear())
+			upLevel();
 		if (lvlChangetimer > 0)
 			lvlChangetimer--;
 	}
