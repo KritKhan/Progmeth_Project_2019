@@ -29,7 +29,7 @@ public class StatusBar extends Field {
 	
 	public StatusBar() {
 		super(ResourceLoader.statusBar,ResourceLoader.statusBar.getWidth(),ResourceLoader.statusBar.getHeight(),
-				new Pair(0,Constant.SCENE_HEIGHT-ResourceLoader.statusBar.getHeight()));
+				new Pair(0,Constant.SCENE_HEIGHT-Constant.STATUSBAR_HEIGHT));
 		this.z = 2000;
 	}
 	

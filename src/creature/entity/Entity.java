@@ -47,7 +47,7 @@ public abstract class Entity extends GameObject {
 	}
 
 	private void setEntityY(double y) {
-		if (GameLogic.battleField.isInBoarder(this, 0, this.pos.y + y+150) && !this.isBlock(this.pos.x, this.pos.y + y))
+		if (GameLogic.battleField.isInBoarder(this, 0, this.pos.y + y) && !this.isBlock(this.pos.x, this.pos.y + y))
 			this.pos.y += y;
 	}
 
