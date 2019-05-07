@@ -13,7 +13,7 @@ public class Archer extends Hero{
 		super();
 		heroImage = ResourceLoader.archer;
 		attackMultiply = 0.8;
-		attackRange = new Pair(50 * 3, 50);
+		attackRange = new Pair(20 * 3, 20);
 		attackSpeed = 2;
 		hpMultiply = 0.9;
 		hpRegen = 2;

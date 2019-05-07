@@ -88,7 +88,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 		this.currentHp = this.currentHp - dmg >= 0 ? this.currentHp - dmg : 0;
 		if (this.currentHp == 0)
 			isAlive = false;
-		ForceUtility.reactionEffec            t(this, direction);
+		ForceUtility.reactionEffect(this, direction);
 		this.hpBarTimer = 180;
 	}
 

@@ -1,12 +1,12 @@
 package creature.minion;
 
-import creature.Creature;
+import SharedObject.ResourceLoader;
 import creature.monster.Monster;
 
 public abstract class Armor extends Monster{
 
 	public Armor(int lvl) {
-		super("Armor", 25, 10, 20);
+		super(ResourceLoader.armor, 25, 10, 20);
 		switch(lvl) {
 		case 1: break;
 		case 2: 
