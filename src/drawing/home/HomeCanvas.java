@@ -55,7 +55,8 @@ public class HomeCanvas extends Canvas {
 		if (event.getSceneX() >= (Constant.SCENE_WIDTH / 2)-w && event.getSceneX() <= (Constant.SCENE_WIDTH / 2)+w
 				&& event.getSceneY() >= (Constant.SCENE_HEIGHT / 1.5)-h && event.getSceneY() <= (Constant.SCENE_HEIGHT / 1.5)+h) {
 			//area of event
-			if (isGoNext) {				
+			if (isGoNext) {		
+				ResourceLoader.click.play(100);
 				goToSeclect();
 			} else {
 				double h2 = ResourceLoader.starthili.getHeight()/2.0;

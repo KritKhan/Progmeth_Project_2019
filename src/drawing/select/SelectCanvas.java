@@ -103,6 +103,7 @@ public class SelectCanvas extends Canvas {
 				this.initialHeroImage();
 				hero[0] = ResourceLoader.archerFaceH;
 				this.selected = "Archer";
+				ResourceLoader.click.play(100);
 				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.archerFaceH, (Constant.SCENE_WIDTH / 4) * 2 - w,
@@ -116,6 +117,7 @@ public class SelectCanvas extends Canvas {
 				this.initialHeroImage();
 				hero[1] = ResourceLoader.magicianFaceH;
 				this.selected = "Magician";
+				ResourceLoader.click.play(100);
 				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.magicianFaceH, Constant.SCENE_WIDTH / 4 - w, Constant.SCENE_HEIGHT / 2 - h);
@@ -128,6 +130,7 @@ public class SelectCanvas extends Canvas {
 				this.initialHeroImage();
 				hero[2] = ResourceLoader.knightFaceH;
 				this.selected = "Knight";
+				ResourceLoader.click.play(100);
 				drawSelectMenu();
 			} else {
 				gc.drawImage(ResourceLoader.knightFaceH, (Constant.SCENE_WIDTH / 4) * 3 - w,
@@ -140,6 +143,7 @@ public class SelectCanvas extends Canvas {
 			// area of event
 			if (isClicked && !selected.equals("")) {
 				//create Hero here
+				ResourceLoader.click.play(100);
 				switch(selected) {
 				case "Magician" :
 					he = new Magician();

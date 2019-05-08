@@ -70,13 +70,13 @@ public class DialogPane extends VBox {
 		close.setTextFill(Color.CORNSILK);
 		close.setOnMouseClicked((MouseEvent e) -> {
 			this.getChildren().clear();
-			//ResourceLoader.clickSound.play(100);
+			ResourceLoader.click.play(100);
 			scene.toBattleField();
 		});
 		this.setOnKeyPressed((KeyEvent e)->{
 			if(e.getCode()==KeyCode.ENTER) {
 				this.getChildren().clear();
-				//ResourceLoader.clickSound.play(100);
+				ResourceLoader.click.play(100);
 				scene.toBattleField();
 			}
 		});
@@ -111,27 +111,28 @@ public class DialogPane extends VBox {
 		gp.add(money, 3, 12, 2, 2);
 
 		HpPotion.setOnMouseClicked((MouseEvent e) -> {
-			//ResourceLoader.clickSound.play(100);
+			ResourceLoader.click.play(100);
 			selectedItem = "HpPotion";
 			t1.setText("Hp Potion\nHeal 500 points to Hp.");
 			t2.setText("Price : 100");
 		});
 
 		MpPotion.setOnMouseClicked((MouseEvent e) -> {
-			//ResourceLoader.clickSound.play(100);
+			ResourceLoader.click.play(100);
 			selectedItem = "MpPotion";
 			t1.setText("Mp Potion\nHeal 500 points to Mp.");
 			t2.setText("Price : 100");
 		});
 		
 		MixPotion.setOnMouseClicked((MouseEvent e) -> {
-			//ResourceLoader.clickSound.play(100);
+			ResourceLoader.click.play(100);;
 			selectedItem = "MixPotion";
 			t1.setText("Mix Potion\nHeal 250 points to Mp.\nHeal 250 points to Hp.");
 			t2.setText("Price : 120");
 		});
 
 		buy.setOnMouseClicked((MouseEvent event0) -> {
+			ResourceLoader.click.play(100);
 			shop.buy(selectedItem);
 			money.setText(Integer.toString(Logic.GameLogic.heroInBat.getMoney()) + " g");
 		});
@@ -145,7 +146,7 @@ public class DialogPane extends VBox {
 		Button resume = new Button("RESUME");
 		resume.setStyle("-fx-color: red;-fx-border: none ");
 		resume.setOnMouseClicked((MouseEvent e) -> {
-			//ResourceLoader.clickSound.play(100);
+			ResourceLoader.click.play(100);
 			scene.toBattleField();
 		});
 		resume.setOnKeyPressed((KeyEvent e)->{

@@ -4,6 +4,7 @@ import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
 import javafx.scene.image.Image;
+import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.text.Font;
 
@@ -81,7 +82,8 @@ public abstract class ResourceLoader {
 	public static Image select;
 	
 	//sound
-		public static Media bgm;
+	public static Media bgm;
+	public static AudioClip click;
 	
 	public static Thread loadThread;
 	
@@ -146,6 +148,7 @@ public abstract class ResourceLoader {
 			statusBar = new Image(ClassLoader.getSystemResource("BGandButton/StatusBar.png").toString());
 			
 			bgm = new Media(ClassLoader.getSystemResource("Sound/battle2.mp3").toString());
+			click = new AudioClip(ClassLoader.getSystemResource("Sound/click.mp3").toString());
 		
 		}catch (NullPointerException e) {
 			System.out.println("resource1 not found");
@@ -181,7 +184,6 @@ public abstract class ResourceLoader {
 					shop = new Image(ClassLoader.getSystemResource("Potion/Shop.png").toString());
 					end = new Image(ClassLoader.getSystemResource("Potion/end.png").toString());
 					setting =  new Image(ClassLoader.getSystemResource("Potion/setting.png").toString());
-					
 					
 				}catch (NullPointerException e) {
 					System.out.println("resource2 not found");
