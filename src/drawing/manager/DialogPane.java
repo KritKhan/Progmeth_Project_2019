@@ -26,6 +26,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import main.BattleFieldMain;
 
@@ -61,13 +62,13 @@ public class DialogPane extends VBox {
 		gp.setVgap(20);
 		gp.setAlignment(Pos.TOP_CENTER);
 
-		gp.add(HpPotion, 0, 1);
-		gp.add(MpPotion, 1, 1);
-		gp.add(MixPotion, 2, 1);
+		gp.add(HpPotion, 1, 1);
+		gp.add(MpPotion, 2, 1);
+		gp.add(MixPotion, 3, 1);
 
 		Button close = new Button("X");
-		close.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
-		close.setTextFill(Color.ANTIQUEWHITE);
+		close.setBackground(new Background(new BackgroundFill(Color.SADDLEBROWN, null, null)));
+		close.setTextFill(Color.CORNSILK);
 		close.setOnMouseClicked((MouseEvent e) -> {
 			this.getChildren().clear();
 			//ResourceLoader.clickSound.play(100);
@@ -86,14 +87,16 @@ public class DialogPane extends VBox {
 	
 	public void shop() {
 		// TODO Auto-generated method stub
-		defaultDraw(scene, ResourceLoader.waterDun);
-		GridPane gp = generate(ResourceLoader.waterDun);
+		defaultDraw(scene, ResourceLoader.shop);
+		GridPane gp = generate(ResourceLoader.shop);
 		Shop shop = new Shop();
 
 		Text t1 = new Text();
-		t1.setFill(Color.ALICEBLUE);
+		t1.setFont(Font.font(15));
+		t1.setFill(Color.ANTIQUEWHITE);
 		Text t2 = new Text();
-		t2.setFill(Color.ALICEBLUE);
+		t2.setFont(Font.font(15));
+		t2.setFill(Color.ANTIQUEWHITE);
 
 		TextField money = new TextField();
 		money.setText(Integer.toString(Logic.GameLogic.heroInBat.getMoney()) + " g");
@@ -101,8 +104,8 @@ public class DialogPane extends VBox {
 		money.setPrefSize(80, 20);
 
 		Button buy = new Button("BUY");
-		buy.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
-		buy.setTextFill(Color.ANTIQUEWHITE);
+		buy.setBackground(new Background(new BackgroundFill(Color.SADDLEBROWN, null, null)));
+		buy.setTextFill(Color.CORNSILK);
 		gp.add(t1, 1, 3, 4, 4);
 		gp.add(t2, 1, 5, 4, 4);
 		gp.add(buy, 3, 9);
@@ -138,7 +141,7 @@ public class DialogPane extends VBox {
 	
 	public void setting() {
 		// TODO Auto-generated method stub
-		defaultDraw(scene, ResourceLoader.grassland);
+		defaultDraw(scene, ResourceLoader.setting);
 		Button resume = new Button("RESUME");
 		resume.setStyle("-fx-color: red;-fx-border: none ");
 		resume.setOnMouseClicked((MouseEvent e) -> {
@@ -155,6 +158,6 @@ public class DialogPane extends VBox {
 	
 	public void dead() {
 		// TODO Auto-generated method stub
-		defaultDraw(scene, ResourceLoader.dirtland);
+		defaultDraw(scene, ResourceLoader.end);
 	}
 }
