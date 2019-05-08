@@ -28,7 +28,7 @@ public class Magician extends Hero {
 		super();
 		heroImage = ResourceLoader.magician;
 		attackMultiply = 1.5;
-		attackRange = new Pair(100, 20);
+		attackRange = new Pair(100, 32);
 		attackSpeed = 0.6;
 		hpMultiply = 1;
 		hpRegen = 1;
@@ -48,16 +48,16 @@ public class Magician extends Hero {
 						if (owner.getAtkType().getAttackTime() > 3) {
 							// gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-								gc.drawImage(ResourceLoader.mEffect, pos.x , pos.y - 2*getHeight(),
+								gc.drawImage(ResourceLoader.mEffect, pos.x , pos.y - 1.3*getHeight(),
 										ResourceLoader.mEffect2.getWidth() * 0.8, ResourceLoader.mEffect2.getHeight() * 0.8);
 							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-								gc.drawImage(ResourceLoader.mEffect2, pos.x - getWidth()/1.55, pos.y - 2*getHeight(),
+								gc.drawImage(ResourceLoader.mEffect2, pos.x - getWidth()/1.55, pos.y - 1.3*getHeight(),
 										ResourceLoader.mEffect.getWidth() * 0.8, ResourceLoader.mEffect.getHeight() * 0.8);
 							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-								gc.drawImage(ResourceLoader.mEffect3, pos.x - 1.5*getWidth() , pos.y - getHeight(),
+								gc.drawImage(ResourceLoader.mEffect3, pos.x - getWidth() , pos.y - getHeight(),
 										ResourceLoader.mEffect3.getWidth() * 0.8, ResourceLoader.mEffect3.getHeight() * 0.8);
 							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-								gc.drawImage(ResourceLoader.mEffect4, pos.x - 1.5*getWidth(), pos.y,
+								gc.drawImage(ResourceLoader.mEffect4, pos.x - getWidth(), pos.y,
 										ResourceLoader.mEffect4.getWidth() * 0.8, ResourceLoader.mEffect4.getHeight() * 0.8);
 							}
 						}

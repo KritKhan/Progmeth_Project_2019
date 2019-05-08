@@ -143,7 +143,7 @@ public class MonsterGen {
 		int rand = RandomUtility.randomInt(0, 4);
 		System.out.println(rand);
 		if (rand < 2) {
-			hero = rand % 2 == 0 ? new Magician() : new Knight();
+			hero = new Knight();
 			
 		} else {
 			hero = new Archer();
