@@ -82,53 +82,50 @@ public class Magician extends Hero {
 
 			@Override
 			public double getWidth() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y
-						: attackRange.x * 1.5;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y : attackRange.x * 1.5;
 			}
 
 			@Override
 			public double getHeight() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 2
-						: attackRange.y;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 2 : attackRange.y;
 			}
-
-			@Override
-			public boolean isCollide(GameObject other, double x, double y) {
-				boolean isMagicHit = false;
-				if (GameLogic.heroInBat.getCurrentMp() > 5) {
-					for (Entry<Pair, Pair> e : magicTime.entrySet()) {
-						double a = 0, b = 0;
-						if (e.getValue().x == Constant.ENTITY_FRONT) {
-							a = e.getKey().x + (owner.getWidth() - magicW);
-							b = e.getKey().y + e.getValue().y + owner.getHeight() / 3;
-						} else if (e.getValue().x == Constant.ENTITY_BACK) {
-							a = e.getKey().x + (owner.getWidth() - magicW);
-							b = e.getKey().y - e.getValue().y;
-						} else if (e.getValue().x == Constant.ENTITY_LEFT) {
-							a = e.getKey().x - e.getValue().y - magicW / 2;
-							b = e.getKey().y;
-						} else if (e.getValue().x == Constant.ENTITY_RIGHT) {
-							a = e.getKey().x + e.getValue().y;
-							b = e.getKey().y;
-						}
-						if ((((a - other.getWidth()) <= other.getX())
-								&& (other.getX() <= (a + magicW + other.getWidth())))
-								&& (((b - other.getHeight()) <= other.getY())
-										&& (other.getY() <= (b + other.getHeight() + magicH)))
-								&& ((((a - other.getWidth()) <= (other.getX() + other.getWidth()))
-										&& ((other.getX() + other.getWidth()) <= (a + magicW + other.getWidth())))
-										&& (((b - other.getHeight()) <= (other.getY() + other.getHeight()))
-												&& ((other.getY() + other.getHeight()) <= (b + other.getHeight()
-														+ magicH)))))
-							isMagicHit = true;
-					}
-				}
-				if ((owner instanceof HeroInBat) && magicTime.size() == 0 && getAttackTime() == 0)
-					return false;
-				else if (owner.getAtkType().getAttackTime() == 0)
-					return (super.isCollide(other, x, y) || isMagicHit);
-				return isMagicHit;
-			}
+//			@Override
+//			public boolean isCollide(GameObject other, double x, double y) {
+//				boolean isMagicHit = false;
+//				if (GameLogic.heroInBat.getCurrentMp() > 5) {
+//					for (Entry<Pair, Pair> e : magicTime.entrySet()) {
+//						double a = 0, b = 0;
+//						if (e.getValue().x == Constant.ENTITY_FRONT) {
+//							a = e.getKey().x + (owner.getWidth() - magicW);
+//							b = e.getKey().y + e.getValue().y + owner.getHeight() / 3;
+//						} else if (e.getValue().x == Constant.ENTITY_BACK) {
+//							a = e.getKey().x + (owner.getWidth() - magicW);
+//							b = e.getKey().y - e.getValue().y;
+//						} else if (e.getValue().x == Constant.ENTITY_LEFT) {
+//							a = e.getKey().x - e.getValue().y - magicW / 2;
+//							b = e.getKey().y;
+//						} else if (e.getValue().x == Constant.ENTITY_RIGHT) {
+//							a = e.getKey().x + e.getValue().y;
+//							b = e.getKey().y;
+//						}
+//						if ((((a - other.getWidth()) <= other.getX())
+//								&& (other.getX() <= (a + magicW + other.getWidth())))
+//								&& (((b - other.getHeight()) <= other.getY())
+//										&& (other.getY() <= (b + other.getHeight() + magicH)))
+//								&& ((((a - other.getWidth()) <= (other.getX() + other.getWidth()))
+//										&& ((other.getX() + other.getWidth()) <= (a + magicW + other.getWidth())))
+//										&& (((b - other.getHeight()) <= (other.getY() + other.getHeight()))
+//												&& ((other.getY() + other.getHeight()) <= (b + other.getHeight()
+//														+ magicH)))))
+//							isMagicHit = true;
+//					}
+//				}
+//				if ((owner instanceof HeroInBat) && magicTime.size() == 0 && getAttackTime() == 0)
+//					return false;
+//				else if (owner.getAtkType().getAttackTime() == 0)
+//					return (super.isCollide(other, x, y) || isMagicHit);
+//				return isMagicHit;
+//			}
 
 		};
 	}

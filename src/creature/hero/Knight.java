@@ -72,8 +72,7 @@ public class Knight extends Hero {
 
 			@Override
 			public double getWidth() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y
-						: attackRange.x * 1.5;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y : attackRange.x * 1.5;
 			}
 
 			@Override
