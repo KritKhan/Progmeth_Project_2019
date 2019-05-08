@@ -16,6 +16,7 @@ import creature.hero.Hero;
 import creature.hero.Knight;
 import creature.hero.Magician;
 import drawing.field.BattleField;
+import drawing.manager.SceneManager;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import main.Main;
@@ -26,7 +27,9 @@ public class MonsterGen {
 	private int monsterCount;
 	private int maxMonster;
 	private int dunLvl;
-	
+	private Monster darkLord;
+	private Monster viper;
+	private Monster witch;
 	public MonsterGen() {
 		monsterCount = 0;
 		maxMonster = 10;
@@ -137,28 +140,57 @@ public class MonsterGen {
 		int idle = (int) Math.max(((img % 3 + 1) * (30 - (dunLvl / 100.0))) + (mass / 100.0), 70);
 		int speed = (int) (9 - ((4 - col) / (row + 1)) - (mass / 2000.0));
 		Hero hero;
-		if (row == 0) {
-			hero = col % 2 == 0 ? new Magician() : new Knight();
+		int rand = RandomUtility.randomInt(0, 4);
+		System.out.println(rand);
+		if (rand < 2) {
+			hero = rand % 2 == 0 ? new Magician() : new Knight();
+			
 		} else {
-			hero = col > 1 ? new Archer() : new Knight();
+			hero = new Archer();
 		}
 		for (int i = 0; i < time; i++) {
-			BattleField.addEntities(new Monster(monsterImg(RandomUtility.randomInt(0, 4)), row, col, speed, mass, hp * ((dunLvl / 20) + 1), Math.max(
-					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
+			BattleField.addEntities(new Monster(ResourceLoader.monsterImage[img-1], row, col, speed, mass, hp * ((dunLvl / 20) + 1), Math.max(
+					//(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
+					RandomUtility.randomInt(10, 60),40+rand*12),
 					hero, idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
 					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
 							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
 					size));
-			monsterCount += size;
+			monsterCount += 1;
+		}
+		if(dunLvl == 10&& monsterCount==maxMonster) {
+			BattleField.addEntities(new Monster(ResourceLoader.darklorde, row, col, speed,(int) 1.7*mass,1000, //(int)1.7*Math.max(
+//					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
+					300,
+					new Archer(), idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
+					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
+					1.5*size));
+		}else if(dunLvl == 7&& monsterCount==maxMonster) {
+			BattleField.addEntities(new Monster(ResourceLoader.witch, row, col, speed,(int)1.5*mass,500,//(int)1.5* Math.max(
+//					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
+					250,
+					new Magician(), idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
+					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
+					1.5*size));
+		}else if(dunLvl == 3&& monsterCount==maxMonster) {
+			BattleField.addEntities(new Monster(ResourceLoader.viper, row, col, speed, (int) 1.3*mass,200,//(int) 1.3* Math.max(
+//					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
+					200,
+					new Archer(), idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
+					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
+					1.5*size));
 		}
 	}
 
-	public void genByLvl(int img, int rand) {
+	public void genByLvl(int rand) {
 		if (rand < 0)
 			return;
 		for (int i = 0; i < rand; i++) {
 			int col = RandomUtility.random() % 4;
-			genMonster(img, (dunLvl % 10) > 5 ? 0 : col % 2, col, 1, i);
+			genMonster(RandomUtility.randomInt(0,4), (dunLvl % 10) > 5 ? 0 : col % 2, col, 1, i);
 		}
 	}
 
@@ -167,71 +199,21 @@ public class MonsterGen {
 		if (RenderableHolder.getInstance().size() >= 25)
 			return;
 		int rand = RandomUtility.randomByLevel(dunLvl) % 3 + 1;
-		if ((dunLvl % 7 == 0 && dunLvl != 0 && monsterCount > maxMonster - 10)
-				|| (dunLvl > 25 && rand + (RandomUtility.random()) % 4 == 1)) { // gen boss
-			if (dunLvl > 35) {
-				if (rand % 3 == 1) {
-					genMonster(3, 0, (rand % 2), 2, 1);
-					genMonster(rand, 0, rand, 2, 1);
-					genMonster(rand, 1, rand, 2, 1);
-				} else {
-					genMonster(3, 1, 2 + (rand % 2), 2, (rand % 2) + 2);
-				}
-				genMonster(4, 0, 2 + rand % 2, 1, 2);
-				genMonster(4, 0, rand, 1, 2);
-				genMonster(4, 1, 0, 1, 1);
-				genMonster(5, 1, rand % 2, 1, 1);
-			} else if (dunLvl > 30) {
-				if (rand % 3 == 0) {
-					genMonster(1, 1, rand, 2, 3);
-				} else if (rand % 3 == 1) {
-					genMonster(3, 0, (rand % 2), 1, 1);
-					genMonster(1, 0, rand, 2, 2);
-				} else {
-					genMonster(3, 0, 0, 1, 1);
-					genMonster(3, 0, 1, 1, 1);
-				}
-			} else if (dunLvl > 20) {
-				if (rand % 2 == 0)
-					genMonster(1, 1, rand, 2, 2);
-				else {
-					genMonster(3, 0, (rand % 2), 1, 1);
-					genMonster(2, 0, 1 + (rand % 2) * 2, 2, 1);
-				}
-			} else if (dunLvl > 10) {
-				genMonster(3, 0, (rand % 2), 1, 1);
-			} else if (dunLvl > 10) {
-				if (rand % 2 == 0)
-					genMonster(2, 0, 1 + (rand % 2) * 2, 2, 2);
-				else
-					genMonster(2, 1, 4, 2, 1);
-			} else {
-				genMonster(2, 0, 1, 2, 1);
-			}
-			monsterCount += 10;
-			return;
-		}
-		if (dunLvl > 35) {
-			genByLvl(3, 1);
-			genByLvl(2, rand - 1);
-		} else if (dunLvl > 30) {
-			genByLvl(3, rand - 3);
-			genByLvl(1, 2);
-			genByLvl(2, 1);
-		} else if (dunLvl > 20) {
-			genByLvl(1, rand - 1);
-			genByLvl(2, 1);
-		} else if (dunLvl > 10) {
-			genByLvl(1, rand % 2);
-			genByLvl(2, rand - 1);
-		} else if (dunLvl > 10) {
-			genByLvl(1, rand - 1);
-			genByLvl(2, 1);
+		if (dunLvl > 8) {
+			genByLvl(1);
+			genByLvl(rand - 1);
+		} else if (dunLvl > 6) {
+			genByLvl(rand - 3);
+			genByLvl(2);
+			genByLvl(1);
+		} else if (dunLvl > 4) {
+			genByLvl(rand - 1);
+			genByLvl(1);
+		} else if (dunLvl > 2) {
+			genByLvl(rand % 2);
+			genByLvl(rand - 1);
 		} else {
-			genByLvl(2, rand);
-		}
-		if (dunLvl % 13 == 0 && (RandomUtility.random()) % 73 == 1) {
-			genMonster(5, 1, rand % 2, 1, 1);
+			genByLvl(rand);
 		}
 	}
 }

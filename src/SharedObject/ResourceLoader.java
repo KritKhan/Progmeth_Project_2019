@@ -69,7 +69,10 @@ public abstract class ResourceLoader {
 	public static Image kEffect4;
 	
 	public static Image logo;
-
+	
+	public static Image end;
+	public static Image shop;
+	public static Image setting;
 	public static Image statusBar;
 	//select
 	public static Image select;
@@ -165,6 +168,10 @@ public abstract class ResourceLoader {
 					monsterImage[0] = lion;
 					monsterImage[1] = wolf;
 					monsterImage[2] = armor;
+					
+					shop = new Image(ClassLoader.getSystemResource("Potion/Shop.png").toString());
+					end = new Image(ClassLoader.getSystemResource("Potion/end.png").toString());
+					setting =  new Image(ClassLoader.getSystemResource("Potion/setting.png").toString());
 				}catch (NullPointerException e) {
 					System.out.println("resource2 not found");
 				}

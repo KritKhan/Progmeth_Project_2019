@@ -86,8 +86,10 @@ public class BattleField extends Field {
 			} else
 				entities_holder.remove(e);
 		}
-		if (isLevelClear())
-			upLevel();
+		if (isLevelClear()) {
+			if(lvl > 10) SceneManager.BattleFieldScene.toDialog(2);
+			else upLevel();
+		}
 		if (lvlChangetimer > 0)
 			lvlChangetimer--;
 	}

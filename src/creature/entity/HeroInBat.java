@@ -27,7 +27,7 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 
 	public HeroInBat(int direction, Hero atkType) {
 		super(Constant.SCENE_WIDTH / 2, (Constant.SCENE_HEIGHT - 100) / 2, atkType.getHeroImage(), 0, 3, direction,
-				5, 50, 1000, 60, atkType); //draw hero in the middle of screen
+				5, 50, 1000, 200, atkType); //draw hero in the middle of screen
 		//initialize all power of hero
 		this.maxMp = 400;
 		this.currentMp = 0;
