@@ -1,6 +1,7 @@
 package creature.monster;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Random;
 
 import Logic.GameLogic;
 import SharedObject.Constant;
@@ -137,12 +138,12 @@ public class MonsterGen {
 		int speed = (int) (9 - ((4 - col) / (row + 1)) - (mass / 2000.0));
 		Hero hero;
 		if (row == 0) {
-			hero = col % 2 == 0 ? new Archer() : new Knight();
+			hero = col % 2 == 0 ? new Magician() : new Knight();
 		} else {
-			hero = col > 1 ? new Magician() : new Knight();
+			hero = col > 1 ? new Archer() : new Knight();
 		}
 		for (int i = 0; i < time; i++) {
-			BattleField.addEntities(new Monster(monsterImg(img), row, col, speed, mass, hp * ((dunLvl / 20) + 1), Math.max(
+			BattleField.addEntities(new Monster(monsterImg(RandomUtility.randomInt(0, 4)), row, col, speed, mass, hp * ((dunLvl / 20) + 1), Math.max(
 					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
 					hero, idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
 					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
@@ -163,7 +164,7 @@ public class MonsterGen {
 
 	private void addMonster() throws InstantiationException, IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException, SecurityException {
-		if (RenderableHolder.getInstance().size() >= 35)
+		if (RenderableHolder.getInstance().size() >= 25)
 			return;
 		int rand = RandomUtility.randomByLevel(dunLvl) % 3 + 1;
 		if ((dunLvl % 7 == 0 && dunLvl != 0 && monsterCount > maxMonster - 10)

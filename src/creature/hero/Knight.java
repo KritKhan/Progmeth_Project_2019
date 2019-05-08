@@ -29,21 +29,21 @@ public class Knight extends Hero {
 						if (owner.getAtkType().getAttackTime() > 3) {
 							 //gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-								gc.drawImage(ResourceLoader.kEffect2, pos.x - getWidth() / 2, pos.y - getHeight() / 2,
-										ResourceLoader.kEffect2.getWidth() * 0.8,
-										ResourceLoader.kEffect2.getHeight() * 0.8);
+								gc.drawImage(ResourceLoader.kEffect, pos.x - getWidth() / 2, pos.y - getHeight() / 2,
+										ResourceLoader.kEffect.getWidth() * 0.5,
+										ResourceLoader.kEffect.getHeight() * 0.5);
 							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-								gc.drawImage(ResourceLoader.kEffect, pos.x - getWidth() * 1.2,
-										pos.y - getHeight() / 2, ResourceLoader.kEffect.getWidth() * 0.8,
-										ResourceLoader.kEffect.getHeight() * 0.8);
+								gc.drawImage(ResourceLoader.kEffect2, pos.x - getWidth() * 2.3,
+										pos.y - getHeight() / 2, ResourceLoader.kEffect2.getWidth() * 0.5,
+										ResourceLoader.kEffect2.getHeight() * 0.5);
 							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-								gc.drawImage(ResourceLoader.kEffect2, pos.x - getWidth() / 6,
-										pos.y - getHeight() * 0.6, ResourceLoader.kEffect2.getWidth() * 0.8,
-										ResourceLoader.kEffect2.getHeight() * 0.8);
+								gc.drawImage(ResourceLoader.kEffect3, pos.x - getWidth() / 6,
+										pos.y - getHeight() * 2, ResourceLoader.kEffect3.getWidth() * 0.5,
+										ResourceLoader.kEffect3.getHeight() * 0.5);
 							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-								gc.drawImage(ResourceLoader.kEffect, pos.x - getWidth() * 0.4,
-										pos.y - getHeight() * 0.4, ResourceLoader.kEffect.getWidth() * 0.8,
-										ResourceLoader.kEffect.getHeight() * 0.8);
+								gc.drawImage(ResourceLoader.kEffect4, pos.x - getWidth() * 0.4,
+										pos.y - getHeight() * 0.4, ResourceLoader.kEffect4.getWidth() * 0.5,
+										ResourceLoader.kEffect4.getHeight() * 0.5);
 							}
 						}
 					} else {
@@ -63,6 +63,7 @@ public class Knight extends Hero {
 										pos.y - getHeight() * 5 / 6);
 							}
 						}
+
 					}
 				} catch (NullPointerException e) {
 					System.out.println("cannot draw attack effect");

@@ -1,6 +1,6 @@
 package creature.minion;
 
-import creature.Creature;
+import SharedObject.ResourceLoader;
 import creature.monster.Monster;
 
 public abstract class Armor extends Monster{

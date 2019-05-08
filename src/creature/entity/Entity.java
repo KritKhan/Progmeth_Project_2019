@@ -30,6 +30,7 @@ public abstract class Entity extends GameObject {
 		this.isAlive = true;
 		this.counter = 0;
 		this.walktick = 1;
+		System.out.println(img);
 		this.img = new WritableImage(img.getPixelReader(),0 , 0, (int) w * 3,(int) h * 4);
 	}
 
