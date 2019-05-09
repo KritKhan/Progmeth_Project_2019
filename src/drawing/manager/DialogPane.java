@@ -1,10 +1,14 @@
 package drawing.manager;
 
 import com.sun.javafx.tk.FontLoader;
+
+import Exception.PurchaseException;
+import Logic.GameLogic;
 import SharedObject.ResourceLoader;
 import drawing.battlefield.BattleFieldScene;
 import drawing.field.StatusBar;
-import exception.PurchaseException;
+import drawing.select.SelectCanvas;
+import drawing.select.SelectScene;
 import item.Item;
 import item.Shop;
 import javafx.geometry.Insets;
@@ -38,7 +42,6 @@ public class DialogPane extends VBox {
 	private ImageView MpPotion;
 	private ImageView MixPotion;
 	private String selectedItem = "";
-	private Item item = null;
 	private FontLoader fontloader = ResourceLoader.fontLoader;
 
 	public DialogPane(BattleFieldScene battleScene, Image image) {
@@ -171,6 +174,18 @@ public class DialogPane extends VBox {
 
 	public void dead() {
 		// TODO Auto-generated method stub
+		BattleFieldMain.getBattleFieldCanvas().canvasUpdate();
 		defaultDraw(scene, ResourceLoader.end);
+		Button close = new Button("Restart");
+		close.setStyle("-fx-color: red;-fx-border: none ");
+		close.setOnMouseClicked((MouseEvent e) -> {
+			ResourceLoader.click.play(100);
+			this.getChildren().clear();
+			GameLogic.battleField.restart();
+			//GameLogic.heroInBat.destroyed();
+			SceneManager.SelectScene = new SelectScene();
+			SceneManager.goToScene(SceneManager.MainScene);
+		});
+		this.getChildren().add(close);
 	}
 }

@@ -4,7 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 
 public class SelectScene extends Scene {
-	private StackPane root;
+	public StackPane root;
 	private SelectCanvas canvas;
 
 	public SelectScene() {
@@ -13,7 +13,7 @@ public class SelectScene extends Scene {
 		canvas = new SelectCanvas();
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
-
+		
 	}
 
 	public SelectCanvas getSelectCanvas() {

@@ -2,6 +2,7 @@ package drawing.select;
 
 import com.sun.javafx.tk.FontLoader;
 
+import Exception.HeroException;
 import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.ResourceLoader;
@@ -11,7 +12,6 @@ import creature.hero.Knight;
 import creature.hero.Magician;
 import drawing.battlefield.BattleFieldScene;
 import drawing.manager.SceneManager;
-import exception.HeroException;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -31,7 +31,7 @@ public class SelectCanvas extends Canvas {
 	private FontLoader fontloader = ResourceLoader.fontLoader;
 	public static String selected = "";
 	private Image[] hero = new Image[3];
-	private Hero he;
+	public Hero he;
 
 	public SelectCanvas() {
 		super(1000, 700);
@@ -223,5 +223,14 @@ public class SelectCanvas extends Canvas {
 
 	public String getSelected() {
 		return selected;
+	}
+	
+	public SelectCanvas getSelecteCanvas(){
+		return this;
+	}
+	
+	public void clearSelectCanvas() {
+		this.he = null;
+		this.selected = "";
 	}
 }

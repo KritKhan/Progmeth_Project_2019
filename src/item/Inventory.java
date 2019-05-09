@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Inventory {
 	public static List<Item> inventory = new ArrayList<>();
-	Item hp = new HpPotion();
-	Item mp = new MpPotion();
-	Item mix = new MixPotion();
+	public Item hp = new HpPotion();
+	public Item mp = new MpPotion();
+	public Item mix = new MixPotion();
 
 	public Inventory() {
 		reset();
