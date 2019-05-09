@@ -15,11 +15,9 @@ public class BattleFieldScene extends Scene{
 	private StackPane root;
 	private Canvas canvas;
 	private DialogPane dialog;
-	private Image[] images;
 
 	public BattleFieldScene() {
 		super(new StackPane());
-		initialImages(); 
 		root = (StackPane) this.getRoot();
 		root.setAlignment(Pos.CENTER);
 		
@@ -31,21 +29,6 @@ public class BattleFieldScene extends Scene{
 //		this.toBattleField();
 		
 		InputUtility.bindListeners(this);
-	}
-	
-	public void initialImages() {
-		images = new Image[11];
-		images[0] = ResourceLoader.dungeon1;
-		images[1] = ResourceLoader.dirtland;
-		images[2] = ResourceLoader.dirtland;
-		images[3] = ResourceLoader.dungeon1;
-		images[4] = ResourceLoader.waterDun;
-		images[5] = ResourceLoader.waterDun;
-		images[6] = ResourceLoader.grassland;
-		images[7] = ResourceLoader.dungeon1;
-		images[8] = ResourceLoader.grassland;
-		images[9] = ResourceLoader.dungeon2;
-		images[10] = ResourceLoader.dungeon2;
 	}
 	
 	public void toBattleField() {

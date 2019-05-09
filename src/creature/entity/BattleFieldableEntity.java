@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
-	
+
 	protected double maxHp;
 	protected double currentHp;
 	protected int baseAtk;
@@ -23,22 +23,23 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 	private ArrayList<Integer> dmgTimerDelay;
 	private int dmg;
 
-	public BattleFieldableEntity(double x, double y, Image img, int row, int col, int direction, int movespeed, int mass,
-			int maxHp, int baseAtk, T atkType) {
+	public BattleFieldableEntity(double x, double y, Image img, int row, int col, int direction, int movespeed,
+			int mass, int maxHp, int baseAtk, T atkType) {
 		super(x, y, img, row, col, direction, movespeed, mass);
 		this.atkType = atkType;
-		this.atkType.setOwner((BattleFieldableEntity<Hero>) this); //add the entity to list
+		this.atkType.setOwner((BattleFieldableEntity<Hero>) this); // add the entity to list
 		this.baseAtk = baseAtk;
 		this.mass = mass;
-		this.maxHp = maxHp; 
+		this.maxHp = maxHp;
 		this.damageTake = new int[4];
 		this.currentHp = getMaxHp();
 		this.dmgTimer = 0;
 		this.hpBarTimer = 0;
 		dmgTimerDelay = new ArrayList<>();
 	}
+
 	@Override
-	public void draw(GraphicsContext gc) { 
+	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
 		if (!(this instanceof HeroInBat) && (dmgTimer != 0 || hpBarTimer != 0)) {
 			// draw hp bar of monsters
@@ -54,26 +55,28 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 			gc.setFill(Color.RED);
 			for (int i = 0; i < dmgTimerDelay.size(); i++) {
 				gc.fillText("-" + Integer.toString(dmg), pos.x + getWidth() / 3,
-						pos.y  + getHeight()/3 - (50 - dmgTimerDelay.get(i)));
-				dmgTimerDelay.set(i, dmgTimerDelay.get(i)-1);
-				if(dmgTimerDelay.get(i)==0) dmgTimerDelay.remove(i);
-				else if(dmgTimerDelay.size()>=10&&dmgTimerDelay.get(i)<20) dmgTimerDelay.remove(i);
+						pos.y + getHeight() / 3 - (50 - dmgTimerDelay.get(i)));
+				dmgTimerDelay.set(i, dmgTimerDelay.get(i) - 1);
+				if (dmgTimerDelay.get(i) == 0)
+					dmgTimerDelay.remove(i);
+				else if (dmgTimerDelay.size() >= 10 && dmgTimerDelay.get(i) < 20)
+					dmgTimerDelay.remove(i);
 			}
 		}
 		if (dmgTimer % 5 == 0)
-		super.draw(gc);
+			super.draw(gc);
 	}
 
 	public boolean attack() {
 		if (atkType.getAttackTime() == 0) {
 			ArrayList<BattleFieldableEntity<Hero>> inArea = BattleField.getEntityInArea(atkType.getAttackObj(),
 					atkType.getAttackObj().getX(), atkType.getAttackObj().getY());
-			if (inArea == null || inArea.size() <= 1) 
+			if (inArea == null || inArea.size() <= 1)
 				return false;
 			for (BattleFieldableEntity<Hero> other : inArea) {
 				if (other.hashCode() != this.hashCode() && this.race != other.race) {
-					atkType.use(); //use mana
-					atkType.attack(this, other); 
+					atkType.use(); // use mana
+					atkType.attack(this, other);
 				}
 			}
 
@@ -84,7 +87,8 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 
 	public void damage(int dmg, int direction) {
 		this.dmg = dmg;
-		if(dmgTimerDelay.size()<=20) dmgTimerDelay.add(50);
+		if (dmgTimerDelay.size() <= 20)
+			dmgTimerDelay.add(50);
 		dmgTimer = Constant.DMG_TIME_MAX;
 		this.damageTake[direction] += ForceUtility.<T>calculateForce(dmg, getAxis(direction), this);
 		this.currentHp = this.currentHp - dmg >= 0 ? this.currentHp - dmg : 0;
@@ -95,7 +99,7 @@ public abstract class BattleFieldableEntity<T extends Hero> extends Entity {
 	}
 
 	public double getMaxHp() {
-		return maxHp * atkType.getHpMultiply() ;
+		return maxHp * atkType.getHpMultiply();
 	}
 
 	public double getCurrentHp() {

@@ -1,6 +1,5 @@
 package creature.hero;
 
-import Interface.Regenable;
 import Logic.GameLogic;
 import SharedObject.Constant;
 import SharedObject.ForceUtility;
@@ -29,7 +28,7 @@ public abstract class Hero {
 	public Hero() {
 		attackTime = 0;
 	}
-	
+
 	public void update(int direction, double x, double y) {
 		if (attackTime > 0)
 			attackTime--;
@@ -103,15 +102,15 @@ public abstract class Hero {
 	public Image getImage() {
 		return animationImg;
 	}
-	
+
 	public Image getHeroImage() {
 		return heroImage;
 	}
-	
+
 	public String getHeroName() {
 		return heroName;
 	}
-	
+
 	public abstract int getManaUsed();
-	
+
 }

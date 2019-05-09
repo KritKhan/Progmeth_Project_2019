@@ -14,7 +14,7 @@ public class Knight extends Hero {
 		super();
 		heroImage = ResourceLoader.knight;
 		attackMultiply = 1;
-		attackRange = new Pair(70,32);
+		attackRange = new Pair(70, 32);
 		attackSpeed = 1;
 		hpMultiply = 1.4;
 		hpRegen = 5;
@@ -25,46 +25,24 @@ public class Knight extends Hero {
 			@Override
 			public void draw(GraphicsContext gc) {
 				try {
-//					if (owner instanceof HeroInBat) {
-						if (owner.getAtkType().getAttackTime() > 3) {
-							 //gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-								gc.drawImage(ResourceLoader.kEffect, pos.x - getWidth() / 3.2, pos.y - getHeight(),
-										ResourceLoader.kEffect.getWidth() * 0.5,
-										ResourceLoader.kEffect.getHeight() * 0.5);
-							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-								gc.drawImage(ResourceLoader.kEffect2, pos.x - getWidth()/2,
-										pos.y - getHeight() , ResourceLoader.kEffect2.getWidth() * 0.5,
-										ResourceLoader.kEffect2.getHeight() * 0.5);
-							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-								gc.drawImage(ResourceLoader.kEffect3, pos.x - getWidth() / 6,
-										pos.y - getHeight() / 1.2, ResourceLoader.kEffect3.getWidth() * 0.5,
-										ResourceLoader.kEffect3.getHeight() * 0.5);
-							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-								gc.drawImage(ResourceLoader.kEffect4, pos.x - getWidth() * 0.4,
-										pos.y - getHeight() * 0.4, ResourceLoader.kEffect4.getWidth() * 0.5,
-										ResourceLoader.kEffect4.getHeight() * 0.5);
-							}
+					if (owner.getAtkType().getAttackTime() > 3) {
+						if (owner.getDirection() == Constant.ENTITY_RIGHT) {
+							gc.drawImage(ResourceLoader.kEffect, pos.x - getWidth() / 3.2, pos.y - getHeight(),
+									ResourceLoader.kEffect.getWidth() * 0.5, ResourceLoader.kEffect.getHeight() * 0.5);
+						} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
+							gc.drawImage(ResourceLoader.kEffect2, pos.x - getWidth() / 2, pos.y - getHeight(),
+									ResourceLoader.kEffect2.getWidth() * 0.5,
+									ResourceLoader.kEffect2.getHeight() * 0.5);
+						} else if (owner.getDirection() == Constant.ENTITY_BACK) {
+							gc.drawImage(ResourceLoader.kEffect3, pos.x - getWidth() / 6, pos.y - getHeight() / 1.2,
+									ResourceLoader.kEffect3.getWidth() * 0.5,
+									ResourceLoader.kEffect3.getHeight() * 0.5);
+						} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
+							gc.drawImage(ResourceLoader.kEffect4, pos.x - getWidth() * 0.4, pos.y - getHeight() * 0.4,
+									ResourceLoader.kEffect4.getWidth() * 0.5,
+									ResourceLoader.kEffect4.getHeight() * 0.5);
 						}
-//					} else {
-//						if (owner.getAtkType().getAttackTime() > 0) {
-//							 //gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-//							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-//								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() * 5 / 6,
-//										pos.y - getHeight());
-//							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-//								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() * 1.3,
-//										pos.y - getHeight());
-//							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-//								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() / 2,
-//										pos.y - getHeight() * 5 / 6);
-//							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-//								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() / 2,
-//										pos.y - getHeight() * 5 / 6);
-//							}
-//						}
-//
-//					}
+					}
 				} catch (NullPointerException e) {
 					System.out.println("cannot draw attack effect");
 				}
@@ -72,15 +50,18 @@ public class Knight extends Hero {
 
 			@Override
 			public double getWidth() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y : attackRange.x * 1.5;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y
+						: attackRange.x * 1.5;
 			}
 
 			@Override
 			public double getHeight() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 2 : attackRange.y;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 2
+						: attackRange.y;
 			}
 		};
 	}
+
 	public void update(int direction, double x, double y) {
 		try {
 			super.update(direction, x, y);

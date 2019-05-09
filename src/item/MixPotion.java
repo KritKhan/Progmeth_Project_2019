@@ -27,7 +27,7 @@ public class MixPotion extends Item {
 
 	@Override
 	public boolean isBuyable() {
-		return Logic.GameLogic.heroInBat.getMoney()>=this.price &&Logic.GameLogic.heroInBat.getMoney()!=0;
+		return Logic.GameLogic.heroInBat.getMoney() >= this.price && Logic.GameLogic.heroInBat.getMoney() != 0;
 
 	}
 

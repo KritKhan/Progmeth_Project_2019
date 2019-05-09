@@ -14,7 +14,7 @@ public class MpPotion extends Item {
 		this.increaseMp = 500;
 		this.imgae = ResourceLoader.mp;
 	}
-	
+
 	public void use() {
 		if (isUsable()) {
 			GameLogic.heroInBat.healMp(increaseMp);
@@ -25,7 +25,7 @@ public class MpPotion extends Item {
 	@Override
 	public boolean isBuyable() {
 		// TODO Auto-generated method stub
-		return GameLogic.heroInBat.getMoney()>=this.price && Logic.GameLogic.heroInBat.getMoney()!=0;
+		return GameLogic.heroInBat.getMoney() >= this.price && Logic.GameLogic.heroInBat.getMoney() != 0;
 
 	}
 

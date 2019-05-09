@@ -11,9 +11,12 @@ import creature.hero.Knight;
 import creature.hero.Magician;
 import drawing.battlefield.BattleFieldScene;
 import drawing.manager.SceneManager;
+import exception.HeroException;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -35,14 +38,18 @@ public class SelectCanvas extends Canvas {
 		gc = this.getGraphicsContext2D();
 		this.initialHeroImage();
 		this.drawSelectMenu();
-		this.addKeyEventHandler();
+		try {
+			this.addKeyEventHandler();
+		} catch (HeroException e) {
+			System.out.println("HeroException : Please choose hero");
+		}
 	}
 
 	public void initialHeroImage() {
 		hero[0] = ResourceLoader.archerFace;
 		hero[1] = ResourceLoader.magicianFace;
 		hero[2] = ResourceLoader.knightFace;
-	} 
+	}
 
 	public void drawSelectMenu() {
 		// draw bg
@@ -89,7 +96,7 @@ public class SelectCanvas extends Canvas {
 		SceneManager.BattleFieldScene.toBattleField();
 	}
 
-	private void onButton(MouseEvent event, boolean isClicked) {
+	private void onButton(MouseEvent event, boolean isClicked) throws HeroException {
 		double h, w, hok, wok;
 		h = Constant.hero_height / 2;
 		w = Constant.hero_width / 2;
@@ -141,22 +148,24 @@ public class SelectCanvas extends Canvas {
 				&& event.getSceneY() >= Constant.SCENE_HEIGHT / 1.2 - hok
 				&& event.getSceneY() <= Constant.SCENE_HEIGHT / 1.2 + hok) {
 			// area of event
-			if (isClicked && !selected.equals("")) {
-				//create Hero here
+			if (isClicked && selected.equals("")) {
+				throw new HeroException();
+			} else if (isClicked && !selected.equals("")) {
+				// create Hero here
 				ResourceLoader.click.play(100);
-				switch(selected) {
-				case "Magician" :
+				switch (selected) {
+				case "Magician":
 					he = new Magician();
 					break;
-				case "Archer" :
+				case "Archer":
 					he = new Archer();
 					break;
-				case "Knight" :
+				case "Knight":
 					he = new Knight();
 				}
 				System.out.println("pass select hero");
-				System.out.println("Hero name : "+ he.getHeroName());
-				goToBattleField(he); 
+				System.out.println("Hero name : " + he.getHeroName());
+				goToBattleField(he);
 			} else {
 				gc.drawImage(ResourceLoader.okhili, Constant.SCENE_WIDTH / 2 - wok, Constant.SCENE_HEIGHT / 1.2 - hok);
 			}
@@ -165,7 +174,7 @@ public class SelectCanvas extends Canvas {
 		}
 	}
 
-	private void addKeyEventHandler() {
+	private void addKeyEventHandler() throws HeroException {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
@@ -177,14 +186,38 @@ public class SelectCanvas extends Canvas {
 		});
 
 		setOnMouseMoved((MouseEvent event) -> {
-			onButton(event, false);
+			try {
+				onButton(event, false);
+			} catch (HeroException e) {
+//				System.out.println("HeroException : Please choose hero");
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText("Please choose hero!");
+				alert.setHeaderText("Hero Error");
+				alert.showAndWait();
+			}
 		});
 		setOnMouseClicked((MouseEvent event) -> {
-			onButton(event, true);
+			try {
+				onButton(event, true);
+			} catch (HeroException e) {
+//				System.out.println("HeroException : Please choose hero");
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText("Please choose hero!");
+				alert.setHeaderText("Hero Error");
+				alert.showAndWait();
+			}
 		});
-		
+
 		setOnMouseDragEntered((MouseEvent event) -> {
-			onButton(event, true);
+			try {
+				onButton(event, true);
+			} catch (HeroException e) {
+//				System.out.println("HeroException : Please choose hero");
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText("Please choose hero!");
+				alert.setHeaderText("Hero Error");
+				alert.showAndWait();
+			}
 		});
 	}
 

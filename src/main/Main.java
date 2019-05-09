@@ -9,7 +9,7 @@ import javafx.application.Platform;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-public class Main extends Application{
+public class Main extends Application {
 	public static MediaPlayer bgm;
 	public static boolean isGameRunning;
 
@@ -26,12 +26,13 @@ public class Main extends Application{
 			primaryStage.setTitle("Battle x Monsters");
 			primaryStage.centerOnScreen();
 			primaryStage.setResizable(false);
-			
-		}catch (Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
+
 	@Override
 	public void stop() throws Exception {
 		try {
@@ -44,10 +45,9 @@ public class Main extends Application{
 			Platform.exit();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
 
 }

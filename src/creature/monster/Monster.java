@@ -26,7 +26,7 @@ public class Monster extends BattleFieldableEntity<Hero> implements Obstructable
 		super(RandomUtility.randomInt((int) (Constant.SCENE_WIDTH * 0.01), (int) (Constant.SCENE_WIDTH * 0.9)),
 				RandomUtility.randomInt((int) (Constant.SCENE_HEIGHT * 0.01),
 						(int) ((Constant.SCENE_HEIGHT - Constant.STATUSBAR_HEIGHT) * 0.8)),
-				img, row, column, Constant.ENTITY_FRONT, movespeed/2, mass, maxHp, baseAtk, atkType);
+				img, row, column, Constant.ENTITY_FRONT, movespeed / 2, mass, maxHp, baseAtk, atkType);
 		this.idleParameter = idleParameter;
 		this.timidParameter = timidParaneter;
 		this.persistentParameter = persistentParameter;
@@ -36,21 +36,22 @@ public class Monster extends BattleFieldableEntity<Hero> implements Obstructable
 		this.count = idleParameter;
 		this.race = Constant.ENTITY_MONSTER;
 	}
-	
+
 	@Override
 	public double getWidth() {
-		return super.getWidth()*size;
+		return super.getWidth() * size;
 	}
-	
+
 	@Override
 	public double getHeight() {
-		return super.getHeight()*size;
+		return super.getHeight() * size;
 	}
 
 	private int heroDirection() {
 		double dx = GameLogic.heroInBat.getX();
 		double dy = GameLogic.heroInBat.getY();
-		if(pos.diffD(dx, dy)>= eyesight) return RandomUtility.randomByPercent(rand, this.direction, 98);
+		if (pos.diffD(dx, dy) >= eyesight)
+			return RandomUtility.randomByPercent(rand, this.direction, 98);
 		if (pos.diffX(dx) > pos.diffY(dy)) {
 			return (pos.x - dx) >= 0 ? Constant.ENTITY_LEFT : Constant.ENTITY_RIGHT;
 		} else {
@@ -66,11 +67,11 @@ public class Monster extends BattleFieldableEntity<Hero> implements Obstructable
 			GameLogic.heroInBat.earnMoney(bounty);
 		} else if ((isAlive) && (dmgTimer == 0) && (count < idleParameter / 2)) {
 			rand = RandomUtility.randomInt(0, 100);
-			if (((rand) % 100 < persistentParameter/100 ) || (dmgTimer > 1000/persistentParameter))
+			if (((rand) % 100 < persistentParameter / 100) || (dmgTimer > 1000 / persistentParameter))
 				move(heroDirection());
 			else
 				move(RandomUtility.randomByPercent(rand, this.direction, 98));
-				attack();
+			attack();
 			if (isBlock(pos.x, pos.y))
 				struct = true;
 			else
@@ -95,5 +96,5 @@ public class Monster extends BattleFieldableEntity<Hero> implements Obstructable
 		}
 		return false;
 	}
-	
+
 }

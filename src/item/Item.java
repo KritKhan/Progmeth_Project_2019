@@ -11,10 +11,11 @@ public abstract class Item implements Useable {
 	protected int increaseMp;
 	protected Image imgae;
 	protected int amount;
-	
+
 	public abstract boolean isBuyable();
+
 	public abstract boolean isUsable();
-	
+
 	public String getName() {
 		return name;
 	}
@@ -30,11 +31,11 @@ public abstract class Item implements Useable {
 	public int getIncreaseMp() {
 		return increaseMp;
 	}
-	
+
 	public int getAmount() {
 		return amount;
 	}
-	
+
 	public void add() {
 		this.amount++;
 	}

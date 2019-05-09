@@ -9,10 +9,10 @@ import javafx.scene.media.Media;
 import javafx.scene.text.Font;
 
 public abstract class ResourceLoader {
-	//font
+	// font
 	public static FontLoader fontLoader;
-	
-	//character
+
+	// character
 	public static Image magician;
 	public static Image knight;
 	public static Image archer;
@@ -23,40 +23,35 @@ public abstract class ResourceLoader {
 	public static Image wolf;
 	public static Image armor;
 	public static Image[] monsterImage = new Image[3];
-	//hero face
+	// hero face
 	public static Image magicianFace;
 	public static Image knightFace;
 	public static Image archerFace;
 	public static Image magicianFaceH;
 	public static Image knightFaceH;
 	public static Image archerFaceH;
-	
-	//background
-	public static Image map;
-	public static Image dirtland;
+
+	// background
 	public static Image dungeon1;
 	public static Image dungeon2;
-	public static Image waterDun;
-	public static Image grassland;
-	public static Image waterland;
 	public static Image homebg;
 	public static Image selectbg;
-	
-	//button
+
+	// button
 	public static Image startbtn;
 	public static Image starthili;
 	public static Image okbtn;
 	public static Image okhili;
-	
-	//item
+
+	// item
 	public static Image hp;
 	public static Image mp;
 	public static Image mix;
 	public static Image hphili;
 	public static Image mphili;
 	public static Image mixhili;
-	
-	//effect
+
+	// effect
 	public static Image aEffect;
 	public static Image aEffect2;
 	public static Image aEffect3;
@@ -69,34 +64,34 @@ public abstract class ResourceLoader {
 	public static Image kEffect2;
 	public static Image kEffect3;
 	public static Image kEffect4;
-	
+
 	public static Image logo;
-	
-	//gui
+
+	// gui
 	public static Image end;
 	public static Image shop;
 	public static Image setting;
 	public static Image statusBar;
-	
-	//select
+
+	// select
 	public static Image select;
-	
-	//sound
+
+	// sound
 	public static Media bgm;
 	public static AudioClip click;
-	
+
 	public static Thread loadThread;
-	
+
 	static {
 		ResourceLoader.loadResource();
 		initializeSecondLoad();
 	}
-	
+
 	static void loadResource() {
 		try {
 			fontLoader = Toolkit.getToolkit().getFontLoader();
-			
-			//Character
+
+			// Character
 			magician = new Image(ClassLoader.getSystemResource("Character/Magician.png").toString());
 			knight = new Image(ClassLoader.getSystemResource("Character/Knight.png").toString());
 			archer = new Image(ClassLoader.getSystemResource("Character/Archer.png").toString());
@@ -106,56 +101,50 @@ public abstract class ResourceLoader {
 			lion = new Image(ClassLoader.getSystemResource("Character/Lion.png").toString());
 			wolf = new Image(ClassLoader.getSystemResource("Character/Wolf.png").toString());
 			armor = new Image(ClassLoader.getSystemResource("Character/Armor.png").toString());
-			
-			
-			//Hero Face
+
+			// Hero Face
 			magicianFace = new Image(ClassLoader.getSystemResource("Character/MagicianFace.png").toString());
 			knightFace = new Image(ClassLoader.getSystemResource("Character/KnightFace.png").toString());
 			archerFace = new Image(ClassLoader.getSystemResource("Character/ArcherFace.png").toString());
 			magicianFaceH = new Image(ClassLoader.getSystemResource("Character/MagicianFaceH.png").toString());
 			knightFaceH = new Image(ClassLoader.getSystemResource("Character/KnightFaceH.png").toString());
 			archerFaceH = new Image(ClassLoader.getSystemResource("Character/ArcherFaceH.png").toString());
-			
-			//BG
-			map = new Image(ClassLoader.getSystemResource("BGandButton/Map.jpg").toString());
-			dirtland = new Image(ClassLoader.getSystemResource("BGandButton/Dirt.jpg").toString());
+
+			// BG
 			dungeon1 = new Image(ClassLoader.getSystemResource("BGandButton/Dun1.jpg").toString());
 			dungeon2 = new Image(ClassLoader.getSystemResource("BGandButton/Dun2.jpg").toString());
-			waterDun = new Image(ClassLoader.getSystemResource("BGandButton/DunWater.jpg").toString());
-			grassland = new Image(ClassLoader.getSystemResource("BGandButton/Grass.jpg").toString());
-			waterland = new Image(ClassLoader.getSystemResource("BGandButton/Water.jpg").toString());
 			homebg = new Image(ClassLoader.getSystemResource("BGandButton/Main.jpg").toString());
 			selectbg = new Image(ClassLoader.getSystemResource("BGandButton/Select8.jpg").toString());
-			
-			//Button
+
+			// Button
 			startbtn = new Image(ClassLoader.getSystemResource("BGandButton/Startbutton.png").toString());
 			starthili = new Image(ClassLoader.getSystemResource("BGandButton/StartbuttonH.png").toString());
 			okbtn = new Image(ClassLoader.getSystemResource("BGandButton/OKbutton.png").toString());
 			okhili = new Image(ClassLoader.getSystemResource("BGandButton/OKbuttonH.png").toString());
-			
-			//item
+
+			// item
 			hp = new Image(ClassLoader.getSystemResource("Potion/hpPotion.png").toString());
 			mp = new Image(ClassLoader.getSystemResource("Potion/mpPotion.png").toString());
 			mix = new Image(ClassLoader.getSystemResource("Potion/mixPotion.png").toString());
 			hphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
 			mphili = new Image(ClassLoader.getSystemResource("Potion/HpPotionH.png").toString());
 			mixhili = new Image(ClassLoader.getSystemResource("Potion/MixPotion.png").toString());
-			
+
 			logo = new Image(ClassLoader.getSystemResource("BGandButton/Logo8.png").toString());
-			
-			//Select
+
+			// Select
 			select = new Image(ClassLoader.getSystemResource("BGandButton/choose hero2.png").toString());
 			statusBar = new Image(ClassLoader.getSystemResource("BGandButton/StatusBar.png").toString());
-			
+
 			bgm = new Media(ClassLoader.getSystemResource("Sound/battle2.mp3").toString());
 			click = new AudioClip(ClassLoader.getSystemResource("Sound/click.mp3").toString());
-		
-		}catch (NullPointerException e) {
+
+		} catch (NullPointerException e) {
 			System.out.println("resource1 not found");
 		}
-		
+
 	}
-	
+
 	public static void initializeSecondLoad() {
 
 		loadThread = new Thread(new Runnable() {
@@ -163,7 +152,7 @@ public abstract class ResourceLoader {
 			@Override
 			public void run() {
 				try {
-					
+
 					aEffect = new Image(ClassLoader.getSystemResource("Character/ArcherFxR.gif").toString());
 					aEffect2 = new Image(ClassLoader.getSystemResource("Character/ArcherFxL.gif").toString());
 					aEffect3 = new Image(ClassLoader.getSystemResource("Character/ArcherFxU.gif").toString());
@@ -174,25 +163,25 @@ public abstract class ResourceLoader {
 					mEffect4 = new Image(ClassLoader.getSystemResource("Character/MageFxD.gif").toString());
 					kEffect = new Image(ClassLoader.getSystemResource("Character/KnightFxR.gif").toString());
 					kEffect2 = new Image(ClassLoader.getSystemResource("Character/KnightFxL.gif").toString());
-					kEffect3 = new Image(ClassLoader.getSystemResource("Character/KnightFxU.gif").toString());	
+					kEffect3 = new Image(ClassLoader.getSystemResource("Character/KnightFxU.gif").toString());
 					kEffect4 = new Image(ClassLoader.getSystemResource("Character/KnightFxD.gif").toString());
 
 					monsterImage[0] = lion;
 					monsterImage[1] = wolf;
 					monsterImage[2] = armor;
-					
+
 					shop = new Image(ClassLoader.getSystemResource("Potion/Shop.png").toString());
 					end = new Image(ClassLoader.getSystemResource("Potion/end.png").toString());
-					setting =  new Image(ClassLoader.getSystemResource("Potion/setting.png").toString());
-					
-				}catch (NullPointerException e) {
+					setting = new Image(ClassLoader.getSystemResource("Potion/setting.png").toString());
+
+				} catch (NullPointerException e) {
 					System.out.println("resource2 not found");
 				}
 			}
 		});
-		loadThread.setPriority(Thread.MAX_PRIORITY);		
+		loadThread.setPriority(Thread.MAX_PRIORITY);
 	}
-	
+
 	public static void startSecondLoad() {
 		try {
 			loadThread.start();
@@ -200,7 +189,7 @@ public abstract class ResourceLoader {
 			System.out.println("not initialize");
 		}
 	}
-	
+
 	public static boolean isLoadFinish() {
 		return !(loadThread.isAlive());
 	}

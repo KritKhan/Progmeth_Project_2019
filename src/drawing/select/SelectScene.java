@@ -3,7 +3,7 @@ package drawing.select;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 
-public class SelectScene extends Scene{
+public class SelectScene extends Scene {
 	private StackPane root;
 	private SelectCanvas canvas;
 
@@ -13,8 +13,9 @@ public class SelectScene extends Scene{
 		canvas = new SelectCanvas();
 		root.getChildren().add(canvas);
 		canvas.requestFocus();
-		
+
 	}
+
 	public SelectCanvas getSelectCanvas() {
 		return canvas;
 	}

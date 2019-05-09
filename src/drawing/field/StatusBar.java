@@ -84,36 +84,34 @@ public class StatusBar extends Field {
 
 		if ((xPos >= 529 && xPos <= 590 && yPos >= 580 && yPos <= 640 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.DIGIT1))) {
-			//use HpPotion
-				ResourceLoader.click.play(100);
-				inventory.use(Inventory.getInventory().get(0));
+			// use HpPotion
+			ResourceLoader.click.play(100);
+			inventory.use(Inventory.getInventory().get(0));
 		} else if ((xPos >= 608 && xPos <= 669 && yPos >= 580 && yPos <= 640 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.DIGIT2))) {
-			//use MpPotion
+			// use MpPotion
 			ResourceLoader.click.play(100);
-				inventory.use(Inventory.getInventory().get(1));
-		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30+550 && yPos <= 90+550 && InputUtility.isMouseClick())
+			inventory.use(Inventory.getInventory().get(1));
+		} else if ((xPos >= 691 && xPos <= 752 && yPos >= 30 + 550 && yPos <= 90 + 550 && InputUtility.isMouseClick())
 				|| (InputUtility.isKeyPressed(KeyCode.DIGIT3))) {
-			//use MixPotion
+			// use MixPotion
 			ResourceLoader.click.play(100);
-				inventory.use(Inventory.getInventory().get(2));
-		} else if (xPos >= Constant.SCENE_WIDTH -192 && xPos <= Constant.SCENE_WIDTH - 124 
-				&& yPos >= 575 && yPos <= 645 && InputUtility.isMouseClick()
-			|| (InputUtility.isKeyPressed(KeyCode.B))) {
-				InputUtility.mouseX = 0;
-				InputUtility.mouseY = 0;
-				BattleFieldMain.stop();
-				ResourceLoader.click.play(100);
-				SceneManager.BattleFieldScene.toDialog(0);
-		} else if (xPos >= Constant.SCENE_WIDTH -106 && xPos <= Constant.SCENE_WIDTH - 38
-				&& yPos >= 575 && yPos <= 645 && InputUtility.isMouseClick()
-			|| (InputUtility.isKeyPressed(KeyCode.ENTER))) {
-				InputUtility.mouseX = 0;
-				InputUtility.mouseY = 0;
-				BattleFieldMain.stop();
-				ResourceLoader.click.play(100);
-				//open pause
-				SceneManager.BattleFieldScene.toDialog(1);
+			inventory.use(Inventory.getInventory().get(2));
+		} else if (xPos >= Constant.SCENE_WIDTH - 192 && xPos <= Constant.SCENE_WIDTH - 124 && yPos >= 575
+				&& yPos <= 645 && InputUtility.isMouseClick() || (InputUtility.isKeyPressed(KeyCode.B))) {
+			InputUtility.mouseX = 0;
+			InputUtility.mouseY = 0;
+			BattleFieldMain.stop();
+			ResourceLoader.click.play(100);
+			SceneManager.BattleFieldScene.toDialog(0);
+		} else if (xPos >= Constant.SCENE_WIDTH - 106 && xPos <= Constant.SCENE_WIDTH - 38 && yPos >= 575 && yPos <= 645
+				&& InputUtility.isMouseClick() || (InputUtility.isKeyPressed(KeyCode.ENTER))) {
+			InputUtility.mouseX = 0;
+			InputUtility.mouseY = 0;
+			BattleFieldMain.stop();
+			ResourceLoader.click.play(100);
+			// open pause
+			SceneManager.BattleFieldScene.toDialog(1);
 		}
 	}
 }

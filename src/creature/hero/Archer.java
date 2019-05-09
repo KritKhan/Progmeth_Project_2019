@@ -9,7 +9,7 @@ import creature.entity.HeroInBat;
 import item.Inventory;
 import javafx.scene.canvas.GraphicsContext;
 
-public class Archer extends Hero{
+public class Archer extends Hero {
 
 	public Archer() {
 		super();
@@ -26,64 +26,38 @@ public class Archer extends Hero{
 
 			@Override
 			public void draw(GraphicsContext gc) {
-//				try {
-//					if (owner instanceof HeroInBat) {
-						if (owner.getAtkType().getAttackTime() > 3) {
-							// gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() / 2, pos.y - getHeight() / 2,
-										ResourceLoader.aEffect.getWidth() * 0.8,
-										ResourceLoader.aEffect.getHeight() * 0.8);
-							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-								gc.drawImage(ResourceLoader.aEffect2, pos.x - getWidth() ,pos.y - getHeight() / 2, 
-										ResourceLoader.aEffect2.getWidth() * 0.8,
-										ResourceLoader.aEffect2.getHeight() * 0.8);
-							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-								gc.drawImage(ResourceLoader.aEffect3, pos.x - getWidth() / 6,pos.y - getHeight() * 0.6,
-										ResourceLoader.aEffect3.getWidth() * 0.8,
-										ResourceLoader.aEffect3.getHeight() * 0.8);
-							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-								gc.drawImage(ResourceLoader.aEffect4, pos.x - getWidth() * 0.4,pos.y - getHeight()*0.2, 
-										ResourceLoader.aEffect4.getWidth() * 0.8,
-										ResourceLoader.aEffect4.getHeight() * 0.8);
-							}
-						}
-//					} else {
-//						if (owner.getAtkType().getAttackTime() > 0) {
-//							// gc.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
-//							if (owner.getDirection() == Constant.ENTITY_RIGHT) {
-//								gc.drawImage(ResourceLoader.aEffect2, pos.x - getWidth() * 5 / 6,
-//										pos.y - getHeight());
-//							} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
-//								gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() * 1.3,
-//										pos.y - getHeight());
-//							} else if (owner.getDirection() == Constant.ENTITY_BACK) {
-//								gc.drawImage(ResourceLoader.aEffect3, pos.x - getWidth() / 2,
-//										pos.y - getHeight() * 5 / 6);
-//							} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
-//								gc.drawImage(ResourceLoader.aEffect4, pos.x - getWidth() / 2,
-//										pos.y - getHeight() * 5 / 6);
-//							}
-//						}
-//					}
-//				} catch (NullPointerException e) {
-//					System.out.println("cannot draw attack effect");
-//				}
+				if (owner.getAtkType().getAttackTime() > 3) {
+					if (owner.getDirection() == Constant.ENTITY_RIGHT) {
+						gc.drawImage(ResourceLoader.aEffect, pos.x - getWidth() / 2, pos.y - getHeight() / 2,
+								ResourceLoader.aEffect.getWidth() * 0.8, ResourceLoader.aEffect.getHeight() * 0.8);
+					} else if (owner.getDirection() == Constant.ENTITY_LEFT) {
+						gc.drawImage(ResourceLoader.aEffect2, pos.x - getWidth(), pos.y - getHeight() / 2,
+								ResourceLoader.aEffect2.getWidth() * 0.8, ResourceLoader.aEffect2.getHeight() * 0.8);
+					} else if (owner.getDirection() == Constant.ENTITY_BACK) {
+						gc.drawImage(ResourceLoader.aEffect3, pos.x - getWidth() / 6, pos.y - getHeight() * 0.6,
+								ResourceLoader.aEffect3.getWidth() * 0.8, ResourceLoader.aEffect3.getHeight() * 0.8);
+					} else if (owner.getDirection() == Constant.ENTITY_FRONT) {
+						gc.drawImage(ResourceLoader.aEffect4, pos.x - getWidth() * 0.4, pos.y - getHeight() * 0.2,
+								ResourceLoader.aEffect4.getWidth() * 0.8, ResourceLoader.aEffect4.getHeight() * 0.8);
+					}
+				}
 			}
 
 			@Override
 			public double getWidth() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y : attackRange.x * 1.5;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.y
+						: attackRange.x * 1.5;
 			}
 
 			@Override
 			public double getHeight() {
-				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 2 : attackRange.y;
+				return ((GameLogic.heroInBat.getDirection() % 3) == Constant.SCENE_Y_AXIS) ? attackRange.x * 2
+						: attackRange.y;
 
 			}
 		};
 	}
-	
+
 	@Override
 	public void update(int direction, double x, double y) {
 		super.update(direction, x, y);
@@ -104,7 +78,7 @@ public class Archer extends Hero{
 		} else
 			this.attackObj.setZ(owner.getZ() + 10);
 	}
-	
+
 	@Override
 	public void use() {
 		super.use();
@@ -112,9 +86,8 @@ public class Archer extends Hero{
 			GameLogic.heroInBat.useMp(getManaUsed());
 	}
 
-	
 	public int getManaUsed() {
-		return Constant.BASE_MP_USE/2;
+		return Constant.BASE_MP_USE / 2;
 	}
 
 }

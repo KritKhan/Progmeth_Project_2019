@@ -18,14 +18,14 @@ public class GameLogic {
 		status = new StatusBar();
 		RenderableHolder.getInstance().add(status);
 	}
-	
-	public <T extends Hero>void newHero(T atkType) {
+
+	public <T extends Hero> void newHero(T atkType) {
 		heroInBat = new HeroInBat(Constant.ENTITY_FRONT, atkType);
 		BattleField.addEntities(heroInBat);
-	} 
+	}
 
 	public void logicUpdate() {
 		battleField.update();
 		status.update();
-	}  
+	}
 }

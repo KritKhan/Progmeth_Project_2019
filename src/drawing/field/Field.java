@@ -13,8 +13,8 @@ public abstract class Field implements IRenderable {
 	protected WritableImage bg;
 	protected Pair topLeft;
 	protected int z;
-	protected double width; 
-	protected double height; 
+	protected double width;
+	protected double height;
 
 	public Field(Image bgImage, double width, double height, Pair topLeft) {
 		this.visible = true;
@@ -23,12 +23,12 @@ public abstract class Field implements IRenderable {
 		this.bg = new WritableImage(bgImage.getPixelReader(), (int) width, (int) height);
 		this.topLeft = topLeft;
 	}
-	
+
 	@Override
 	public int getZ() {
 		return z;
 	}
-   
+
 	@Override
 	public boolean isDestroyed() {
 		return visible == false;
@@ -41,7 +41,7 @@ public abstract class Field implements IRenderable {
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.drawImage(bg, topLeft.x, topLeft.y,Constant.SCENE_WIDTH,Constant.SCENE_HEIGHT-Constant.STATUSBAR_HEIGHT);
+		gc.drawImage(bg, topLeft.x, topLeft.y, Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT - Constant.STATUSBAR_HEIGHT);
 	}
 
 	protected boolean isInBorderX(double x) {
@@ -55,7 +55,7 @@ public abstract class Field implements IRenderable {
 			return true;
 		return false;
 	}
-	
+
 	public Pair getTopLeft() {
 		return topLeft;
 	}

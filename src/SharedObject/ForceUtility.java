@@ -6,15 +6,16 @@ import creature.hero.Hero;
 public class ForceUtility {
 
 	public static <T extends Hero> void reactionEffect(BattleFieldableEntity<T> entity, int axis) {
-		double d = entity.getMovespeed()*entity.getMovespeed()/2;
-		Pair Ft =totalForce(entity);
+		double d = entity.getMovespeed() * entity.getMovespeed() / 2;
+		Pair Ft = totalForce(entity);
 		// bug able to push out of the field
 		if (axis % 3 == Constant.SCENE_Y_AXIS)
 			d /= (Ft.y / entity.getMass());
 		else
 			d /= (Ft.x / entity.getMass());
 		try {
-			if(entity.isAlive())entity.setPos(d, axis);
+			if (entity.isAlive())
+				entity.setPos(d, axis);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,8 +34,7 @@ public class ForceUtility {
 		return new Pair(x, y);
 	}
 
-	public static <T extends Hero> int calculateForce(int force, int axis,
-			BattleFieldableEntity<T> dungeonableEntity) {
+	public static <T extends Hero> int calculateForce(int force, int axis, BattleFieldableEntity<T> dungeonableEntity) {
 		if (axis == Constant.SCENE_X_AXIS)
 			return (int) (force * Constant.SCENE_WIDTH / 200);
 		else

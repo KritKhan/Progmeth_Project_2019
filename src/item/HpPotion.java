@@ -3,10 +3,9 @@ package item;
 import Logic.GameLogic;
 import SharedObject.ResourceLoader;
 
-
-public class HpPotion extends Item{
+public class HpPotion extends Item {
 	private static final String des = "Immediately heals HP by + 500";
-	
+
 	public HpPotion() {
 		this.name = "HP Potion";
 		this.price = 100;
@@ -28,7 +27,7 @@ public class HpPotion extends Item{
 	@Override
 	public boolean isBuyable() {
 		// TODO Auto-generated method stub
-		return Logic.GameLogic.heroInBat.getMoney()>=this.price && Logic.GameLogic.heroInBat.getMoney()!=0;
+		return Logic.GameLogic.heroInBat.getMoney() >= this.price && Logic.GameLogic.heroInBat.getMoney() != 0;
 	}
 
 	@Override

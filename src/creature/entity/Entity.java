@@ -31,7 +31,7 @@ public abstract class Entity extends GameObject {
 		this.counter = 0;
 		this.walktick = 1;
 		System.out.println(img);
-		this.img = new WritableImage(img.getPixelReader(),0 , 0, (int) w * 3,(int) h * 4);
+		this.img = new WritableImage(img.getPixelReader(), 0, 0, (int) w * 3, (int) h * 4);
 	}
 
 	@Override
@@ -42,17 +42,17 @@ public abstract class Entity extends GameObject {
 
 	protected abstract boolean isBlock(double x, double y);
 
-	private void setEntityX(double x) { //adding X, check isInBoarder
+	private void setEntityX(double x) { // adding X, check isInBoarder
 		if (GameLogic.battleField.isInBoarder(this, this.pos.x + x, 0) && !this.isBlock(this.pos.x + x, this.pos.y))
 			this.pos.x += x;
 	}
 
-	private void setEntityY(double y) { //adding Y, check isInBoarder
+	private void setEntityY(double y) { // adding Y, check isInBoarder
 		if (GameLogic.battleField.isInBoarder(this, 0, this.pos.y + y) && !this.isBlock(this.pos.x, this.pos.y + y))
 			this.pos.y += y;
 	}
 
-	public synchronized void setPos(double dPos, int direction) { //move x or y by look at the direction
+	public synchronized void setPos(double dPos, int direction) { // move x or y by look at the direction
 //		System.out.println(this.getClass().getSimpleName() + " sync");
 		if (direction == Constant.ENTITY_BACK || direction == Constant.ENTITY_FRONT)
 			setEntityY(dPos);
@@ -61,7 +61,7 @@ public abstract class Entity extends GameObject {
 
 	}
 
-	private void addWalkTick() { //every 8 update time will change 1 position(picture)
+	private void addWalkTick() { // every 8 update time will change 1 position(picture)
 		if (counter == Constant.ENTITY_WALK_TICK_DELAY) {
 			this.walktick = (this.walktick + 1) % Constant.ENTITY_WALK_STAGE;
 			counter = 0;
@@ -69,7 +69,7 @@ public abstract class Entity extends GameObject {
 		counter++;
 	}
 
-	@Override 
+	@Override
 	public boolean isCollide(GameObject other, double x, double y) {
 		if ((other.getX() - getWidth() * 4 / 6 <= x && x <= other.getX() + getWidth() * 4 / 6)
 				&& ((other.getY() - getHeight() / 6 + 5 <= y && y <= other.getY() + getHeight()))) {
@@ -96,10 +96,10 @@ public abstract class Entity extends GameObject {
 
 	protected void move(int direction) { //
 		if ((this.direction != direction) && ((this.direction + direction) % Constant.ENTITY_WALK_STAGE == 0)) {
-			this.counter = 0; //direction is change -> 
+			this.counter = 0; // direction is change ->
 			this.walktick = 1;
 		} else if (this.direction == direction || ((this.direction + direction) % Constant.ENTITY_WALK_STAGE != 0)) {
-			addWalkTick(); //if direct is same, walkTrick++ 
+			addWalkTick(); // if direct is same, walkTrick++
 		}
 
 		if (direction == Constant.ENTITY_FRONT)
