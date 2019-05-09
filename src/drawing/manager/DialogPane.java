@@ -4,8 +4,13 @@ import com.sun.javafx.tk.FontLoader;
 
 import Exception.PurchaseException;
 import Logic.GameLogic;
+import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
+import creature.entity.BattleFieldableEntity;
+import creature.monster.MonsterGen;
+import drawing.battlefield.BattleFieldCanvas;
 import drawing.battlefield.BattleFieldScene;
+import drawing.field.BattleField;
 import drawing.field.StatusBar;
 import drawing.select.SelectCanvas;
 import drawing.select.SelectScene;
@@ -35,6 +40,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import main.BattleFieldMain;
+import main.Main;
 
 public class DialogPane extends VBox {
 	private BattleFieldScene scene;
@@ -177,15 +183,16 @@ public class DialogPane extends VBox {
 		BattleFieldMain.getBattleFieldCanvas().canvasUpdate();
 		defaultDraw(scene, ResourceLoader.end);
 		Button close = new Button("Restart");
-		close.setStyle("-fx-color: red;-fx-border: none ");
+		close.setBackground(new Background(new BackgroundFill(Color.SADDLEBROWN, null, null)));
+		close.setTextFill(Color.CORNSILK);
 		close.setOnMouseClicked((MouseEvent e) -> {
+			MonsterGen.stop();
 			ResourceLoader.click.play(100);
-			this.getChildren().clear();
 			GameLogic.battleField.restart();
-			//GameLogic.heroInBat.destroyed();
-			SceneManager.SelectScene = new SelectScene();
-			SceneManager.goToScene(SceneManager.MainScene);
+			RenderableHolder.getInstance().news();
+			SceneManager.BattleFieldScene.toMain();
 		});
-		this.getChildren().add(close);
+		Text t1 = new Text("\n \n \n \n \n \n \n\n\n\n\n\n\n\n\n");		
+		this.getChildren().addAll(t1,close);
 	}
 }

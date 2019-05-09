@@ -5,6 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import drawing.battlefield.BattleFieldScene;
+import drawing.field.BattleField;
 import drawing.home.*;
 import drawing.select.SelectCanvas;
 import drawing.select.SelectScene;
@@ -22,7 +23,10 @@ public class SceneManager {
 		stage.setTitle("Game Name");
 		stage.show();
 	}
-
+	public static void restart() {
+		SelectScene = new SelectScene();
+		BattleFieldScene = new BattleFieldScene();
+	}
 	public static void goToScene(Scene scene) {
 		stage.setScene(scene);
 	}

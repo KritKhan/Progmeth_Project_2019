@@ -148,7 +148,7 @@ public abstract class Entity extends GameObject {
 		return race;
 	}
 
-	public boolean isAlive() {
+	public boolean getIsAlive() {
 		return isAlive;
 	}
 

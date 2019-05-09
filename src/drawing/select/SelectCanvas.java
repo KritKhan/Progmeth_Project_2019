@@ -11,6 +11,7 @@ import creature.hero.Hero;
 import creature.hero.Knight;
 import creature.hero.Magician;
 import drawing.battlefield.BattleFieldScene;
+import drawing.field.BattleField;
 import drawing.manager.SceneManager;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
@@ -87,7 +88,6 @@ public class SelectCanvas extends Canvas {
 	}
 
 	public void goToBattleField(Hero hero) {
-		ResourceLoader.startSecondLoad();
 		BattleFieldMain battleMain = new BattleFieldMain();
 		System.out.println("create battleMain");
 		BattleFieldMain.getGameLogic().newHero(he);
