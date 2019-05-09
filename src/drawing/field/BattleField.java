@@ -102,7 +102,7 @@ public class BattleField extends Field {
 		if (lvlChangetimer == 0) {
 			lvl++;
 			lvlChangetimer = 400;
-			monsterGen.setDunLvl(this.lvl);
+			monsterGen.setBatLvl(this.lvl);
 
 		}
 	}
@@ -137,4 +137,5 @@ public class BattleField extends Field {
 	public static int getLvlChangetimer() {
 		return lvlChangetimer;
 	}
+
 }

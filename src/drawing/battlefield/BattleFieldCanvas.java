@@ -20,6 +20,7 @@ public class BattleFieldCanvas extends Canvas {
 
 	public BattleFieldCanvas(BattleFieldScene scene) {
 		super(Constant.SCENE_WIDTH, Constant.SCENE_HEIGHT);
+		ResourceLoader.startSecondLoad();
 		this.scene = scene;
 		gc = this.getGraphicsContext2D();
 		gc.setFill(Color.BLACK);

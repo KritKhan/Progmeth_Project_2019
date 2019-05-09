@@ -62,4 +62,13 @@ public class RenderableHolder {
 		return entities.size();
 	}
 
+	public void news() {
+		entities = new ArrayList<IRenderable>();
+		comparator = (IRenderable o1, IRenderable o2) -> {
+			if (o1.getZ() > o2.getZ())
+				return 1;
+			return -1;
+		};
+	}
+
 }

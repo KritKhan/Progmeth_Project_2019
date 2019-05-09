@@ -1,8 +1,15 @@
 package drawing.manager;
 
 import com.sun.javafx.tk.FontLoader;
+
+import Logic.GameLogic;
+import SharedObject.RenderableHolder;
 import SharedObject.ResourceLoader;
+import creature.entity.BattleFieldableEntity;
+import creature.monster.MonsterGen;
+import drawing.battlefield.BattleFieldCanvas;
 import drawing.battlefield.BattleFieldScene;
+import drawing.field.BattleField;
 import drawing.field.StatusBar;
 import exception.PurchaseException;
 import item.Item;
@@ -31,6 +38,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import main.BattleFieldMain;
+import main.Main;
 
 public class DialogPane extends VBox {
 	private BattleFieldScene scene;
@@ -172,5 +180,16 @@ public class DialogPane extends VBox {
 	public void dead() {
 		// TODO Auto-generated method stub
 		defaultDraw(scene, ResourceLoader.end);
+		Button close = new Button("Back to Home");
+		close.setBackground(new Background(new BackgroundFill(Color.SADDLEBROWN, null, null)));
+		close.setTextFill(Color.CORNSILK);
+		close.setOnMouseClicked((MouseEvent e) -> {
+			MonsterGen.stop();
+			ResourceLoader.click.play(100);
+			GameLogic.battleField.restart();
+			RenderableHolder.getInstance().news();
+			SceneManager.BattleFieldScene.toMain();
+		});
+		this.getChildren().add(close);
 	}
 }

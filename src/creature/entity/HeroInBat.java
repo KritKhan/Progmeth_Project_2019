@@ -139,12 +139,6 @@ public class HeroInBat extends BattleFieldableEntity<Hero> {
 		currentMp = currentMp < i ? 0 : currentMp - i;
 	}
 
-	public void revive() {
-		this.restoreHp();
-		BattleField.addEntities(this);
-		setAtktype(atkType);
-	}
-
 	public void restoreHp() {
 		currentHp = getMaxHp();
 		setVisible(true);

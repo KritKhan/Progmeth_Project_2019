@@ -25,10 +25,7 @@ public class MonsterGen {
 	private static Thread monsterThread;
 	private int monsterCount;
 	private int maxMonster;
-	private int dunLvl;
-	private Monster darkLord;
-	private Monster viper;
-	private Monster witch;
+	private int batLvl;
 
 	public MonsterGen() {
 		monsterCount = 0;
@@ -44,7 +41,7 @@ public class MonsterGen {
 						break;
 					}
 					if (Main.isGameRunning && RenderableHolder.getInstance().size() < 35
-							&& GameLogic.heroInBat.isAlive()) {
+							&& GameLogic.heroInBat.getIsAlive()) {
 						if (monsterCount < maxMonster && (BattleField.getLvlChangetimer() == 0)) {
 							try {
 								addMonster();
@@ -121,8 +118,8 @@ public class MonsterGen {
 		return ResourceLoader.monsterImage[i - 1];
 	}
 
-	public void setDunLvl(int dunLvl) {
-		this.dunLvl = dunLvl;
+	public void setBatLvl(int batLvl) {
+		this.batLvl = batLvl;
 	}
 
 	public void genMonster(int img, int row, int col, int size, int time) {
@@ -136,7 +133,7 @@ public class MonsterGen {
 			return;
 		int mass = (int) (Math.pow((float) ((4 - col) / (row + 1)), 2) * 27 + img * 23);
 		int hp = (int) (Math.pow(11.0, (3 - img % 3)) + ((col % 2 + 1) * 23) / (row + 1)) + (size - 1) * 221;
-		int idle = (int) Math.max(((img % 3 + 1) * (30 - (dunLvl / 100.0))) + (mass / 100.0), 70);
+		int idle = (int) Math.max(((img % 3 + 1) * (30 - (batLvl / 100.0))) + (mass / 100.0), 70);
 		int speed = (int) (9 - ((4 - col) / (row + 1)) - (mass / 2000.0));
 		Hero hero;
 		int rand = RandomUtility.randomInt(0, 4);
@@ -151,38 +148,38 @@ public class MonsterGen {
 			BattleField
 					.addEntities(
 							new Monster(ResourceLoader.monsterImage[img - 1], row, col, speed, mass,
-									hp * ((dunLvl / 20) + 1), Math.max(
+									hp * ((batLvl / 20) + 1), Math.max(
 											// (int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp
 											// / 1377.0 * 400) / 2), 15),
 											RandomUtility.randomInt(10, 30), rand * 12),
 									hero, idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
-									(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+									(int) ((hp / Constant.BOUNTY_MULTIPLYER * batLvl)
 											+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
 									size));
 			monsterCount += 1;
 		}
-		if (dunLvl == 10 && monsterCount == maxMonster) {
+		if (batLvl == 10 && monsterCount == maxMonster) {
 			BattleField.addEntities(new Monster(ResourceLoader.darklorde, row, col, speed, (int) 1.7 * mass, 10000, // (int)1.7*Math.max(
 //					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
 					200, new Archer(), idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
-					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+					(int) ((hp / Constant.BOUNTY_MULTIPLYER * batLvl)
 							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
 					1.5 * size));
-		} else if (dunLvl == 7 && monsterCount == maxMonster) {
+		} else if (batLvl == 7 && monsterCount == maxMonster) {
 			BattleField.addEntities(new Monster(ResourceLoader.witch, row, col, speed, (int) 1.5 * mass, 5000, // (int)1.5*
 																												// Math.max(
 //					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
 					150, new Magician(), idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
-					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+					(int) ((hp / Constant.BOUNTY_MULTIPLYER * batLvl)
 							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
 					1.5 * size));
-		} else if (dunLvl == 3 && monsterCount == maxMonster) {
+		} else if (batLvl == 3 && monsterCount == maxMonster) {
 			BattleField.addEntities(new Monster(ResourceLoader.viper, row, col, speed, (int) 1.3 * mass, 2500, // (int)
 																												// 1.3*
 																												// Math.max(
 //					(int) ((((2 - img % 3) / 3.0 * 300.0) + 13 * (col * img) + 6 * (row) + hp / 1377.0 * 400) / 2), 15),
 					100, new Archer(), idle, (1 + img % 3), (3 - img % 3) * 300, speed * (3 - img % 3) * 40,
-					(int) ((hp / Constant.BOUNTY_MULTIPLYER * dunLvl)
+					(int) ((hp / Constant.BOUNTY_MULTIPLYER * batLvl)
 							+ ((9 - ((4 - col) / (row + 1)) - (mass / 2000.0))) * 3 + (img - 1) * 50),
 					1.5 * size));
 		}
@@ -193,7 +190,7 @@ public class MonsterGen {
 			return;
 		for (int i = 0; i < rand; i++) {
 			int col = RandomUtility.random() % 4;
-			genMonster(RandomUtility.randomInt(0, 4), (dunLvl % 10) > 5 ? 0 : col % 2, col, 1, i);
+			genMonster(RandomUtility.randomInt(0, 4), (batLvl % 10) > 5 ? 0 : col % 2, col, 1, i);
 		}
 	}
 
@@ -201,18 +198,18 @@ public class MonsterGen {
 			InvocationTargetException, SecurityException {
 		if (RenderableHolder.getInstance().size() >= 25)
 			return;
-		int rand = RandomUtility.randomByLevel(dunLvl) % 3 + 1;
-		if (dunLvl > 8) {
+		int rand = RandomUtility.randomByLevel(batLvl) % 3 + 1;
+		if (batLvl > 8) {
 			genByLvl(1);
 			genByLvl(rand - 1);
-		} else if (dunLvl > 6) {
+		} else if (batLvl > 6) {
 			genByLvl(rand - 3);
 			genByLvl(2);
 			genByLvl(1);
-		} else if (dunLvl > 4) {
+		} else if (batLvl > 4) {
 			genByLvl(rand - 1);
 			genByLvl(1);
-		} else if (dunLvl > 2) {
+		} else if (batLvl > 2) {
 			genByLvl(rand % 2);
 			genByLvl(rand - 1);
 		} else {

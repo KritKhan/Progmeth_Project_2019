@@ -4,6 +4,7 @@ import Logic.GameLogic;
 import SharedObject.InputUtility;
 import SharedObject.ResourceLoader;
 import drawing.manager.DialogPane;
+import drawing.manager.SceneManager;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -30,7 +31,11 @@ public class BattleFieldScene extends Scene{
 		
 		InputUtility.bindListeners(this);
 	}
-	
+	public void toMain() {
+		dialog.getChildren().clear();
+		dialog.setVisible(false);
+		SceneManager.goToScene(SceneManager.MainScene);
+	}
 	public void toBattleField() {
 		dialog.getChildren().clear();
 		dialog.setVisible(false);

@@ -14,7 +14,7 @@ public class ForceUtility {
 		else
 			d /= (Ft.x / entity.getMass());
 		try {
-			if (entity.isAlive())
+			if (entity.getIsAlive())
 				entity.setPos(d, axis);
 		} catch (Exception e) {
 			e.printStackTrace();
